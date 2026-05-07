@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NW Natural Scenario Studio</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">GranularGas Scenario Front-End</p>
+        <h1>Scenario Studio</h1>
+        <p class="hero__lede">
+          Build scenario inputs, run the GranularGas model, and browse saved results directly from the
+          local <code>scenarios</code> folder. This page now treats the scenario name and date as required inputs
+          and uses the combined <code>name_date</code> identifier for saved runs.
+        </p>
+        <div class="hero__notes">
+          <span class="hero-chip">Required name + date</span>
+          <span class="hero-chip">Run and save to scenarios/</span>
+          <span class="hero-chip">Scenario comparison</span>
+        </div>
+      </div>
+
+      <div class="hero__meta">
+        <div class="hero-stat">
+          <span class="hero-stat__label">Saved Scenario ID</span>
+          <strong id="heroScenarioId">baseline_2026-05-06</strong>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat__label">Template</span>
+          <strong id="heroTemplateName">baseline</strong>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat__label">Server Status</span>
+          <strong id="heroServerStatus">Checking...</strong>
+        </div>
+        <div class="hero-stat hero-stat--status">
+          <span class="hero-stat__label">Last Action</span>
+          <strong id="heroActionStatus">Ready</strong>
+        </div>
+      </div>
+
+      <div class="preset-strip" id="presetStrip"></div>
+    </header>
+
+    <main class="dashboard">
+      <section class="controls-column">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Scenario Setup</p>
+              <h2>Required scenario identity</h2>
+            </div>
+            <span class="status-pill" id="dirtyState">Preset Loaded</span>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Scenario Name</span>
+              <input id="displayNameInput" type="text" autocomplete="off" spellcheck="false" required>
+              <small>Required. This is the human-readable scenario name.</small>
+            </label>
+
+            <label class="field">
+              <span>Scenario Date</span>
+              <input id="scenarioDateInput" type="date" required>
+              <small>Required. Saved scenarios use <code>name_date</code>.</small>
+            </label>
+
+            <label class="field field--full">
+              <span>Description</span>
+              <textarea id="scenarioDescriptionInput" rows="3"></textarea>
+            </label>
+
+            <label class="field">
+              <span>Base Year</span>
+              <input id="baseYearInput" type="number" min="2020" max="2050" step="1">
+            </label>
+
+            <label class="field">
+              <span>Forecast Horizon</span>
+              <input id="forecastHorizonInput" type="number" min="1" max="50" step="1">
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Macro Drivers</p>
+              <h2>Growth and weather</h2>
+            </div>
+          </div>
+
+          <div class="control-stack">
+            <div class="metric-control">
+              <div class="metric-control__copy">
+                <span class="metric-control__label">Housing Growth Rate</span>
+                <p class="metric-control__text">Annual residential housing growth applied across the scenario window.</p>
+              </div>
+              <div class="metric-control__inputs">
+                <input id="housingGrowthRange" class="slider" type="range" min="0" max="5" step="0.1">
+                <label class="inline-input">
+                  <input id="housingGrowthNumber" type="number" min="0" max="5" step="0.1" inputmode="decimal">
+                  <span>%</span>
+                </label>
+              </div>
+            </div>
+
+            <label class="field field--full">
+              <span>Weather Assumption</span>
+              <select id="weatherSelect">
+                <option value="normal">Normal</option>
+                <option value="warm">Warm</option>
+                <option value="cold">Cold</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Electrification</p>
+              <h2>Study-end targets</h2>
+            </div>
+          </div>
+
+          <div class="control-stack">
+            <div class="metric-control">
+              <div class="metric-control__copy">
+                <span class="metric-control__label">Study-End Space Heating Electrification</span>
+                <p class="metric-control__text">The UI stores the study-end all-electric target and converts it to an annual GranularGas rate when the model runs.</p>
+              </div>
+              <div class="metric-control__inputs">
+                <input id="spaceHeatingElectrificationRange" class="slider" type="range" min="0" max="100" step="0.5">
+                <label class="inline-input">
+                  <input id="spaceHeatingElectrificationNumber" type="number" min="0" max="100" step="0.1" inputmode="decimal">
+                  <span>%</span>
+                </label>
+              </div>
+              <p class="metric-control__hint" id="spaceHeatingElectrificationHint"></p>
+            </div>
+
+            <div class="metric-control">
+              <div class="metric-control__copy">
+                <span class="metric-control__label">Study-End Hybrid Heat Pump Adoption</span>
+                <p class="metric-control__text">The UI stores the study-end hybrid target and converts it to the model's annual hybrid adoption rate.</p>
+              </div>
+              <div class="metric-control__inputs">
+                <input id="hybridHeatingAdoptionRange" class="slider" type="range" min="0" max="100" step="0.5">
+                <label class="inline-input">
+                  <input id="hybridHeatingAdoptionNumber" type="number" min="0" max="100" step="0.1" inputmode="decimal">
+                  <span>%</span>
+                </label>
+              </div>
+              <p class="metric-control__hint" id="hybridHeatingAdoptionHint"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Efficiency</p>
+              <h2>Annual efficiency assumptions</h2>
+            </div>
+          </div>
+
+          <div class="control-stack">
+            <div class="metric-control">
+              <div class="metric-control__copy">
+                <span class="metric-control__label">Space Heating Efficiency Improvement</span>
+                <p class="metric-control__text">Annual improvement rate sent directly to the current GranularGas model.</p>
+              </div>
+              <div class="metric-control__inputs">
+                <input id="spaceHeatingEfficiencyRange" class="slider" type="range" min="0" max="5" step="0.1">
+                <label class="inline-input">
+                  <input id="spaceHeatingEfficiencyNumber" type="number" min="0" max="5" step="0.1" inputmode="decimal">
+                  <span>%</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="metric-control">
+              <div class="metric-control__copy">
+                <span class="metric-control__label">Hybrid Space Heating Efficiency Improvement</span>
+                <p class="metric-control__text">Stored with the scenario so the saved JSON preserves the hybrid planning input, even though the current model primarily consumes the conventional space-heating efficiency knob.</p>
+              </div>
+              <div class="metric-control__inputs">
+                <input id="hybridHeatingEfficiencyRange" class="slider" type="range" min="0" max="5" step="0.1">
+                <label class="inline-input">
+                  <input id="hybridHeatingEfficiencyNumber" type="number" min="0" max="5" step="0.1" inputmode="decimal">
+                  <span>%</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel--actions">
+          <div class="button-row">
+            <button id="runScenarioButton" class="button button--primary" type="button">Run Scenario</button>
+            <button id="exportScenarioButton" class="button button--secondary" type="button">Export JSON</button>
+            <button id="importScenarioButton" class="button button--secondary" type="button">Import JSON</button>
+            <button id="copyPreviewButton" class="button button--ghost" type="button">Copy Preview</button>
+            <button id="resetScenarioButton" class="button button--ghost" type="button">Reset</button>
+          </div>
+          <p class="helper-text" id="actionStatus">
+            The Run Scenario button saves the config to the GranularGas <code>scenarios</code> folder and then launches the model.
+          </p>
+          <input id="scenarioImportInput" type="file" accept=".json,application/json" hidden>
+        </section>
+      </section>
+
+      <section class="insights-column">
+        <section class="panel panel--summary">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Scenario Library</p>
+              <h2>Saved results browser</h2>
+            </div>
+            <button id="refreshScenariosButton" class="button button--ghost" type="button">Refresh</button>
+          </div>
+
+          <div class="field-grid">
+            <label class="field field--full">
+              <span>Primary Scenario</span>
+              <select id="primaryScenarioSelect"></select>
+            </label>
+
+            <label class="field field--full">
+              <span>Compare Against</span>
+              <select id="comparisonScenarioSelect"></select>
+            </label>
+          </div>
+
+          <div class="summary-grid" id="loadedScenarioGrid"></div>
+          <div class="narrative-card" id="loadedScenarioNarrative"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Current Config</p>
+              <h2>Run-ready summary</h2>
+            </div>
+            <span class="status-pill status-pill--accent" id="previewModeBadge">Validated</span>
+          </div>
+
+          <div class="summary-grid">
+            <article class="summary-card">
+              <span class="summary-card__label">Scenario ID</span>
+              <strong id="summaryScenarioId">baseline_2026-05-06</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-card__label">Forecast Window</span>
+              <strong id="summaryWindow">2025-2035</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-card__label">Weather</span>
+              <strong id="summaryWeather">Normal</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-card__label">Growth</span>
+              <strong id="summaryGrowth">1.0%</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-card__label">Annual All-Electric Rate</span>
+              <strong id="summaryAnnualElectrification">0.2%</strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-card__label">Annual Hybrid Rate</span>
+              <strong id="summaryAnnualHybrid">0.1%</strong>
+            </article>
+          </div>
+
+          <div class="validation-list" id="validationList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Scenario Comparison</p>
+              <h2>Selected result metrics</h2>
+            </div>
+          </div>
+
+          <div class="comparison-grid" id="comparisonGrid"></div>
+          <div class="comparison-table-wrap">
+            <table class="comparison-table" id="comparisonTable">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Primary</th>
+                  <th>Compare</th>
+                  <th>Delta</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel panel--visuals">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Scenario Visuals</p>
+              <h2>Charts from saved results</h2>
+            </div>
+          </div>
+
+          <div class="chart-gallery" id="chartGallery"></div>
+        </section>
+
+        <section class="panel panel--preview">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">Saved Payload</p>
+              <h2>JSON Preview</h2>
+            </div>
+            <span class="status-pill" id="saveFilenameBadge">baseline_2026-05-06.json</span>
+          </div>
+          <pre id="jsonPreview" class="json-preview"></pre>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

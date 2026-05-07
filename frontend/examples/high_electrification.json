@@ -1,0 +1,16 @@
+{
+  "name": "high_electrification",
+  "description": "Accelerated transition with stronger all-electric and hybrid space-heating adoption",
+  "base_year": 2025,
+  "forecast_horizon": 10,
+  "housing_growth_rate": 0.013,
+  "electrification_rate": {
+    "space_heating": 0.12,
+    "hybrid_space_heating": 0.08
+  },
+  "efficiency_improvement": {
+    "space_heating": 0.015,
+    "hybrid_space_heating": 0.01
+  },
+  "weather_assumption": "normal"
+}
