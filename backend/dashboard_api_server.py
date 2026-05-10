@@ -7,6 +7,7 @@ import os
 import re
 import subprocess
 import sys
+import traceback
 from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -214,6 +215,9 @@ def load_scenario_bundle(scenario_id: str) -> dict:
     results = load_json(scenario_dir / "results.json", default=None)
     if results is None:
         results = load_csv_records(scenario_dir / "results.csv")
+    recs_enduse_trend = load_json(scenario_dir / "recs_enduse_trend.json", default=None)
+    if recs_enduse_trend is None:
+        recs_enduse_trend = load_csv_records(scenario_dir / "recs_enduse_trend.csv")
     charts = build_chart_manifest(scenario_id, scenario_dir)
 
     scenario = build_summary_metadata(
@@ -236,6 +240,7 @@ def load_scenario_bundle(scenario_id: str) -> dict:
         "irp_comparison": irp_comparison,
         "estimated_total_upc": estimated_total_upc,
         "segment_demand": segment_demand,
+        "recs_enduse_trend": recs_enduse_trend,
         "charts": charts,
     }
 
@@ -345,8 +350,19 @@ def run_model_scenario(config: dict) -> dict:
 class ScenarioApiHandler(BaseHTTPRequestHandler):
     server_version = "GranularGasScenarioAPI/0.1"
 
-    def log_message(self, format, *args):
-        return
+    def log_message(self, format, *args):  # noqa: A002
+        # Print every request to stdout so the terminal shows live traffic.
+        print(f"  {self.address_string()}  {format % args}", flush=True)
+
+    def _log_error(self, context: str, exc: BaseException) -> None:
+        """Print a full traceback to the server console for any 500-class error."""
+        sep = "─" * 72
+        print(f"\n{sep}", flush=True)
+        print(f"  ERROR in {context}", flush=True)
+        print(f"  {type(exc).__name__}: {exc}", flush=True)
+        print(sep, flush=True)
+        traceback.print_exc()
+        print(sep, flush=True)
 
     def _send_json(self, payload: dict | list, status: int = HTTPStatus.OK):
         body = json.dumps(payload, indent=2, default=str).encode("utf-8")
@@ -433,7 +449,12 @@ class ScenarioApiHandler(BaseHTTPRequestHandler):
         except ValueError as exc:
             self._send_error(str(exc), status=HTTPStatus.BAD_REQUEST)
         except Exception as exc:
-            self._send_error("Unexpected server error.", status=HTTPStatus.INTERNAL_SERVER_ERROR, details=str(exc))
+            self._log_error(f"GET {path}", exc)
+            self._send_error(
+                "Unexpected server error.",
+                status=HTTPStatus.INTERNAL_SERVER_ERROR,
+                details={"type": type(exc).__name__, "message": str(exc), "traceback": traceback.format_exc()},
+            )
 
     def do_POST(self):
         parsed = urlparse(self.path)
@@ -451,6 +472,9 @@ class ScenarioApiHandler(BaseHTTPRequestHandler):
         except ValueError as exc:
             self._send_error(str(exc), status=HTTPStatus.BAD_REQUEST)
         except RuntimeError as exc:
+            # RuntimeError from run_model_scenario carries a JSON-encoded dict
+            # with stdout/stderr from the subprocess.
+            self._log_error(f"POST {parsed.path} — model subprocess", exc)
             details = str(exc)
             try:
                 details = json.loads(details)
@@ -458,18 +482,26 @@ class ScenarioApiHandler(BaseHTTPRequestHandler):
                 pass
             self._send_error("Model run failed.", status=HTTPStatus.INTERNAL_SERVER_ERROR, details=details)
         except Exception as exc:
-            self._send_error("Unexpected server error.", status=HTTPStatus.INTERNAL_SERVER_ERROR, details=str(exc))
+            self._log_error(f"POST {parsed.path}", exc)
+            self._send_error(
+                "Unexpected server error.",
+                status=HTTPStatus.INTERNAL_SERVER_ERROR,
+                details={"type": type(exc).__name__, "message": str(exc), "traceback": traceback.format_exc()},
+            )
 
 
 def main():
     SCENARIOS_DIR.mkdir(parents=True, exist_ok=True)
     server = ThreadingHTTPServer((HOST, PORT), ScenarioApiHandler)
-    print(f"GranularGas scenario API listening on http://{HOST}:{PORT}")
-    print(f"Scenarios directory: {SCENARIOS_DIR}")
+    print("─" * 72, flush=True)
+    print(f"  GranularGas scenario API  →  http://{HOST}:{PORT}", flush=True)
+    print(f"  Scenarios dir             →  {SCENARIOS_DIR}", flush=True)
+    print(f"  Python                    →  {sys.executable}", flush=True)
+    print("─" * 72, flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        pass
+        print("\nShutting down.", flush=True)
     finally:
         server.server_close()
 

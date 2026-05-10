@@ -653,32 +653,83 @@
       const primaryChart = primaryCharts.get(key);
       const compareChart = compareCharts.get(key);
       const label = primaryChart?.label || compareChart?.label || key;
+      const isEndUse = key === "enduse_breakdown";
+      const isEstUpc = key === "estimated_total_upc";
+      const isModelVsIrp = key === "model_vs_irp";
+      const isTotalDemand = key === "total_demand";
+      const isSegmentDemand = key === "segment_demand";
 
       if (APP.comparisonBundle) {
+        const primarySrc = primaryChart ? `${API_URL}${primaryChart.url}` : null;
+        const compareSrc = compareChart ? `${API_URL}${compareChart.url}` : null;
+        const primaryLabel = `${label} — ${APP.primaryBundle.scenario.display_name}`;
+        const compareLabel = `${label} — ${APP.comparisonBundle.scenario.display_name}`;
+
         return `
           <article class="chart-compare-card">
-            <h3>${label}</h3>
+            <div class="chart-card__header">
+              <h3>${label}</h3>
+              ${isEndUse ? `<button class="button button--ghost chart-overlay-btn" id="endUseOverlayButton" type="button">End Use Comparison</button>` : ""}
+              ${isEstUpc ? `<button class="button button--ghost chart-overlay-btn" id="estUpcOverlayButton" type="button">UPC Comparison</button>` : ""}
+              ${isModelVsIrp ? `<button class="button button--ghost chart-overlay-btn" id="irpDeclineOverlayButton" type="button">Decline Rate Comparison</button>` : ""}
+              ${isTotalDemand ? `<button class="button button--ghost chart-overlay-btn" id="totalDemandOverlayButton" type="button">Total Comparison</button>` : ""}
+              ${isSegmentDemand ? `<button class="button button--ghost chart-overlay-btn" id="segmentDemandOverlayButton" type="button">Segment Comparison</button>` : ""}
+            </div>
             <div class="chart-compare-grid">
               <div class="chart-frame">
                 <span class="chart-frame__label">${APP.primaryBundle.scenario.display_name}</span>
-                ${primaryChart ? `<img src="${API_URL}${primaryChart.url}" alt="${label} for ${APP.primaryBundle.scenario.display_name}">` : `<div class="chart-missing">Chart not available</div>`}
+                ${primarySrc
+                  ? `<img src="${primarySrc}" alt="${primaryLabel}" data-lightbox-src="${primarySrc}" data-lightbox-label="${primaryLabel}">`
+                  : `<div class="chart-missing">Chart not available</div>`}
               </div>
               <div class="chart-frame">
                 <span class="chart-frame__label">${APP.comparisonBundle.scenario.display_name}</span>
-                ${compareChart ? `<img src="${API_URL}${compareChart.url}" alt="${label} for ${APP.comparisonBundle.scenario.display_name}">` : `<div class="chart-missing">Chart not available</div>`}
+                ${compareSrc
+                  ? `<img src="${compareSrc}" alt="${compareLabel}" data-lightbox-src="${compareSrc}" data-lightbox-label="${compareLabel}">`
+                  : `<div class="chart-missing">Chart not available</div>`}
               </div>
             </div>
           </article>
         `;
       }
 
+      const src = primaryChart ? `${API_URL}${primaryChart.url}` : null;
+      const altLabel = `${label} — ${APP.primaryBundle.scenario.display_name}`;
+
       return `
         <article class="chart-card">
-          <h3>${label}</h3>
-          ${primaryChart ? `<img src="${API_URL}${primaryChart.url}" alt="${label} for ${APP.primaryBundle.scenario.display_name}">` : `<div class="chart-missing">Chart not available</div>`}
+          <div class="chart-card__header">
+            <h3>${label}</h3>
+            ${isEndUse ? `<button class="button button--ghost chart-overlay-btn" id="endUseOverlayButton" type="button">End Use Comparison</button>` : ""}
+            ${isEstUpc ? `<button class="button button--ghost chart-overlay-btn" id="estUpcOverlayButton" type="button">UPC Comparison</button>` : ""}
+            ${isModelVsIrp ? `<button class="button button--ghost chart-overlay-btn" id="irpDeclineOverlayButton" type="button">Decline Rate Comparison</button>` : ""}
+            ${isTotalDemand ? `<button class="button button--ghost chart-overlay-btn" id="totalDemandOverlayButton" type="button">Total Comparison</button>` : ""}
+            ${isSegmentDemand ? `<button class="button button--ghost chart-overlay-btn" id="segmentDemandOverlayButton" type="button">Segment Comparison</button>` : ""}
+          </div>
+          ${src
+            ? `<img src="${src}" alt="${altLabel}" data-lightbox-src="${src}" data-lightbox-label="${altLabel}">`
+            : `<div class="chart-missing">Chart not available</div>`}
         </article>
       `;
     }).join("");
+
+    // Wire overlay buttons if rendered
+    const overlayBtn = document.getElementById("endUseOverlayButton");
+    if (overlayBtn) overlayBtn.addEventListener("click", openEndUseOverlay);
+
+    const estUpcBtn = document.getElementById("estUpcOverlayButton");
+    if (estUpcBtn) estUpcBtn.addEventListener("click", openEstUpcOverlay);
+
+    const irpDeclineBtn = document.getElementById("irpDeclineOverlayButton");
+    if (irpDeclineBtn) irpDeclineBtn.addEventListener("click", openIrpDeclineOverlay);
+
+    const totalDemandBtn = document.getElementById("totalDemandOverlayButton");
+    if (totalDemandBtn) totalDemandBtn.addEventListener("click", openTotalDemandOverlay);
+
+    const segmentDemandBtn = document.getElementById("segmentDemandOverlayButton");
+    if (segmentDemandBtn) segmentDemandBtn.addEventListener("click", openSegmentDemandOverlay);
+
+    attachChartClickHandlers();
   }
 
   function render() {
@@ -865,22 +916,108 @@
     };
   }
 
+  function showToast(message, type = "success", detail = "") {
+    const existing = document.getElementById("runToast");
+    if (existing) {
+      existing.remove();
+    }
+
+    const toast = document.createElement("div");
+    toast.id = "runToast";
+    toast.className = `run-toast run-toast--${type}`;
+    toast.setAttribute("role", type === "processing" ? "status" : "alert");
+    toast.setAttribute("aria-live", "assertive");
+
+    let icon;
+    if (type === "success") {
+      icon = `<span class="run-toast__icon">✓</span>`;
+    } else if (type === "processing") {
+      icon = `<span class="run-toast__icon run-toast__icon--spinner" aria-hidden="true"></span>`;
+    } else {
+      icon = `<span class="run-toast__icon">✕</span>`;
+    }
+
+    toast.innerHTML = `
+      ${icon}
+      <div class="run-toast__body">
+        <span class="run-toast__message">${message}</span>
+        ${detail ? `<span class="run-toast__detail">${detail}</span>` : ""}
+        ${type === "processing" ? `<span class="run-toast__timer" id="runToastTimer">0s</span>` : ""}
+      </div>
+      ${type !== "processing" ? `<button class="run-toast__close" aria-label="Dismiss">&times;</button>` : ""}
+    `;
+
+    if (type !== "processing") {
+      toast.querySelector(".run-toast__close").addEventListener("click", () => toast.remove());
+    }
+
+    document.body.appendChild(toast);
+
+    if (type === "processing") {
+      // Tick a live elapsed-time counter
+      const startTime = Date.now();
+      const timerEl = document.getElementById("runToastTimer");
+      const interval = setInterval(() => {
+        if (!timerEl || !timerEl.parentNode) {
+          clearInterval(interval);
+          return;
+        }
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timerEl.textContent = elapsed < 60
+          ? `${elapsed}s`
+          : `${Math.floor(elapsed / 60)}m ${elapsed % 60}s`;
+      }, 1000);
+      toast._timerInterval = interval;
+    } else {
+      // Auto-dismiss: 8 s for success, 20 s for errors
+      const ttl = type === "success" ? 8000 : 20000;
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.classList.add("run-toast--fade");
+          setTimeout(() => toast.remove(), 400);
+        }
+      }, ttl);
+    }
+
+    return toast;
+  }
+
+  function dismissProcessingToast() {
+    const toast = document.getElementById("runToast");
+    if (toast && toast._timerInterval) {
+      clearInterval(toast._timerInterval);
+    }
+    if (toast) {
+      toast.remove();
+    }
+  }
+
   async function handleRunScenario() {
     const validation = validateState(APP.currentState);
     if (!validation.valid) {
-      APP.lastActionMessage = validation.errors.join(" ");
+      const msg = validation.errors.join(" ");
+      APP.lastActionMessage = msg;
+      showToast(msg, "error");
       render();
       return;
     }
 
     if (!APP.serverHealthy) {
-      APP.lastActionMessage = "The local scenario API is offline. Start the Python server first.";
+      const msg = "The local scenario API is offline. Start the Python server first.";
+      APP.lastActionMessage = msg;
+      showToast(msg, "error");
       render();
       return;
     }
 
     const payload = buildConfigPayload(APP.currentState);
-    APP.lastActionMessage = `Running ${payload.name} and saving results into the GranularGas scenarios folder...`;
+    APP.lastActionMessage = `Running ${payload.name}…`;
+    if (dom.runScenarioButton) {
+      dom.runScenarioButton.disabled = true;
+      dom.runScenarioButton.textContent = "Running…";
+    }
+
+    showToast(`Running ${payload.name}…`, "processing", "The model is running on the backend. This may take a minute.");
     render();
 
     try {
@@ -888,16 +1025,40 @@
         method: "POST",
         body: JSON.stringify(payload)
       });
+      dismissProcessingToast();
       APP.lastCommittedPayload = serializePayload(payload);
       APP.primaryScenarioId = bundle.scenario.id;
       APP.primaryBundle = bundle;
       APP.comparisonBundle = null;
       APP.comparisonScenarioId = "";
-      APP.lastActionMessage = `Model run complete. Saved ${bundle.scenario.id}.json and results in scenarios/${bundle.scenario.id}/.`;
+      APP.lastActionMessage = `Model run complete. Saved ${bundle.scenario.id}.`;
+      showToast(`Run complete — ${bundle.scenario.id}`, "success", `Results saved to scenarios/${bundle.scenario.id}/`);
       await refreshScenarioCatalog(bundle.scenario.id);
     } catch (error) {
+      dismissProcessingToast();
+      // Try to extract structured detail from the server's 500 response
+      let detail = "";
+      try {
+        const parsed = JSON.parse(error.message);
+        if (parsed?.details?.stderr) {
+          detail = parsed.details.stderr.trim().split("\n").slice(-6).join("\n");
+        } else if (parsed?.details?.message) {
+          detail = parsed.details.message;
+        } else if (typeof parsed?.details === "string") {
+          detail = parsed.details;
+        }
+      } catch {
+        detail = error.message;
+      }
+      const summary = "Model run failed — check the detail below and the server console for the full traceback.";
       APP.lastActionMessage = `Model run failed: ${error.message}`;
+      showToast(summary, "error", detail);
       render();
+    } finally {
+      if (dom.runScenarioButton) {
+        dom.runScenarioButton.disabled = false;
+        dom.runScenarioButton.textContent = "Run Scenario";
+      }
     }
   }
 
@@ -962,37 +1123,43 @@
   }
 
   function wireEvents() {
-    dom.displayNameInput.addEventListener("input", (event) => {
+    function on(el, event, handler) {
+      if (el) {
+        el.addEventListener(event, handler);
+      }
+    }
+
+    on(dom.displayNameInput, "input", (event) => {
       updateState((state) => {
         state.display_name = event.target.value;
       }, "Scenario name updated.");
     });
 
-    dom.scenarioDateInput.addEventListener("input", (event) => {
+    on(dom.scenarioDateInput, "input", (event) => {
       updateState((state) => {
         state.scenario_date = event.target.value;
       }, "Scenario date updated.");
     });
 
-    dom.scenarioDescriptionInput.addEventListener("input", (event) => {
+    on(dom.scenarioDescriptionInput, "input", (event) => {
       updateState((state) => {
         state.description = event.target.value;
       }, "Scenario description updated.");
     });
 
-    dom.baseYearInput.addEventListener("input", (event) => {
+    on(dom.baseYearInput, "input", (event) => {
       updateState((state) => {
         state.base_year = Number(event.target.value);
       });
     });
 
-    dom.forecastHorizonInput.addEventListener("input", (event) => {
+    on(dom.forecastHorizonInput, "input", (event) => {
       updateState((state) => {
         state.forecast_horizon = Number(event.target.value);
       });
     });
 
-    dom.weatherSelect.addEventListener("change", (event) => {
+    on(dom.weatherSelect, "change", (event) => {
       updateState((state) => {
         state.weather_assumption = event.target.value;
       }, `Weather assumption updated to ${formatWeather(event.target.value)}.`);
@@ -1002,8 +1169,8 @@
       const handler = (event) => {
         updatePercentField(setter, event.target.value, maxPercent);
       };
-      rangeEl.addEventListener("input", handler);
-      numberEl.addEventListener("input", handler);
+      on(rangeEl, "input", handler);
+      on(numberEl, "input", handler);
     };
 
     bindPercentPair(dom.housingGrowthRange, dom.housingGrowthNumber, (state, value) => {
@@ -1026,22 +1193,1195 @@
       state.efficiency_targets.hybrid_space_heating = value;
     }, 5);
 
-    dom.runScenarioButton.addEventListener("click", handleRunScenario);
-    dom.exportScenarioButton.addEventListener("click", handleExportScenario);
-    dom.copyPreviewButton.addEventListener("click", handleCopyPreview);
-    dom.resetScenarioButton.addEventListener("click", handleResetScenario);
-    dom.importScenarioButton.addEventListener("click", () => dom.scenarioImportInput.click());
-    dom.scenarioImportInput.addEventListener("change", handleScenarioImport);
-    dom.refreshScenariosButton.addEventListener("click", () => refreshScenarioCatalog());
+    on(dom.runScenarioButton, "click", handleRunScenario);
+    on(dom.exportScenarioButton, "click", handleExportScenario);
+    on(dom.copyPreviewButton, "click", handleCopyPreview);
+    on(dom.resetScenarioButton, "click", handleResetScenario);
+    on(dom.importScenarioButton, "click", () => dom.scenarioImportInput && dom.scenarioImportInput.click());
+    on(dom.scenarioImportInput, "change", handleScenarioImport);
+    on(dom.refreshScenariosButton, "click", () => refreshScenarioCatalog());
 
-    dom.primaryScenarioSelect.addEventListener("change", async (event) => {
+    on(dom.primaryScenarioSelect, "change", async (event) => {
       APP.primaryScenarioId = event.target.value;
       await loadPrimaryScenario(APP.primaryScenarioId);
     });
 
-    dom.comparisonScenarioSelect.addEventListener("change", async (event) => {
+    on(dom.comparisonScenarioSelect, "change", async (event) => {
       APP.comparisonScenarioId = event.target.value;
       await loadComparisonScenario(APP.comparisonScenarioId);
+    });
+  }
+
+  // ── Lightbox ──────────────────────────────────────────────────────────────
+
+  const LIGHTBOX = {
+    el: null,
+    img: null,
+    caption: null
+  };
+
+  function openLightbox(src, label) {
+    if (!LIGHTBOX.el) {
+      return;
+    }
+    LIGHTBOX.img.src = src;
+    LIGHTBOX.img.alt = label;
+    LIGHTBOX.caption.textContent = label;
+    LIGHTBOX.el.hidden = false;
+    document.body.style.overflow = "hidden";
+    LIGHTBOX.el.querySelector(".lightbox__close").focus();
+  }
+
+  function closeLightbox() {
+    if (!LIGHTBOX.el) {
+      return;
+    }
+    LIGHTBOX.el.hidden = true;
+    LIGHTBOX.img.src = "";
+    document.body.style.overflow = "";
+  }
+
+  function wireLightbox() {
+    LIGHTBOX.el = document.getElementById("chartLightbox");
+    LIGHTBOX.img = document.getElementById("lightboxImg");
+    LIGHTBOX.caption = document.getElementById("lightboxCaption");
+
+    if (!LIGHTBOX.el) {
+      return;
+    }
+
+    document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+    document.getElementById("lightboxBackdrop").addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !LIGHTBOX.el.hidden) {
+        closeLightbox();
+      }
+    });
+  }
+
+  function attachChartClickHandlers() {
+    dom.chartGallery.querySelectorAll("img[data-lightbox-src]").forEach((img) => {
+      img.addEventListener("click", () => {
+        openLightbox(img.dataset.lightboxSrc, img.dataset.lightboxLabel || img.alt);
+      });
+    });
+  }
+
+  // ── End Use Overlay Chart ─────────────────────────────────────────────────
+
+  // Palette for all 6 end uses
+  const END_USE_COLORS = {
+    space_heating:  "#4ecdc4",
+    water_heating:  "#f7b731",
+    cooking:        "#fd79a8",
+    clothes_drying: "#a29bfe",
+    fireplace:      "#ff7675",
+    other:          "#81ecec"
+  };
+
+  // Two distinct palettes for the overlay chart
+  // Primary: cool blue-green family
+  const END_USE_COLORS_PRIMARY = {
+    space_heating:  "#00b4d8",
+    water_heating:  "#48cae4",
+    cooking:        "#90e0ef",
+    clothes_drying: "#0077b6",
+    fireplace:      "#023e8a",
+    other:          "#ade8f4"
+  };
+  // Comparison: warm orange-red family
+  const END_USE_COLORS_COMPARE = {
+    space_heating:  "#e85d04",
+    water_heating:  "#f48c06",
+    cooking:        "#faa307",
+    clothes_drying: "#dc2f02",
+    fireplace:      "#9d0208",
+    other:          "#ffba08"
+  };
+
+  const END_USE_LABELS = {
+    space_heating:  "Space Heating",
+    water_heating:  "Water Heating",
+    cooking:        "Cooking",
+    clothes_drying: "Clothes Drying",
+    fireplace:      "Fireplace",
+    other:          "Other"
+  };
+
+  const END_USES = ["space_heating", "water_heating", "cooking", "clothes_drying", "fireplace", "other"];
+
+  function buildEndUseSeriesFromBundle(bundle) {
+    // Prefer estimated_total_upc which has actual per-end-use UPC values per year
+    const euData = bundle.estimated_total_upc || [];
+    if (euData.length) {
+      return euData
+        .slice()
+        .sort((a, b) => a.year - b.year)
+        .map((row) => ({
+          year:           row.year,
+          space_heating:  row.space_heating  || 0,
+          water_heating:  row.water_heating  || 0,
+          cooking:        row.cooking        || 0,
+          clothes_drying: row.clothes_drying || 0,
+          fireplace:      row.fireplace      || 0,
+          other:          row.other          || 0
+        }));
+    }
+
+    // Fallback: estimate from RECS percentages × UPC if estimated_total_upc is missing
+    const recs = (bundle.recs_enduse_trend || []);
+    const latestRecs = recs.length ? recs[recs.length - 1] : null;
+    const shPct  = latestRecs ? (latestRecs.sh_pct  || 0) / 100 : 0.55;
+    const whPct  = latestRecs ? (latestRecs.wh_pct  || 0) / 100 : 0.33;
+    const appPct = latestRecs ? (latestRecs.appliance_pct || 0) / 100 : 0.12;
+
+    return (bundle.yearly_summary || [])
+      .slice()
+      .sort((a, b) => a.year - b.year)
+      .map((row) => {
+        const upc = row.use_per_customer || 0;
+        return {
+          year:           row.year,
+          space_heating:  upc * shPct,
+          water_heating:  upc * whPct,
+          cooking:        upc * appPct * 0.4,
+          clothes_drying: upc * appPct * 0.25,
+          fireplace:      upc * appPct * 0.2,
+          other:          upc * appPct * 0.15
+        };
+      });
+  }
+
+  function drawEndUseOverlay(primaryBundle, compareBundle) {
+    const canvas = document.getElementById("endUseCanvas");
+    const legend = document.getElementById("endUseLegend");
+    const title  = document.getElementById("endUseLightboxTitle");
+    if (!canvas) return;
+
+    const primaryName = primaryBundle.scenario.display_name;
+    const compareName = compareBundle ? compareBundle.scenario.display_name : null;
+
+    title.textContent = compareName
+      ? `End Use Breakdown — ${primaryName} vs ${compareName}`
+      : `End Use Breakdown — ${primaryName}`;
+
+    const primarySeries = buildEndUseSeriesFromBundle(primaryBundle);
+    const compareSeries = compareBundle ? buildEndUseSeriesFromBundle(compareBundle) : null;
+    const endUses = END_USES;
+
+    // Y-max = highest stacked total across both series
+    let yMax = 0;
+    [...primarySeries, ...(compareSeries || [])].forEach((row) => {
+      const total = endUses.reduce((s, eu) => s + (row[eu] || 0), 0);
+      if (total > yMax) yMax = total;
+    });
+    yMax = yMax * 1.1 || 1;
+
+    // ── Canvas sizing ─────────────────────────────────────────────────────
+    const dpr = window.devicePixelRatio || 1;
+    const W = Math.round(Math.min(window.innerWidth * 0.96, 1400) - 64 - 180 - 24);
+    const H = Math.round(window.innerHeight * 0.78);
+
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = `${W}px`;
+    canvas.style.height = `${H}px`;
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const PAD_TOP  = 36;
+    const PAD_BOT  = 52;
+    const PAD_LEFT = 72;
+    const PAD_RIGHT = 16;
+    const chartW = W - PAD_LEFT - PAD_RIGHT;
+    const chartH = H - PAD_TOP - PAD_BOT;
+
+    // Use the union of years from both series for the shared X axis
+    const allYears = Array.from(new Set([
+      ...primarySeries.map((r) => r.year),
+      ...(compareSeries ? compareSeries.map((r) => r.year) : [])
+    ])).sort((a, b) => a - b);
+    const n = allYears.length;
+
+    function xPos(yearVal) {
+      const idx = allYears.indexOf(yearVal);
+      return PAD_LEFT + (idx / Math.max(n - 1, 1)) * chartW;
+    }
+    function yPos(val) {
+      return PAD_TOP + chartH - (val / yMax) * chartH;
+    }
+
+    // ── Grid ──────────────────────────────────────────────────────────────
+    const yTicks = 6;
+    for (let t = 0; t <= yTicks; t++) {
+      const y = PAD_TOP + chartH - (t / yTicks) * chartH;
+      ctx.strokeStyle = t === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.06)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(PAD_LEFT, y);
+      ctx.lineTo(PAD_LEFT + chartW, y);
+      ctx.stroke();
+      ctx.fillStyle = "rgba(232,255,248,0.5)";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "right";
+      ctx.fillText((yMax * t / yTicks).toFixed(0), PAD_LEFT - 10, y + 4);
+    }
+
+    // X axis labels
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(232,255,248,0.5)";
+    ctx.font = "12px sans-serif";
+    allYears.forEach((yr) => {
+      const x = xPos(yr);
+      ctx.fillText(String(yr), x, H - PAD_BOT + 20);
+      ctx.strokeStyle = "rgba(255,255,255,0.1)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x, PAD_TOP + chartH);
+      ctx.lineTo(x, PAD_TOP + chartH + 5);
+      ctx.stroke();
+    });
+
+    // Axis border
+    ctx.strokeStyle = "rgba(255,255,255,0.22)";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(PAD_LEFT, PAD_TOP);
+    ctx.lineTo(PAD_LEFT, PAD_TOP + chartH);
+    ctx.lineTo(PAD_LEFT + chartW, PAD_TOP + chartH);
+    ctx.stroke();
+
+    // Y axis label
+    ctx.save();
+    ctx.translate(14, PAD_TOP + chartH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(232,255,248,0.35)";
+    ctx.font = "11px sans-serif";
+    ctx.fillText("Therms / Customer / Year", 0, 0);
+    ctx.restore();
+
+    // ── Draw one stacked area series onto the shared axes ─────────────────
+    function drawStackedSeries(series, palette, lineWidth, dashed) {
+      const stacks = series.map((row) => {
+        let cum = 0;
+        return endUses.map((eu) => {
+          const bot = cum;
+          cum += (row[eu] || 0);
+          return { bot, top: cum };
+        });
+      });
+
+      endUses.forEach((eu, euIdx) => {
+        const color = palette[eu];
+
+        // Draw only the top boundary line of each band (no fill)
+        ctx.beginPath();
+        series.forEach((row, i) => {
+          const x = xPos(row.year);
+          const y = yPos(stacks[i][euIdx].top);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        });
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+        ctx.lineJoin = "round";
+        ctx.setLineDash(dashed ? [8, 5] : []);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Dots at each data point
+        series.forEach((row, i) => {
+          const x = xPos(row.year);
+          const y = yPos(stacks[i][euIdx].top);
+          ctx.beginPath();
+          ctx.arc(x, y, lineWidth + 0.5, 0, Math.PI * 2);
+          ctx.fillStyle = color;
+          ctx.fill();
+        });
+      });
+    }
+
+    // Primary: solid lines; compare: dashed lines — both fully visible
+    drawStackedSeries(primarySeries, END_USE_COLORS_PRIMARY, 2.5, false);
+    if (compareSeries) {
+      drawStackedSeries(compareSeries, END_USE_COLORS_COMPARE, 2.5, true);
+    }
+
+    // ── Legend ────────────────────────────────────────────────────────────
+    legend.innerHTML = "";
+
+    function addLegendSection(label, palette, dashed) {
+      const heading = document.createElement("div");
+      heading.style.cssText = "font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(232,255,248,0.45);margin-bottom:6px;margin-top:10px;";
+      heading.textContent = label;
+      legend.appendChild(heading);
+
+      endUses.forEach((eu) => {
+        const color = palette[eu];
+        const item = document.createElement("div");
+        item.className = "enduse-legend-item";
+
+        const sw = document.createElement("canvas");
+        sw.className = "enduse-legend-swatch-canvas";
+        const swDpr = window.devicePixelRatio || 1;
+        sw.width  = 36 * swDpr;
+        sw.height = 14 * swDpr;
+        sw.style.width  = "36px";
+        sw.style.height = "14px";
+        const sc = sw.getContext("2d");
+        sc.scale(swDpr, swDpr);
+        sc.strokeStyle = color;
+        sc.lineWidth = 2.5;
+        sc.setLineDash(dashed ? [6, 4] : []);
+        sc.lineCap = "round";
+        sc.beginPath(); sc.moveTo(4, 7); sc.lineTo(32, 7); sc.stroke();
+        sc.setLineDash([]);
+        sc.beginPath(); sc.arc(18, 7, 3, 0, Math.PI * 2);
+        sc.fillStyle = color; sc.fill();
+
+        const span = document.createElement("span");
+        span.textContent = END_USE_LABELS[eu];
+        item.appendChild(sw);
+        item.appendChild(span);
+        legend.appendChild(item);
+      });
+    }
+
+    addLegendSection(primaryName, END_USE_COLORS_PRIMARY, false);
+    if (compareSeries) {
+      addLegendSection(compareName, END_USE_COLORS_COMPARE, true);
+    }
+  }
+
+  function hexToRgba(hex, alpha) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r},${g},${b},${alpha})`;
+  }
+
+  // ── Estimated Total UPC Overlay ───────────────────────────────────────────
+
+  const UPC_LINE_COLORS = {
+    primary: "#4ecdc4",
+    compare: "#f7b731",
+    irp:     "#ff7675"
+  };
+
+  function drawEstUpcOverlay(primaryBundle, compareBundle) {
+    const canvas = document.getElementById("estUpcCanvas");
+    const legend = document.getElementById("estUpcLegend");
+    const title  = document.getElementById("estUpcLightboxTitle");
+    if (!canvas) return;
+
+    const primaryName = primaryBundle.scenario.display_name;
+    const compareName = compareBundle ? compareBundle.scenario.display_name : null;
+
+    title.textContent = compareName
+      ? `Estimated Total UPC — ${primaryName} vs ${compareName}`
+      : `Estimated Total UPC — ${primaryName}`;
+
+    const primaryData = (primaryBundle.estimated_total_upc || []).slice().sort((a, b) => a.year - b.year);
+    const compareData = compareBundle
+      ? (compareBundle.estimated_total_upc || []).slice().sort((a, b) => a.year - b.year)
+      : null;
+
+    // Build unified year list
+    const allYears = Array.from(new Set([
+      ...primaryData.map((r) => r.year),
+      ...(compareData ? compareData.map((r) => r.year) : [])
+    ])).sort((a, b) => a - b);
+    const n = allYears.length;
+    if (n === 0) return;
+
+    // Lines to draw: estimated_total_upc for each scenario + IRP UPC if present
+    const primaryUpc  = allYears.map((yr) => { const r = primaryData.find((d) => d.year === yr); return r ? (r.estimated_total_upc ?? null) : null; });
+    const compareUpc  = compareData ? allYears.map((yr) => { const r = compareData.find((d) => d.year === yr); return r ? (r.estimated_total_upc ?? null) : null; }) : null;
+    const primaryIrp  = allYears.map((yr) => { const r = primaryData.find((d) => d.year === yr); return r ? (r.irp_upc ?? null) : null; });
+    const hasIrp = primaryIrp.some((v) => v !== null);
+
+    // Y range
+    const allVals = [
+      ...primaryUpc.filter((v) => v !== null),
+      ...(compareUpc ? compareUpc.filter((v) => v !== null) : []),
+      ...(hasIrp ? primaryIrp.filter((v) => v !== null) : [])
+    ];
+    const yMin = Math.max(0, Math.min(...allVals) * 0.9);
+    const yMax = Math.max(...allVals) * 1.1 || 1;
+
+    // Canvas sizing
+    const dpr = window.devicePixelRatio || 1;
+    const W = Math.round(Math.min(window.innerWidth * 0.96, 1400) - 64 - 180 - 24);
+    const H = Math.round(window.innerHeight * 0.78);
+
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = `${W}px`;
+    canvas.style.height = `${H}px`;
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const PAD_TOP  = 36;
+    const PAD_BOT  = 52;
+    const PAD_LEFT = 72;
+    const PAD_RIGHT = 16;
+    const chartW = W - PAD_LEFT - PAD_RIGHT;
+    const chartH = H - PAD_TOP - PAD_BOT;
+
+    function xPos(i) { return PAD_LEFT + (i / Math.max(n - 1, 1)) * chartW; }
+    function yPos(v) { return PAD_TOP + chartH - ((v - yMin) / (yMax - yMin)) * chartH; }
+
+    // Grid
+    const yTicks = 6;
+    for (let t = 0; t <= yTicks; t++) {
+      const val = yMin + (yMax - yMin) * t / yTicks;
+      const y = yPos(val);
+      ctx.strokeStyle = t === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.06)";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(PAD_LEFT, y); ctx.lineTo(PAD_LEFT + chartW, y); ctx.stroke();
+      ctx.fillStyle = "rgba(232,255,248,0.5)";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "right";
+      ctx.fillText(val.toFixed(0), PAD_LEFT - 10, y + 4);
+    }
+
+    // X labels
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(232,255,248,0.5)";
+    ctx.font = "12px sans-serif";
+    allYears.forEach((yr, i) => {
+      const x = xPos(i);
+      ctx.fillText(String(yr), x, H - PAD_BOT + 20);
+      ctx.strokeStyle = "rgba(255,255,255,0.1)";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, PAD_TOP + chartH); ctx.lineTo(x, PAD_TOP + chartH + 5); ctx.stroke();
+    });
+
+    // Axis border
+    ctx.strokeStyle = "rgba(255,255,255,0.22)";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(PAD_LEFT, PAD_TOP);
+    ctx.lineTo(PAD_LEFT, PAD_TOP + chartH);
+    ctx.lineTo(PAD_LEFT + chartW, PAD_TOP + chartH);
+    ctx.stroke();
+
+    // Y axis label
+    ctx.save();
+    ctx.translate(14, PAD_TOP + chartH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(232,255,248,0.35)";
+    ctx.font = "11px sans-serif";
+    ctx.fillText("Therms / Customer / Year", 0, 0);
+    ctx.restore();
+
+    function drawLine(values, color, dashed, lineWidth) {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = lineWidth || 2.5;
+      ctx.lineJoin = "round";
+      ctx.setLineDash(dashed ? [8, 5] : []);
+      let started = false;
+      values.forEach((v, i) => {
+        if (v === null) { started = false; return; }
+        const x = xPos(i); const y = yPos(v);
+        if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
+      });
+      ctx.stroke();
+      ctx.setLineDash([]);
+      // Dots
+      values.forEach((v, i) => {
+        if (v === null) return;
+        ctx.beginPath();
+        ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      });
+    }
+
+    if (hasIrp) drawLine(primaryIrp, UPC_LINE_COLORS.irp, true, 2);
+    drawLine(primaryUpc, UPC_LINE_COLORS.primary, false, 3);
+    if (compareUpc) drawLine(compareUpc, UPC_LINE_COLORS.compare, false, 3);
+
+    // Legend
+    legend.innerHTML = "";
+    const legendItems = [
+      { color: UPC_LINE_COLORS.primary, label: primaryName, dashed: false },
+      ...(compareUpc ? [{ color: UPC_LINE_COLORS.compare, label: compareName, dashed: false }] : []),
+      ...(hasIrp ? [{ color: UPC_LINE_COLORS.irp, label: "IRP UPC", dashed: true }] : [])
+    ];
+
+    legendItems.forEach(({ color, label, dashed }) => {
+      const item = document.createElement("div");
+      item.className = "enduse-legend-item";
+
+      const sw = document.createElement("canvas");
+      sw.className = "enduse-legend-swatch-canvas";
+      const swDpr = window.devicePixelRatio || 1;
+      sw.width  = 36 * swDpr; sw.height = 14 * swDpr;
+      sw.style.width = "36px"; sw.style.height = "14px";
+      const sc = sw.getContext("2d");
+      sc.scale(swDpr, swDpr);
+      sc.strokeStyle = color;
+      sc.lineWidth = dashed ? 2 : 3;
+      sc.setLineDash(dashed ? [6, 4] : []);
+      sc.lineCap = "round";
+      sc.beginPath(); sc.moveTo(4, 7); sc.lineTo(32, 7); sc.stroke();
+      sc.setLineDash([]);
+      sc.beginPath(); sc.arc(18, 7, 3, 0, Math.PI * 2);
+      sc.fillStyle = color; sc.fill();
+
+      const span = document.createElement("span");
+      span.textContent = label;
+      item.appendChild(sw);
+      item.appendChild(span);
+      legend.appendChild(item);
+    });
+  }
+
+  function openEstUpcOverlay() {
+    if (!APP.primaryBundle) return;
+    const el = document.getElementById("estUpcLightbox");
+    if (!el) return;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => drawEstUpcOverlay(APP.primaryBundle, APP.comparisonBundle));
+  }
+
+  function closeEstUpcOverlay() {
+    const el = document.getElementById("estUpcLightbox");
+    if (el) el.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  // ── IRP Decline Rate Overlay ──────────────────────────────────────────────
+
+  function computeDeclineRates(data, field) {
+    // Returns array of { year, rate } where rate = (val[i] - val[i-1]) / val[i-1] * 100
+    const sorted = data.slice().sort((a, b) => a.year - b.year);
+    const rates = [];
+    for (let i = 1; i < sorted.length; i++) {
+      const prev = sorted[i - 1][field];
+      const curr = sorted[i][field];
+      if (prev != null && curr != null && prev !== 0) {
+        rates.push({ year: sorted[i].year, rate: ((curr - prev) / prev) * 100 });
+      }
+    }
+    return rates;
+  }
+
+  function drawIrpDeclineOverlay(primaryBundle, compareBundle) {
+    const canvas = document.getElementById("irpDeclineCanvas");
+    const legend = document.getElementById("irpDeclineLegend");
+    const title  = document.getElementById("irpDeclineLightboxTitle");
+    if (!canvas) return;
+
+    const primaryName = primaryBundle.scenario.display_name;
+    const compareName = compareBundle ? compareBundle.scenario.display_name : null;
+
+    title.textContent = compareName
+      ? `Annual Decline Rates — ${primaryName} vs ${compareName}`
+      : `Annual Decline Rates — ${primaryName}`;
+
+    const primaryIrp = primaryBundle.irp_comparison || [];
+    const compareIrp = compareBundle ? (compareBundle.irp_comparison || []) : null;
+
+    // Compute decline rates for each series
+    const primaryModelRates = computeDeclineRates(primaryIrp, "model_upc");
+    const primaryEstRates   = computeDeclineRates(primaryIrp, "estimated_total_upc");
+    const primaryIrpRates   = computeDeclineRates(primaryIrp, "irp_upc");
+    const compareModelRates = compareIrp ? computeDeclineRates(compareIrp, "model_upc") : null;
+    const compareEstRates   = compareIrp ? computeDeclineRates(compareIrp, "estimated_total_upc") : null;
+
+    // Union of all years
+    const allYears = Array.from(new Set([
+      ...primaryModelRates.map((r) => r.year),
+      ...primaryIrpRates.map((r) => r.year),
+      ...(compareModelRates ? compareModelRates.map((r) => r.year) : [])
+    ])).sort((a, b) => a - b);
+    const n = allYears.length;
+    if (n === 0) return;
+
+    function rateAt(rates, yr) {
+      const found = rates.find((r) => r.year === yr);
+      return found ? found.rate : null;
+    }
+
+    // Build value arrays aligned to allYears
+    const series = [
+      { label: `${primaryName} — Model UPC`,     color: "#4ecdc4", dashed: false, vals: allYears.map((y) => rateAt(primaryModelRates, y)) },
+      { label: `${primaryName} — Est. Total UPC`, color: "#a29bfe", dashed: false, vals: allYears.map((y) => rateAt(primaryEstRates, y)) },
+      { label: "IRP UPC",                          color: "#ff7675", dashed: true,  vals: allYears.map((y) => rateAt(primaryIrpRates, y)) },
+      ...(compareModelRates ? [
+        { label: `${compareName} — Model UPC`,      color: "#f7b731", dashed: false, vals: allYears.map((y) => rateAt(compareModelRates, y)) },
+        { label: `${compareName} — Est. Total UPC`, color: "#fd79a8", dashed: false, vals: allYears.map((y) => rateAt(compareEstRates, y)) }
+      ] : [])
+    ];
+
+    // Y range — include 0 line
+    const allVals = series.flatMap((s) => s.vals.filter((v) => v !== null));
+    const yMin = Math.min(0, Math.min(...allVals) * 1.2);
+    const yMax = Math.max(0, Math.max(...allVals) * 1.2) || 1;
+
+    // Canvas sizing
+    const dpr = window.devicePixelRatio || 1;
+    const W = Math.round(Math.min(window.innerWidth * 0.96, 1400) - 64 - 200 - 24);
+    const H = Math.round(window.innerHeight * 0.78);
+
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = `${W}px`;
+    canvas.style.height = `${H}px`;
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const PAD_TOP  = 36;
+    const PAD_BOT  = 52;
+    const PAD_LEFT = 72;
+    const PAD_RIGHT = 16;
+    const chartW = W - PAD_LEFT - PAD_RIGHT;
+    const chartH = H - PAD_TOP - PAD_BOT;
+
+    function xPos(i) { return PAD_LEFT + (i / Math.max(n - 1, 1)) * chartW; }
+    function yPos(v) { return PAD_TOP + chartH - ((v - yMin) / (yMax - yMin)) * chartH; }
+
+    // Grid
+    const yTicks = 6;
+    for (let t = 0; t <= yTicks; t++) {
+      const val = yMin + (yMax - yMin) * t / yTicks;
+      const y = yPos(val);
+      ctx.strokeStyle = Math.abs(val) < 0.01 ? "rgba(255,255,255,0.35)" : (t === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.06)");
+      ctx.lineWidth = Math.abs(val) < 0.01 ? 1.5 : 1;
+      ctx.beginPath(); ctx.moveTo(PAD_LEFT, y); ctx.lineTo(PAD_LEFT + chartW, y); ctx.stroke();
+      ctx.fillStyle = "rgba(232,255,248,0.5)";
+      ctx.font = "12px sans-serif";
+      ctx.textAlign = "right";
+      ctx.fillText(`${val.toFixed(1)}%`, PAD_LEFT - 10, y + 4);
+    }
+
+    // Zero line label
+    const zeroY = yPos(0);
+    ctx.fillStyle = "rgba(232,255,248,0.3)";
+    ctx.font = "11px sans-serif";
+    ctx.textAlign = "left";
+    ctx.fillText("0%", PAD_LEFT + 4, zeroY - 4);
+
+    // X labels
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(232,255,248,0.5)";
+    ctx.font = "12px sans-serif";
+    allYears.forEach((yr, i) => {
+      const x = xPos(i);
+      ctx.fillText(String(yr), x, H - PAD_BOT + 20);
+      ctx.strokeStyle = "rgba(255,255,255,0.1)";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, PAD_TOP + chartH); ctx.lineTo(x, PAD_TOP + chartH + 5); ctx.stroke();
+    });
+
+    // Axis border
+    ctx.strokeStyle = "rgba(255,255,255,0.22)";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(PAD_LEFT, PAD_TOP);
+    ctx.lineTo(PAD_LEFT, PAD_TOP + chartH);
+    ctx.lineTo(PAD_LEFT + chartW, PAD_TOP + chartH);
+    ctx.stroke();
+
+    // Y axis label
+    ctx.save();
+    ctx.translate(14, PAD_TOP + chartH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "rgba(232,255,248,0.35)";
+    ctx.font = "11px sans-serif";
+    ctx.fillText("Annual Change (%)", 0, 0);
+    ctx.restore();
+
+    // Draw lines
+    series.forEach(({ color, dashed, vals }) => {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = dashed ? 2 : 2.5;
+      ctx.lineJoin = "round";
+      ctx.setLineDash(dashed ? [8, 5] : []);
+      let started = false;
+      vals.forEach((v, i) => {
+        if (v === null) { started = false; return; }
+        const x = xPos(i); const y = yPos(v);
+        if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
+      });
+      ctx.stroke();
+      ctx.setLineDash([]);
+      vals.forEach((v, i) => {
+        if (v === null) return;
+        ctx.beginPath();
+        ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      });
+    });
+
+    // Legend
+    legend.innerHTML = "";
+    series.forEach(({ color, label, dashed }) => {
+      const item = document.createElement("div");
+      item.className = "enduse-legend-item";
+      item.style.marginBottom = "6px";
+
+      const sw = document.createElement("canvas");
+      sw.className = "enduse-legend-swatch-canvas";
+      const swDpr = window.devicePixelRatio || 1;
+      sw.width  = 36 * swDpr; sw.height = 14 * swDpr;
+      sw.style.width = "36px"; sw.style.height = "14px";
+      const sc = sw.getContext("2d");
+      sc.scale(swDpr, swDpr);
+      sc.strokeStyle = color;
+      sc.lineWidth = dashed ? 2 : 2.5;
+      sc.setLineDash(dashed ? [6, 4] : []);
+      sc.lineCap = "round";
+      sc.beginPath(); sc.moveTo(4, 7); sc.lineTo(32, 7); sc.stroke();
+      sc.setLineDash([]);
+      sc.beginPath(); sc.arc(18, 7, 3, 0, Math.PI * 2);
+      sc.fillStyle = color; sc.fill();
+
+      const span = document.createElement("span");
+      span.textContent = label;
+      item.appendChild(sw);
+      item.appendChild(span);
+      legend.appendChild(item);
+    });
+  }
+
+  function openIrpDeclineOverlay() {
+    if (!APP.primaryBundle) return;
+    const el = document.getElementById("irpDeclineLightbox");
+    if (!el) return;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => drawIrpDeclineOverlay(APP.primaryBundle, APP.comparisonBundle));
+  }
+
+  function closeIrpDeclineOverlay() {
+    const el = document.getElementById("irpDeclineLightbox");
+    if (el) el.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function closeIrpDeclineOverlay() {
+    const el = document.getElementById("irpDeclineLightbox");
+    if (el) el.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  // ── Total Demand Overlay ──────────────────────────────────────────────────
+
+  function drawTotalDemandOverlay(primaryBundle, compareBundle) {
+    const canvas = document.getElementById("totalDemandCanvas");
+    const legend = document.getElementById("totalDemandLegend");
+    const title  = document.getElementById("totalDemandLightboxTitle");
+    if (!canvas) return;
+
+    const primaryName = primaryBundle.scenario.display_name;
+    const compareName = compareBundle ? compareBundle.scenario.display_name : null;
+    title.textContent = compareName
+      ? `Total Demand — ${primaryName} vs ${compareName}`
+      : `Total Demand — ${primaryName}`;
+
+    const primaryRows = (primaryBundle.yearly_summary || []).slice().sort((a, b) => a.year - b.year);
+    const compareRows = compareBundle
+      ? (compareBundle.yearly_summary || []).slice().sort((a, b) => a.year - b.year)
+      : null;
+
+    const allYears = Array.from(new Set([
+      ...primaryRows.map((r) => r.year),
+      ...(compareRows ? compareRows.map((r) => r.year) : [])
+    ])).sort((a, b) => a - b);
+    const n = allYears.length;
+    if (n === 0) return;
+
+    function valAt(rows, yr, field) {
+      const r = rows.find((d) => d.year === yr);
+      return r ? (r[field] ?? null) : null;
+    }
+
+    const series = [
+      { label: `${primaryName} — Total Therms`, color: "#4ecdc4", dashed: false,
+        vals: allYears.map((y) => valAt(primaryRows, y, "total_therms")) },
+      { label: `${primaryName} — UPC`,           color: "#a29bfe", dashed: false,
+        vals: allYears.map((y) => valAt(primaryRows, y, "use_per_customer")), axis: "right" },
+      ...(compareRows ? [
+        { label: `${compareName} — Total Therms`, color: "#f7b731", dashed: true,
+          vals: allYears.map((y) => valAt(compareRows, y, "total_therms")) },
+        { label: `${compareName} — UPC`,           color: "#fd79a8", dashed: true,
+          vals: allYears.map((y) => valAt(compareRows, y, "use_per_customer")), axis: "right" }
+      ] : [])
+    ];
+
+    // Two Y axes: left = therms, right = UPC
+    const thermsSeries = series.filter((s) => !s.axis);
+    const upcSeries    = series.filter((s) => s.axis === "right");
+
+    const thermsVals = thermsSeries.flatMap((s) => s.vals.filter((v) => v !== null));
+    const upcVals    = upcSeries.flatMap((s) => s.vals.filter((v) => v !== null));
+    const thermsMax  = Math.max(...thermsVals) * 1.1 || 1;
+    const thermsMin  = Math.max(0, Math.min(...thermsVals) * 0.9);
+    const upcMax     = Math.max(...upcVals) * 1.1 || 1;
+    const upcMin     = Math.max(0, Math.min(...upcVals) * 0.9);
+
+    const dpr = window.devicePixelRatio || 1;
+    const W = Math.round(Math.min(window.innerWidth * 0.96, 1400) - 64 - 200 - 24);
+    const H = Math.round(window.innerHeight * 0.78);
+    canvas.width  = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = `${W}px`; canvas.style.height = `${H}px`;
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const PAD_TOP = 36, PAD_BOT = 52, PAD_LEFT = 80, PAD_RIGHT = 72;
+    const chartW = W - PAD_LEFT - PAD_RIGHT;
+    const chartH = H - PAD_TOP - PAD_BOT;
+
+    function xPos(i) { return PAD_LEFT + (i / Math.max(n - 1, 1)) * chartW; }
+    function yPosLeft(v)  { return PAD_TOP + chartH - ((v - thermsMin) / (thermsMax - thermsMin)) * chartH; }
+    function yPosRight(v) { return PAD_TOP + chartH - ((v - upcMin)    / (upcMax    - upcMin))    * chartH; }
+
+    // Grid + left Y axis
+    const yTicks = 6;
+    for (let t = 0; t <= yTicks; t++) {
+      const y = PAD_TOP + chartH - (t / yTicks) * chartH;
+      ctx.strokeStyle = t === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.06)";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(PAD_LEFT, y); ctx.lineTo(PAD_LEFT + chartW, y); ctx.stroke();
+      const thermsVal = thermsMin + (thermsMax - thermsMin) * t / yTicks;
+      ctx.fillStyle = "rgba(232,255,248,0.5)"; ctx.font = "11px sans-serif"; ctx.textAlign = "right";
+      ctx.fillText((thermsVal / 1e6).toFixed(1) + "M", PAD_LEFT - 8, y + 4);
+      const upcVal = upcMin + (upcMax - upcMin) * t / yTicks;
+      ctx.textAlign = "left";
+      ctx.fillStyle = "rgba(162,155,254,0.7)";
+      ctx.fillText(upcVal.toFixed(0), PAD_LEFT + chartW + 8, y + 4);
+    }
+
+    // X labels
+    ctx.textAlign = "center"; ctx.fillStyle = "rgba(232,255,248,0.5)"; ctx.font = "12px sans-serif";
+    allYears.forEach((yr, i) => {
+      const x = xPos(i);
+      ctx.fillText(String(yr), x, H - PAD_BOT + 20);
+      ctx.strokeStyle = "rgba(255,255,255,0.1)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, PAD_TOP + chartH); ctx.lineTo(x, PAD_TOP + chartH + 5); ctx.stroke();
+    });
+
+    // Axis borders
+    ctx.strokeStyle = "rgba(255,255,255,0.22)"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(PAD_LEFT, PAD_TOP); ctx.lineTo(PAD_LEFT, PAD_TOP + chartH); ctx.lineTo(PAD_LEFT + chartW, PAD_TOP + chartH); ctx.stroke();
+    ctx.strokeStyle = "rgba(162,155,254,0.4)"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(PAD_LEFT + chartW, PAD_TOP); ctx.lineTo(PAD_LEFT + chartW, PAD_TOP + chartH); ctx.stroke();
+
+    // Y axis labels
+    ctx.save(); ctx.translate(14, PAD_TOP + chartH / 2); ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = "center"; ctx.fillStyle = "rgba(232,255,248,0.35)"; ctx.font = "11px sans-serif";
+    ctx.fillText("Total Therms", 0, 0); ctx.restore();
+    ctx.save(); ctx.translate(W - 14, PAD_TOP + chartH / 2); ctx.rotate(Math.PI / 2);
+    ctx.textAlign = "center"; ctx.fillStyle = "rgba(162,155,254,0.5)"; ctx.font = "11px sans-serif";
+    ctx.fillText("UPC (Therms/Customer)", 0, 0); ctx.restore();
+
+    // Draw lines
+    series.forEach(({ color, dashed, vals, axis }) => {
+      const yFn = axis === "right" ? yPosRight : yPosLeft;
+      ctx.beginPath(); ctx.strokeStyle = color; ctx.lineWidth = dashed ? 2 : 2.5;
+      ctx.lineJoin = "round"; ctx.setLineDash(dashed ? [8, 5] : []);
+      let started = false;
+      vals.forEach((v, i) => {
+        if (v === null) { started = false; return; }
+        const x = xPos(i), y = yFn(v);
+        if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
+      });
+      ctx.stroke(); ctx.setLineDash([]);
+      vals.forEach((v, i) => {
+        if (v === null) return;
+        ctx.beginPath(); ctx.arc(xPos(i), yFn(v), 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = color; ctx.fill();
+      });
+    });
+
+    // Legend
+    legend.innerHTML = "";
+    series.forEach(({ color, label, dashed }) => {
+      const item = document.createElement("div");
+      item.className = "enduse-legend-item";
+      item.style.marginBottom = "8px";
+      const sw = document.createElement("canvas");
+      sw.className = "enduse-legend-swatch-canvas";
+      const swDpr = window.devicePixelRatio || 1;
+      sw.width = 36 * swDpr; sw.height = 14 * swDpr;
+      sw.style.width = "36px"; sw.style.height = "14px";
+      const sc = sw.getContext("2d");
+      sc.scale(swDpr, swDpr);
+      sc.strokeStyle = color; sc.lineWidth = dashed ? 2 : 2.5;
+      sc.setLineDash(dashed ? [6, 4] : []); sc.lineCap = "round";
+      sc.beginPath(); sc.moveTo(4, 7); sc.lineTo(32, 7); sc.stroke(); sc.setLineDash([]);
+      sc.beginPath(); sc.arc(18, 7, 3, 0, Math.PI * 2); sc.fillStyle = color; sc.fill();
+      const span = document.createElement("span");
+      span.textContent = label;
+      item.appendChild(sw); item.appendChild(span);
+      legend.appendChild(item);
+    });
+  }
+
+  function openTotalDemandOverlay() {
+    if (!APP.primaryBundle) return;
+    const el = document.getElementById("totalDemandLightbox");
+    if (!el) return;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => drawTotalDemandOverlay(APP.primaryBundle, APP.comparisonBundle));
+  }
+
+  function closeTotalDemandOverlay() {
+    const el = document.getElementById("totalDemandLightbox");
+    if (el) el.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  // ── Segment Demand Overlay ────────────────────────────────────────────────
+
+  function drawSegmentDemandOverlay(primaryBundle, compareBundle) {
+    const canvas = document.getElementById("segmentDemandCanvas");
+    const legend = document.getElementById("segmentDemandLegend");
+    const title  = document.getElementById("segmentDemandLightboxTitle");
+    if (!canvas) return;
+
+    const primaryName = primaryBundle.scenario.display_name;
+    const compareName = compareBundle ? compareBundle.scenario.display_name : null;
+    title.textContent = compareName
+      ? `Segment Demand — ${primaryName} vs ${compareName}`
+      : `Segment Demand — ${primaryName}`;
+
+    function buildSegmentMap(bundle) {
+      const map = {};
+      (bundle.segment_demand || []).forEach((row) => {
+        if (!map[row.segment]) map[row.segment] = [];
+        map[row.segment].push({ year: row.year, total_therms: row.total_therms });
+      });
+      Object.values(map).forEach((arr) => arr.sort((a, b) => a.year - b.year));
+      return map;
+    }
+
+    const primaryMap = buildSegmentMap(primaryBundle);
+    const compareMap = compareBundle ? buildSegmentMap(compareBundle) : null;
+    const segments = Array.from(new Set([
+      ...Object.keys(primaryMap),
+      ...(compareMap ? Object.keys(compareMap) : [])
+    ])).sort();
+
+    const SEGMENT_COLORS = ["#4ecdc4", "#f7b731", "#fd79a8", "#a29bfe", "#ff7675", "#81ecec"];
+
+    const allYears = Array.from(new Set([
+      ...Object.values(primaryMap).flatMap((arr) => arr.map((r) => r.year)),
+      ...(compareMap ? Object.values(compareMap).flatMap((arr) => arr.map((r) => r.year)) : [])
+    ])).sort((a, b) => a - b);
+    const n = allYears.length;
+    if (n === 0) return;
+
+    // Build series: one per segment per scenario
+    const series = [];
+    segments.forEach((seg, si) => {
+      const color = SEGMENT_COLORS[si % SEGMENT_COLORS.length];
+      const pRows = primaryMap[seg] || [];
+      series.push({
+        label: `${seg} (${primaryName})`, color, dashed: false,
+        vals: allYears.map((y) => { const r = pRows.find((d) => d.year === y); return r ? r.total_therms : null; })
+      });
+      if (compareMap) {
+        const cRows = compareMap[seg] || [];
+        series.push({
+          label: `${seg} (${compareName})`, color, dashed: true,
+          vals: allYears.map((y) => { const r = cRows.find((d) => d.year === y); return r ? r.total_therms : null; })
+        });
+      }
+    });
+
+    const allVals = series.flatMap((s) => s.vals.filter((v) => v !== null));
+    const yMin = Math.max(0, Math.min(...allVals) * 0.9);
+    const yMax = Math.max(...allVals) * 1.1 || 1;
+
+    const dpr = window.devicePixelRatio || 1;
+    const W = Math.round(Math.min(window.innerWidth * 0.96, 1400) - 64 - 200 - 24);
+    const H = Math.round(window.innerHeight * 0.78);
+    canvas.width  = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = `${W}px`; canvas.style.height = `${H}px`;
+
+    const ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
+    const PAD_TOP = 36, PAD_BOT = 52, PAD_LEFT = 80, PAD_RIGHT = 16;
+    const chartW = W - PAD_LEFT - PAD_RIGHT;
+    const chartH = H - PAD_TOP - PAD_BOT;
+
+    function xPos(i) { return PAD_LEFT + (i / Math.max(n - 1, 1)) * chartW; }
+    function yPos(v) { return PAD_TOP + chartH - ((v - yMin) / (yMax - yMin)) * chartH; }
+
+    // Grid
+    const yTicks = 6;
+    for (let t = 0; t <= yTicks; t++) {
+      const y = PAD_TOP + chartH - (t / yTicks) * chartH;
+      ctx.strokeStyle = t === 0 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.06)";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(PAD_LEFT, y); ctx.lineTo(PAD_LEFT + chartW, y); ctx.stroke();
+      const val = yMin + (yMax - yMin) * t / yTicks;
+      ctx.fillStyle = "rgba(232,255,248,0.5)"; ctx.font = "11px sans-serif"; ctx.textAlign = "right";
+      ctx.fillText((val / 1e6).toFixed(1) + "M", PAD_LEFT - 8, y + 4);
+    }
+
+    ctx.textAlign = "center"; ctx.fillStyle = "rgba(232,255,248,0.5)"; ctx.font = "12px sans-serif";
+    allYears.forEach((yr, i) => {
+      const x = xPos(i);
+      ctx.fillText(String(yr), x, H - PAD_BOT + 20);
+      ctx.strokeStyle = "rgba(255,255,255,0.1)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, PAD_TOP + chartH); ctx.lineTo(x, PAD_TOP + chartH + 5); ctx.stroke();
+    });
+
+    ctx.strokeStyle = "rgba(255,255,255,0.22)"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(PAD_LEFT, PAD_TOP); ctx.lineTo(PAD_LEFT, PAD_TOP + chartH); ctx.lineTo(PAD_LEFT + chartW, PAD_TOP + chartH); ctx.stroke();
+
+    ctx.save(); ctx.translate(14, PAD_TOP + chartH / 2); ctx.rotate(-Math.PI / 2);
+    ctx.textAlign = "center"; ctx.fillStyle = "rgba(232,255,248,0.35)"; ctx.font = "11px sans-serif";
+    ctx.fillText("Total Therms", 0, 0); ctx.restore();
+
+    series.forEach(({ color, dashed, vals }) => {
+      ctx.beginPath(); ctx.strokeStyle = color; ctx.lineWidth = dashed ? 2 : 2.5;
+      ctx.lineJoin = "round"; ctx.setLineDash(dashed ? [8, 5] : []);
+      let started = false;
+      vals.forEach((v, i) => {
+        if (v === null) { started = false; return; }
+        const x = xPos(i), y = yPos(v);
+        if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
+      });
+      ctx.stroke(); ctx.setLineDash([]);
+      vals.forEach((v, i) => {
+        if (v === null) return;
+        ctx.beginPath(); ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = color; ctx.fill();
+      });
+    });
+
+    legend.innerHTML = "";
+    series.forEach(({ color, label, dashed }) => {
+      const item = document.createElement("div");
+      item.className = "enduse-legend-item";
+      item.style.marginBottom = "8px";
+      const sw = document.createElement("canvas");
+      sw.className = "enduse-legend-swatch-canvas";
+      const swDpr = window.devicePixelRatio || 1;
+      sw.width = 36 * swDpr; sw.height = 14 * swDpr;
+      sw.style.width = "36px"; sw.style.height = "14px";
+      const sc = sw.getContext("2d");
+      sc.scale(swDpr, swDpr);
+      sc.strokeStyle = color; sc.lineWidth = dashed ? 2 : 2.5;
+      sc.setLineDash(dashed ? [6, 4] : []); sc.lineCap = "round";
+      sc.beginPath(); sc.moveTo(4, 7); sc.lineTo(32, 7); sc.stroke(); sc.setLineDash([]);
+      sc.beginPath(); sc.arc(18, 7, 3, 0, Math.PI * 2); sc.fillStyle = color; sc.fill();
+      const span = document.createElement("span");
+      span.textContent = label;
+      item.appendChild(sw); item.appendChild(span);
+      legend.appendChild(item);
+    });
+  }
+
+  function openSegmentDemandOverlay() {
+    if (!APP.primaryBundle) return;
+    const el = document.getElementById("segmentDemandLightbox");
+    if (!el) return;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => drawSegmentDemandOverlay(APP.primaryBundle, APP.comparisonBundle));
+  }
+
+  function closeSegmentDemandOverlay() {
+    const el = document.getElementById("segmentDemandLightbox");
+    if (el) el.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function openEndUseOverlay() {
+    if (!APP.primaryBundle) return;
+    const el = document.getElementById("endUseLightbox");
+    if (!el) return;
+    el.hidden = false;
+    document.body.style.overflow = "hidden";
+    // Draw after the element is visible so offsetWidth is correct
+    requestAnimationFrame(() => {
+      drawEndUseOverlay(APP.primaryBundle, APP.comparisonBundle);
+    });
+  }
+
+  function closeEndUseOverlay() {
+    const el = document.getElementById("endUseLightbox");
+    if (el) el.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function wireEndUseOverlay() {
+    const closeBtn = document.getElementById("endUseLightboxClose");
+    const backdrop = document.getElementById("endUseLightboxBackdrop");
+    if (closeBtn) closeBtn.addEventListener("click", closeEndUseOverlay);
+    if (backdrop) backdrop.addEventListener("click", closeEndUseOverlay);
+
+    const estUpcCloseBtn = document.getElementById("estUpcLightboxClose");
+    const estUpcBackdrop = document.getElementById("estUpcLightboxBackdrop");
+    if (estUpcCloseBtn) estUpcCloseBtn.addEventListener("click", closeEstUpcOverlay);
+    if (estUpcBackdrop) estUpcBackdrop.addEventListener("click", closeEstUpcOverlay);
+
+    const irpCloseBtn = document.getElementById("irpDeclineLightboxClose");
+    const irpBackdrop = document.getElementById("irpDeclineLightboxBackdrop");
+    if (irpCloseBtn) irpCloseBtn.addEventListener("click", closeIrpDeclineOverlay);
+    if (irpBackdrop) irpBackdrop.addEventListener("click", closeIrpDeclineOverlay);
+
+    const tdCloseBtn = document.getElementById("totalDemandLightboxClose");
+    const tdBackdrop = document.getElementById("totalDemandLightboxBackdrop");
+    if (tdCloseBtn) tdCloseBtn.addEventListener("click", closeTotalDemandOverlay);
+    if (tdBackdrop) tdBackdrop.addEventListener("click", closeTotalDemandOverlay);
+
+    const sdCloseBtn = document.getElementById("segmentDemandLightboxClose");
+    const sdBackdrop = document.getElementById("segmentDemandLightboxBackdrop");
+    if (sdCloseBtn) sdCloseBtn.addEventListener("click", closeSegmentDemandOverlay);
+    if (sdBackdrop) sdBackdrop.addEventListener("click", closeSegmentDemandOverlay);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const eu = document.getElementById("endUseLightbox");
+        if (eu && !eu.hidden) { closeEndUseOverlay(); return; }
+        const upc = document.getElementById("estUpcLightbox");
+        if (upc && !upc.hidden) { closeEstUpcOverlay(); return; }
+        const irp = document.getElementById("irpDeclineLightbox");
+        if (irp && !irp.hidden) { closeIrpDeclineOverlay(); return; }
+        const td = document.getElementById("totalDemandLightbox");
+        if (td && !td.hidden) { closeTotalDemandOverlay(); return; }
+        const sd = document.getElementById("segmentDemandLightbox");
+        if (sd && !sd.hidden) closeSegmentDemandOverlay();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      const eu = document.getElementById("endUseLightbox");
+      if (eu && !eu.hidden && APP.primaryBundle) drawEndUseOverlay(APP.primaryBundle, APP.comparisonBundle);
+      const upc = document.getElementById("estUpcLightbox");
+      if (upc && !upc.hidden && APP.primaryBundle) drawEstUpcOverlay(APP.primaryBundle, APP.comparisonBundle);
+      const irp = document.getElementById("irpDeclineLightbox");
+      if (irp && !irp.hidden && APP.primaryBundle) drawIrpDeclineOverlay(APP.primaryBundle, APP.comparisonBundle);
+      const td = document.getElementById("totalDemandLightbox");
+      if (td && !td.hidden && APP.primaryBundle) drawTotalDemandOverlay(APP.primaryBundle, APP.comparisonBundle);
+      const sd = document.getElementById("segmentDemandLightbox");
+      if (sd && !sd.hidden && APP.primaryBundle) drawSegmentDemandOverlay(APP.primaryBundle, APP.comparisonBundle);
     });
   }
 
@@ -1054,13 +2394,28 @@
       return;
     }
 
-    cacheDom();
-    APP.lastCommittedPayload = serializePayload(buildConfigPayload(APP.currentState));
-    wireEvents();
-    render();
-    await checkServerHealth();
-    if (APP.serverHealthy) {
-      await refreshScenarioCatalog();
+    try {
+      cacheDom();
+
+      // Verify critical DOM elements resolved — surface any mismatch immediately
+      const missing = Object.entries(dom)
+        .filter(([, el]) => el === null)
+        .map(([key]) => key);
+      if (missing.length) {
+        console.error("NWScenarioDashboard: missing DOM elements:", missing);
+      }
+
+      APP.lastCommittedPayload = serializePayload(buildConfigPayload(APP.currentState));
+      wireEvents();
+      wireLightbox();
+      wireEndUseOverlay();
+      render();
+      await checkServerHealth();
+      if (APP.serverHealthy) {
+        await refreshScenarioCatalog();
+      }
+    } catch (err) {
+      console.error("NWScenarioDashboard init error:", err);
     }
   }
 

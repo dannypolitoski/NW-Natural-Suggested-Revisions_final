@@ -294,10 +294,10 @@
             <table class="comparison-table" id="comparisonTable">
               <thead>
                 <tr>
-                  <th>Metric</th>
-                  <th>Primary</th>
-                  <th>Compare</th>
-                  <th>Delta</th>
+                  <th scope="col">Metric</th>
+                  <th scope="col">Primary</th>
+                  <th scope="col">Compare</th>
+                  <th scope="col">Delta</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -328,6 +328,81 @@
         </section>
       </section>
     </main>
+  </div>
+
+  <!-- Chart lightbox -->
+  <div id="chartLightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Chart preview" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <figure class="lightbox__figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption" class="lightbox__caption"></figcaption>
+    </figure>
+  </div>
+
+  <!-- End use overlay lightbox -->
+  <div id="endUseLightbox" class="lightbox enduse-lightbox" role="dialog" aria-modal="true" aria-label="End use overlay chart" hidden>
+    <button class="lightbox__close" id="endUseLightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__backdrop" id="endUseLightboxBackdrop"></div>
+    <div class="enduse-lightbox__panel">
+      <h2 class="enduse-lightbox__title" id="endUseLightboxTitle">End Use Breakdown Overlay</h2>
+      <div class="enduse-lightbox__body">
+        <canvas id="endUseCanvas" class="enduse-canvas"></canvas>
+        <div class="enduse-lightbox__legend" id="endUseLegend"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estimated Total UPC overlay lightbox -->
+  <div id="estUpcLightbox" class="lightbox enduse-lightbox" role="dialog" aria-modal="true" aria-label="Estimated Total UPC overlay chart" hidden>
+    <button class="lightbox__close" id="estUpcLightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__backdrop" id="estUpcLightboxBackdrop"></div>
+    <div class="enduse-lightbox__panel">
+      <h2 class="enduse-lightbox__title" id="estUpcLightboxTitle">Estimated Total UPC</h2>
+      <div class="enduse-lightbox__body">
+        <canvas id="estUpcCanvas" class="enduse-canvas"></canvas>
+        <div class="enduse-lightbox__legend" id="estUpcLegend"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IRP Decline Rate overlay lightbox -->
+  <div id="irpDeclineLightbox" class="lightbox enduse-lightbox" role="dialog" aria-modal="true" aria-label="IRP decline rate overlay chart" hidden>
+    <button class="lightbox__close" id="irpDeclineLightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__backdrop" id="irpDeclineLightboxBackdrop"></div>
+    <div class="enduse-lightbox__panel">
+      <h2 class="enduse-lightbox__title" id="irpDeclineLightboxTitle">Annual Decline Rates</h2>
+      <div class="enduse-lightbox__body">
+        <canvas id="irpDeclineCanvas" class="enduse-canvas"></canvas>
+        <div class="enduse-lightbox__legend" id="irpDeclineLegend"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Total Demand overlay lightbox -->
+  <div id="totalDemandLightbox" class="lightbox enduse-lightbox" role="dialog" aria-modal="true" aria-label="Total demand overlay chart" hidden>
+    <button class="lightbox__close" id="totalDemandLightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__backdrop" id="totalDemandLightboxBackdrop"></div>
+    <div class="enduse-lightbox__panel">
+      <h2 class="enduse-lightbox__title" id="totalDemandLightboxTitle">Total Demand</h2>
+      <div class="enduse-lightbox__body">
+        <canvas id="totalDemandCanvas" class="enduse-canvas"></canvas>
+        <div class="enduse-lightbox__legend" id="totalDemandLegend"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Segment Demand overlay lightbox -->
+  <div id="segmentDemandLightbox" class="lightbox enduse-lightbox" role="dialog" aria-modal="true" aria-label="Segment demand overlay chart" hidden>
+    <button class="lightbox__close" id="segmentDemandLightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__backdrop" id="segmentDemandLightboxBackdrop"></div>
+    <div class="enduse-lightbox__panel">
+      <h2 class="enduse-lightbox__title" id="segmentDemandLightboxTitle">Segment Demand</h2>
+      <div class="enduse-lightbox__body">
+        <canvas id="segmentDemandCanvas" class="enduse-canvas"></canvas>
+        <div class="enduse-lightbox__legend" id="segmentDemandLegend"></div>
+      </div>
+    </div>
   </div>
 
   <script src="./app.js"></script>

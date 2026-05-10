@@ -409,3 +409,119 @@ For questions or issues:
 - EIA for RECS microdata
 - Portland State University for population forecasts
 
+
+---
+
+## Running the Backend from the Command Line
+
+The model and the dashboard API server are two separate processes. Here is how to run each one directly.
+
+### 1. Start the Dashboard API Server
+
+The API server serves the frontend and exposes the `/api/forecast` endpoint that the **Run Scenario** button calls.
+
+```bash
+cd backend
+python dashboard_api_server.py
+```
+
+The server starts on `http://127.0.0.1:8000` by default. To use a different port:
+
+```bash
+GRANULAR_GAS_API_PORT=9000 python dashboard_api_server.py
+```
+
+---
+
+### 2. Run a Specific Scenario Directly (without the UI)
+
+Use `src/main.py` to run the GranularGas model against any scenario JSON file. Results are written to `scenarios/<scenario_name>/`.
+
+**Basic run:**
+```bash
+cd backend
+python -m src.main scenarios/baseline.json
+```
+
+**Run with a custom output directory:**
+```bash
+python -m src.main scenarios/baseline.json --output-dir output/my_run
+```
+
+**Run with verbose logging (shows full pipeline progress):**
+```bash
+python -m src.main scenarios/baseline.json --verbose
+```
+
+**Run a specific scenario file you created or exported from the UI:**
+```bash
+python -m src.main scenarios/my_scenario_2026-05-10.json --verbose
+```
+
+**Compare two scenarios side by side:**
+```bash
+python -m src.main scenarios/baseline.json scenarios/high_electrification.json --compare
+```
+
+**Run baseline only (skip comparison even if multiple configs are passed):**
+```bash
+python -m src.main scenarios/baseline.json --baseline-only
+```
+
+---
+
+### 3. Scenario JSON Format
+
+Every scenario config is a JSON file. The minimum required fields are:
+
+```json
+{
+  "name": "my_scenario_2026-05-10",
+  "base_year": 2025,
+  "forecast_horizon": 10,
+  "housing_growth_rate": 0.01,
+  "electrification_rate": 0.002,
+  "hybrid_adoption_rate": 0.001,
+  "efficiency_improvement": 0.01,
+  "weather_assumption": "normal"
+}
+```
+
+The UI's **Export JSON** button writes a file in exactly this format. You can export from the UI, edit the values, and re-run from the command line.
+
+---
+
+### 4. Output Files
+
+After a run, results land in `scenarios/<scenario_name>/`:
+
+| File | Contents |
+|------|----------|
+| `yearly_summary.csv` | Total therms, UPC, and premise count per year |
+| `results.csv` | Full results by year and end-use |
+| `results.json` | Same as above in JSON |
+| `estimated_total_upc.csv` | Estimated total UPC with per-end-use breakdown |
+| `irp_comparison.csv` | Model UPC vs IRP forecast with diff % |
+| `segment_demand.csv` | Demand split by housing segment (RESSF, RESMF) |
+| `equipment_stats.csv` | Gas vs electric equipment counts over time |
+| `metadata.json` | Scenario config and run metadata |
+| `SUMMARY.md` | Human-readable summary report |
+| `chart_*.png` | Auto-generated charts (model vs IRP, total demand, etc.) |
+
+---
+
+### 5. Using a Virtual Environment
+
+If you have a `.venv` set up in the `backend/` folder:
+
+```bash
+# Windows
+backend\.venv\Scripts\activate
+python -m src.main scenarios/baseline.json --verbose
+
+# macOS / Linux
+source backend/.venv/bin/activate
+python -m src.main scenarios/baseline.json --verbose
+```
+
+The API server automatically detects and uses `.venv/Scripts/python.exe` on Windows when launching model runs via the UI.

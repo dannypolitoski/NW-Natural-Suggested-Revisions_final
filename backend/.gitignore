@@ -1,0 +1,24 @@
+# NW Natural proprietary data — never commit
+Data/NWNatural Data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Scenario outputs (large generated files)
+scenarios/*/
+!scenarios/*.json
+
+# Environment
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
