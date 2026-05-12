@@ -286,6 +286,11 @@ def derive_model_config(payload: dict) -> dict:
     config["name"] = scenario_id
     config["template_name"] = template_name
 
+    # ScenarioConfig does not retain template_name, so mark baseline-template
+    # API runs for IRP alignment before handing the config to the model.
+    if "baseline_irp_alignment" not in config and slugify(template_name) == "baseline":
+        config["baseline_irp_alignment"] = True
+
     forecast_horizon = int(config.get("forecast_horizon", 10) or 10)
     forecast_horizon = max(forecast_horizon, 1)
 

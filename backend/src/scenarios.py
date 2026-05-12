@@ -323,12 +323,20 @@ def validate_scenario(config: ScenarioConfig) -> Dict[str, Any]:
 
 
 def _load_irp_forecast(base_year: int, forecast_horizon: int) -> Optional[pd.DataFrame]:
-    """Load NW Natural IRP 10-Year Load Decay Forecast for comparison."""
+    """Load NW Natural IRP 10-Year Load Decay Forecast for comparison.
+
+    If the external CSV is unavailable, use the documented 2025 IRP planning
+    assumption (648 therms/customer in 2025 with -1.19% annual decay) so model
+    outputs still include an IRP UPC comparison.
+    """
     try:
         irp_path = IRP_LOAD_DECAY_FORECAST
         if not Path(irp_path).exists():
-            logger.warning(f"IRP forecast file not found: {irp_path}")
-            return None
+            logger.warning(
+                "IRP forecast file not found: %s; using embedded 2025 IRP decay fallback",
+                irp_path
+            )
+            return _build_fallback_irp_forecast(base_year, forecast_horizon)
         df = pd.read_csv(irp_path)
         # Standardize column names
         df = df.rename(columns={
@@ -339,11 +347,13 @@ def _load_irp_forecast(base_year: int, forecast_horizon: int) -> Optional[pd.Dat
         })
         # Filter to our forecast range
         df = df[(df['year'] >= base_year) & (df['year'] <= base_year + forecast_horizon)]
+        if 'irp_source' not in df.columns:
+            df['irp_source'] = 'csv_forecast'
         logger.info(f"Loaded IRP forecast: {len(df)} years, UPC range {df['irp_upc_therms'].min():.1f}-{df['irp_upc_therms'].max():.1f}")
         return df
     except Exception as e:
-        logger.warning(f"Failed to load IRP forecast: {e}")
-        return None
+        logger.warning(f"Failed to load IRP forecast: {e}; using embedded fallback")
+        return _build_fallback_irp_forecast(base_year, forecast_horizon)
 
 
 def run_scenario(
@@ -1064,8 +1074,11 @@ def run_scenario(
     irp_forecast = _load_irp_forecast(config.base_year, config.forecast_horizon)
     if irp_forecast is not None:
         # Merge IRP UPC into results for side-by-side comparison
+        irp_cols = ['year', 'irp_upc_therms']
+        if 'irp_source' in irp_forecast.columns:
+            irp_cols.append('irp_source')
         results_df = results_df.merge(
-            irp_forecast[['year', 'irp_upc_therms']],
+            irp_forecast[irp_cols],
             on='year', how='left'
         )
         logger.info("Added NW Natural IRP forecast UPC to results")
@@ -1094,6 +1107,7 @@ def run_scenario(
         yr = int(row['year'])
         sh_upc = row['use_per_customer']
         irp_upc = row.get('irp_upc_therms', None)
+        irp_source = row.get('irp_source', None)
         
         row_data = {
             'year': yr,
@@ -1107,6 +1121,7 @@ def run_scenario(
         
         row_data['estimated_total_upc'] = round(sh_upc + non_heating_total, 1)
         row_data['irp_upc'] = round(irp_upc, 1) if irp_upc else None
+        row_data['irp_source'] = irp_source
         row_data['non_heating_offset'] = round(non_heating_total, 1)
         row_data['diff_vs_irp'] = round(sh_upc + non_heating_total - irp_upc, 1) if irp_upc else None
         row_data['diff_vs_irp_pct'] = round((sh_upc + non_heating_total - irp_upc) / irp_upc * 100, 1) if irp_upc and irp_upc > 0 else None
