@@ -34,7 +34,6 @@
   },
   "use_recs_ratios": true,
   "use_census_enrichment": true,
-  "baseline_irp_alignment": true,
   "_comment": "Baseline Reference Case - Conservative assumptions for IRP planning",
   "_parameters": {
     "heating_factor": "Space-heating-only calibrated therms-per-HDD-per-unit for the current scope",
@@ -48,7 +47,6 @@
     "hybrid_adoption_rate": "Share of replacements that go to dual-fuel heat pump + gas backup (3%/yr)",
     "hybrid_gas_usage_factor": "Gas usage of hybrid homes relative to gas-only (35% — heat pump handles mild weather)",
     "use_recs_ratios": "Use RECS 1993-2020 trend to compute non-heating end-use ratios dynamically",
-    "use_census_enrichment": "Enrich unclassified premises with Census B25024/B25034 distributions",
-    "baseline_irp_alignment": "Anchor the baseline scenario estimated total UPC to NW Natural IRP UPC when the IRP forecast file is available."
+    "use_census_enrichment": "Enrich unclassified premises with Census B25024/B25034 distributions"
   }
 }

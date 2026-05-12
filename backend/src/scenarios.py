@@ -82,7 +82,7 @@ class ScenarioConfig:
     # Calibrate the baseline scenario's estimated total UPC to the IRP UPC series
     # after bottom-up model effects have been applied. Non-baseline scenarios keep
     # their model-derived deltas so scenario comparisons remain meaningful.
-    baseline_irp_alignment: bool = False
+    baseline_irp_alignment: Optional[bool] = None
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert config to dictionary."""
@@ -138,7 +138,9 @@ def _align_baseline_to_irp(
         'years_aligned': 0,
     }
 
-    if not getattr(config, 'baseline_irp_alignment', False):
+    alignment_setting = getattr(config, 'baseline_irp_alignment', None)
+    should_align = _is_baseline_scenario(config.name) if alignment_setting is None else bool(alignment_setting)
+    if not should_align:
         return results_df, estimated_total_df, summary
 
     if estimated_total_df.empty or 'estimated_total_upc' not in estimated_total_df.columns or 'irp_upc' not in estimated_total_df.columns:
