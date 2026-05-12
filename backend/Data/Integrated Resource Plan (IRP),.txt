@@ -1,0 +1,36 @@
+In NW Natural’s 2025 Integrated Resource Plan (IRP), the company has updated its Use Per Customer (UPC) forecasts to reflect significant shifts in the Pacific Northwest’s energy landscape.
+
+The most critical figure from the 2025 IRP (specifically from Chapter 4 and Technical Working Group 9) is the system-wide annual load decline, which is the aggregate result of falling UPC across the residential and commercial sectors.
+NW Natural 2025–2045 UPC Forecast Benchmarks
+
+If you are building a demand model, the following annual growth (or rather, decline) rates from the Reference Case are the most defensible proxies:
+Forecast Component	Annual Change (YoY)	Drivers / Context
+Gross Load Decline	-0.40%	Baseline decline before accounting for utility-led efficiency programs.
+Net Load Decline	-1.19%	The "Real World" forecast including Energy Trust of Oregon (ETO) savings.
+Customer Growth	+0.39%	Revised downward from 1.01% in the 2022 IRP (Oregon specific).
+Net System UPC Trend	~ -1.5%	Aggregate impact per meter as new efficient homes dilute the existing stock.
+Key Data Visuals to Reference
+
+    Figure 4.21 (System-wide Residential Average UPC): This chart in the Flight 1 draft shows the residential UPC curve starting near 648 therms/year in 2025 and sloping downward through 2045.
+
+    Figure 4.22 (Small Commercial Average UPC): Shows a similar, though slightly shallower, downward trajectory.
+
+Why the Forecast has "Steepened" since 2022
+
+NW Natural identifies three primary reasons why customers are using less gas today than they were just three years ago:
+
+    Climate Warming Trends: The 2025 IRP modeling now explicitly accounts for a declining trend in Heating Degree Days (HDDs). Winters are getting milder, reducing the core "space heating" load that drives the majority of UPC.
+
+    Building Codes (WA & OR): In Washington, the 2023 codes requiring heat pump technology have effectively "zeroed out" new gas load for certain segments. In Oregon, the Reach Code and increasing efficiency standards mean a new home's UPC is roughly 30-40% lower than a 1990s vintage home.
+
+    The "Hybrid Heating" Shift: The IRP now favors a Hybrid Heating scenario (electric heat pump with gas backup) as a primary decarbonization tool. This drastically reduces UPC because gas is only used during "peak" events (sub-35°F), rather than for the entire heating season.
+
+Modeling Recommendation
+
+To align your RBSA data with NW Natural’s expectations:
+
+    In Python/R: Apply a decay factor of 0.988 (representing the -1.19% net decline) to your annual consumption variables for each year of your forecast.
+
+    Peak vs. Annual: Note that while annual UPC is declining, Peak Day requirements remain robust. NW Natural models the residential peak hour usage at roughly 0.092% of their total annual weather-normalized load.
+
+Would you like me to help you format a "Load Decay" table for the next 10 years based on these specific IRP percentages?

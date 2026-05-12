@@ -1,0 +1,36 @@
+Segmenting your RBSA Data by "Era"
+
+If you are mapping these to specific buildings from the Residential Building Stock Assessment, use these "Real Data" insights to tune your inputs:
+1. The "Standardization" Era (2005–2010)
+
+    UPC Proxy: ~820 Therms
+
+    Characteristics: This was before the 2011 federal standard effectively mandated condensing furnaces. In this era, a "standard" PNW home had an 80% AFUE furnace and significantly higher air leakage.
+
+    Modeling Tip: If your RBSA site is vintage 1990–2005, use this higher baseline if the "Equipment Age" suggests the original furnace is still in place.
+
+2. The "Efficiency Transition" Era (2011–2019)
+
+    UPC Proxy: ~720 Therms
+
+    Characteristics: Large-scale adoption of LEDs, low-flow fixtures, and 90%+ AFUE furnaces via Energy Trust of Oregon (ETO) incentives.
+
+    Modeling Tip: This era saw a steady 1% annual decline as the "low hanging fruit" of weatherization was picked.
+
+3. The "Decarbonization" Era (2020–2025)
+
+    UPC Proxy: ~650 Therms
+
+    Characteristics: High-efficiency heat pumps (hybrids) and the "Washington Heat Pump Mandate" start to dilute the pool.
+
+    Modeling Tip: NW Natural notes that while annual use is dropping (due to efficiency), peak hour usage on the coldest days remains high because gas is still the primary "extreme cold" heating source in the PNW.
+
+Calculated Growth/Decay Rates
+
+Based on this data, the historical annual rates you should use to "step" your model through time are:
+
+    2005 to 2015: −1.15% per year (Slow, steady efficiency)
+
+    2015 to 2020: −1.55% per year (Aggressive code changes)
+
+    2020 to 2025: −1.19% per year (Current IRP "Net" projection)

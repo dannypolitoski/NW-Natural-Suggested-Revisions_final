@@ -1,0 +1,13 @@
+Category,SubCategory,Parameter,Value,Unit,Source
+Building,UPC_Decay,Annual_Net_Rate,-0.0119,Ratio,NWN_2025_IRP
+Envelope,Wall_Pre_1950,U_Value,0.250,Btu/hr.sqft.F,RBSA_2022
+Envelope,Wall_1951_1980,U_Value,0.081,Btu/hr.sqft.F,RBSA_2022
+Envelope,Wall_1981_2010,U_Value,0.056,Btu/hr.sqft.F,RBSA_2022
+Envelope,Wall_2011_Current,U_Value,0.038,Btu/hr.sqft.F,RBSA_2022
+Infiltration,Leakage_Pre_1950,ACH50,14.0,AirChanges/hr,RBSA_2022
+Infiltration,Leakage_New_Code,ACH50,3.0,AirChanges/hr,WA_Energy_Code_2024
+Efficiency,Gas_Furnace,AFUE,0.95,Ratio,Current_Standard
+Efficiency,Heat_Pump,HSPF2,8.8,Ratio,Energy_Star_v6.1
+Retrofit,Target_Wall,U_Value,0.060,Btu/hr.sqft.F,ETO_Weatherization
+Retrofit,Target_Leakage,ACH50,5.0,AirChanges/hr,ETO_Air_Sealing
+Adjustment,Climate,Gorge_Effect,1.15,Multiplier,NWN_Load_Research

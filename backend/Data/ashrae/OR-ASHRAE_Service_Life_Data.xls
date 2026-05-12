@@ -1,0 +1,732 @@
+
+<table border="1">
+<tr>
+<td colspan=6><FONT SIZE="4" COLOR="blue">ASHRAE Service Life Query Dataset</FONT></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td colspan=4><center><u><i>Search Criteria</i></u></center></td>
+</tr>
+<tr>
+<td><B>REGION</B></td>
+<td colspan=3><center>-Any-</td>
+</tr>
+<tr>
+<td><B>STATE</B></td>
+<td colspan=3><center>OR</td>
+</tr>
+<tr>
+<td><B>Function</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Size (sf)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Age (years)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Height (stories)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>BOMA Class</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Location</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>SYSTEM TYPE</B></td>
+<td colspan=3><center>-Any-</td>
+</tr><tr>
+<td><B>Equipment Type</B></td>
+<td colspan=3><center>All</td>
+</tr><tr></tr>
+
+<tr><TD colspan=2><B># Matching Buildings:</td><td><FONT COLOR="blue">3</FONT></td></tr><tr><TD colspan=2><B># Matching Equipment:</td><td><FONT COLOR="blue">19</FONT></td></tr>
+
+<tr></tr>
+
+<TR>
+	<TD colspan=17></TD>
+
+	<TD colspan=8><b><center>BUILDING INFORMATION</TD>
+
+</TR>
+
+<TR>
+	<TD><b><center>Building ID</TD>
+	<TD><b><center>Equipment ID</TD>
+	<TD><b><center>System Type</TD>
+	<TD><b><center>Equipment Type</TD>
+	<TD><b><center>Equipment Type Other</TD>
+	<TD><b><center>Capacity</TD>
+	<TD><b><center>VFD Installed</TD>
+	<TD><b><center>Seasonality</TD>
+	<TD><b><center>Annual Run Hours</TD>
+	<TD><b><center>Floor Area</TD>
+	<TD><b><center>Quantity</TD>
+	<TD><b><center>Install Month</TD>
+	<TD><b><center>Install Year</TD>
+	<TD><b><center>Removal Month</TD>
+	<TD><b><center>Removal Year</TD>
+	<TD><b><center>Removal Reason</TD>
+	<TD><b><center>Removal Reason Other</TD>
+	<TD><b><center>State</TD>
+	<TD><b><center>Function</TD>
+	<TD><b><center>Gross Area</TD>
+	<TD><b><center>First Occupied Year</TD>
+	<TD><b><center>First Occupied Month</TD>
+	<TD><b><center>Stories</TD>
+	<TD><b><center>BOMA Class</TD>
+	<TD><b><center>Location</TD>
+
+</TR>
+
+<TR>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center>equipment specific</TD>
+	<TD><i><center></TD>
+	<TD><i><center>months</TD>
+	<TD><i><center>hours</TD>
+	<TD><i><center>sf</TD>
+	<TD><i><center></TD>
+	<TD><i><center>month</TD>
+	<TD><i><center>year</TD>
+	<TD><i><center>month</TD>
+	<TD><i><center>year</TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center>square feet</TD>
+	<TD><i><center>year</TD>
+	<TD><i><center>month</TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+</TR>
+
+
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>360</td>
+	  <td><center>2721</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>60</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>57,915</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>57,915</td>
+	  <td><center>1981</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>360</td>
+	  <td><center>2949</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>57,915</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>57,915</td>
+	  <td><center>1981</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>2947</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>3165</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>360</td>
+	  <td><center>2498</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>57,915</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>57,915</td>
+	  <td><center>1981</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>2720</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>500</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>248,800</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>3165</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1945</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>3166</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1972</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>2496</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, variable air volume</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1960</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>2719</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>110</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>360</td>
+	  <td><center>3167</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, all electronic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>57,915</td>
+	  <td><center>1981</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>2497</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>248,800</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>3166</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>2948</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>6</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>248,800</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>2497</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>248,800</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1972</td>
+	  <td><center>1</td>
+	  <td><center>1993</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>2719</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>110</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1945</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>2720</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>500</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>248,800</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1972</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>358</td>
+	  <td><center>2947</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1945</td>
+	  <td><center>1</td>
+	  <td><center>1981</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>School (College/University)</td>
+	  <td><center>58,000</td>
+	  <td><center>1945</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>359</td>
+	  <td><center>2948</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>6</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>248,800</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1972</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>OR</td>
+	  <td><center>Lodging</td>
+	  <td><center>248,800</td>
+	  <td><center>1972</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+
+</table>
+
+

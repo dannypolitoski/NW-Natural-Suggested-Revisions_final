@@ -1,0 +1,7 @@
+Year,Era,Avg. Res. UPC (Therms),% Change vs 2025,Notes / Context
+2025,Current,648,—,Draft 2025 IRP baseline.
+2022,Post-COVID,672,+3.7%,Plateau due to remote work energy shift.
+2020,Pandemic,688,+6.2%,AGA/NWN report faster decline post-2020.
+2015,Pre-Decarb,744,+14.8%,Era of 80% to 95% furnace transitions.
+2010,Early Code,812,+25.3%,AGA 2000-2009 average drop-off point.
+2005,Baseline,835,+28.9%,Standard for pre-2010 RBSA vintages.

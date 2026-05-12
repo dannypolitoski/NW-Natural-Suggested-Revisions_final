@@ -1,0 +1,3676 @@
+
+<table border="1">
+<tr>
+<td colspan=6><FONT SIZE="4" COLOR="blue">ASHRAE Service Life Query Dataset</FONT></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td colspan=4><center><u><i>Search Criteria</i></u></center></td>
+</tr>
+<tr>
+<td><B>REGION</B></td>
+<td colspan=3><center>-Any-</td>
+</tr>
+<tr>
+<td><B>STATE</B></td>
+<td colspan=3><center>WA</td>
+</tr>
+<tr>
+<td><B>Function</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Size (sf)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Age (years)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Height (stories)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>BOMA Class</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Location</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>SYSTEM TYPE</B></td>
+<td colspan=3><center>-Any-</td>
+</tr><tr>
+<td><B>Equipment Type</B></td>
+<td colspan=3><center>All</td>
+</tr><tr></tr>
+
+<tr><TD colspan=2><B># Matching Buildings:</td><td><FONT COLOR="blue">17</FONT></td></tr><tr><TD colspan=2><B># Matching Equipment:</td><td><FONT COLOR="blue">1156</FONT></td></tr>
+
+<tr></tr>
+
+<TR>
+	<TD colspan=17></TD>
+
+	<TD colspan=8><b><center>BUILDING INFORMATION</TD>
+
+</TR>
+
+<TR>
+	<TD><b><center>Building ID</TD>
+	<TD><b><center>Equipment ID</TD>
+	<TD><b><center>System Type</TD>
+	<TD><b><center>Equipment Type</TD>
+	<TD><b><center>Equipment Type Other</TD>
+	<TD><b><center>Capacity</TD>
+	<TD><b><center>VFD Installed</TD>
+	<TD><b><center>Seasonality</TD>
+	<TD><b><center>Annual Run Hours</TD>
+	<TD><b><center>Floor Area</TD>
+	<TD><b><center>Quantity</TD>
+	<TD><b><center>Install Month</TD>
+	<TD><b><center>Install Year</TD>
+	<TD><b><center>Removal Month</TD>
+	<TD><b><center>Removal Year</TD>
+	<TD><b><center>Removal Reason</TD>
+	<TD><b><center>Removal Reason Other</TD>
+	<TD><b><center>State</TD>
+	<TD><b><center>Function</TD>
+	<TD><b><center>Gross Area</TD>
+	<TD><b><center>First Occupied Year</TD>
+	<TD><b><center>First Occupied Month</TD>
+	<TD><b><center>Stories</TD>
+	<TD><b><center>BOMA Class</TD>
+	<TD><b><center>Location</TD>
+
+</TR>
+
+<TR>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center>equipment specific</TD>
+	<TD><i><center></TD>
+	<TD><i><center>months</TD>
+	<TD><i><center>hours</TD>
+	<TD><i><center>sf</TD>
+	<TD><i><center></TD>
+	<TD><i><center>month</TD>
+	<TD><i><center>year</TD>
+	<TD><i><center>month</TD>
+	<TD><i><center>year</TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center>square feet</TD>
+	<TD><i><center>year</TD>
+	<TD><i><center>month</TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+	<TD><i><center></TD>
+</TR>
+
+
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>426</td>
+	  <td><center>2794</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>77</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>31,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>31,000</td>
+	  <td><center>1994</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>2779</td>
+	  <td><center>Cooling</td>
+	  <td><center>Chiller, heat recovery, centrifugal</td>
+	  <td><center></td>
+	  <td><center>300</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>52,000</td>
+	  <td><center>1</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>3239</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>423</td>
+	  <td><center>3019</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>180,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>180,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>3237</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>424</td>
+	  <td><center>2580</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>17,400</td>
+	  <td><center>13</td>
+	  <td><center>1</td>
+	  <td><center>1991</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>17,400</td>
+	  <td><center>1991</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>426</td>
+	  <td><center>2815</td>
+	  <td><center>Heat Rejection</td>
+	  <td><center>Cooling tower, metal</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1998</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>31,000</td>
+	  <td><center>1994</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>426</td>
+	  <td><center>3023</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>31,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>31,000</td>
+	  <td><center>1994</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>2576</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>4,600</td>
+	  <td><center>2</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>3021</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, vertical bore</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>29,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>2783</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>100</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>32,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1956</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>3235</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1997</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>2567</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>52,000</td>
+	  <td><center>70</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>2582</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, single zone</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>10,000</td>
+	  <td><center>8</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>422</td>
+	  <td><center>2789</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>463</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>135,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>135,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>424</td>
+	  <td><center>3244</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1991</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>17,400</td>
+	  <td><center>1991</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>3011</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>2,300</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>429</td>
+	  <td><center>3026</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>3</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>109,000</td>
+	  <td><center>1</td>
+	  <td><center>9</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>109,000</td>
+	  <td><center>1994</td>
+      <td><center>9</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>2573</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>3231</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>424</td>
+	  <td><center>2791</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>49</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>17,400</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1991</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>17,400</td>
+	  <td><center>1991</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>3246</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>3009</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>133,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>423</td>
+	  <td><center>2579</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, single zone</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>180,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>180,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>427</td>
+	  <td><center>3024</td>
+	  <td><center>Heating</td>
+	  <td><center>Municipal water plant</td>
+	  <td><center></td>
+	  <td><center>2</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>91,432</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>91,432</td>
+	  <td><center>1995</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>2778</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>320</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>3240</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>2793</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, vertical bore</td>
+	  <td><center></td>
+	  <td><center>50</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>10,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>422</td>
+	  <td><center>2577</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>135,000</td>
+	  <td><center>297</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>135,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>427</td>
+	  <td><center>2795</td>
+	  <td><center>Cooling</td>
+	  <td><center>Municipal water plant</td>
+	  <td><center></td>
+	  <td><center>286</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>91,432</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>91,432</td>
+	  <td><center>1995</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>3022</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, vertical bore</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>10,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>2780</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>300</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>133,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>422</td>
+	  <td><center>3242</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>135,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>3007</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>426</td>
+	  <td><center>2583</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>31,000</td>
+	  <td><center>10</td>
+	  <td><center>1</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>31,000</td>
+	  <td><center>1994</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>2814</td>
+	  <td><center>Heat Rejection</td>
+	  <td><center>Cooling tower, metal</td>
+	  <td><center></td>
+	  <td><center>300</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>52,000</td>
+	  <td><center>1</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>429</td>
+	  <td><center>2797</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>250</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>109,000</td>
+	  <td><center>1</td>
+	  <td><center>9</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>109,000</td>
+	  <td><center>1994</td>
+      <td><center>9</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>2782</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>100</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>2,300</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>424</td>
+	  <td><center>3020</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>17,400</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1991</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>17,400</td>
+	  <td><center>1991</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>3236</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1997</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>2566</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>39</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>2581</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>29,000</td>
+	  <td><center>24</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>422</td>
+	  <td><center>3018</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>6</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>135,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>135,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>2784</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>320</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>3238</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>3232</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Interal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>2786</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>600</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>100,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>426</td>
+	  <td><center>3247</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>31,000</td>
+	  <td><center>1994</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>3231</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1900</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>3233</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1938</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>416</td>
+	  <td><center>3234</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1954</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>130,000</td>
+	  <td><center>1954</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>3235</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1956</td>
+	  <td><center>1</td>
+	  <td><center>1997</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>3236</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1956</td>
+	  <td><center>1</td>
+	  <td><center>1997</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>3237</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>3238</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>3239</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1974</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>3240</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, hybrid system with elec./pneumatic components</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1977</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>3241</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1978</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>3017</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>4,600</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>2571</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>32,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1956</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>429</td>
+	  <td><center>2586</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>109,000</td>
+	  <td><center>52</td>
+	  <td><center>9</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>109,000</td>
+	  <td><center>1994</td>
+      <td><center>9</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>2785</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>320</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>427</td>
+	  <td><center>3248</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>91,432</td>
+	  <td><center>1995</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>3015</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>7</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>100,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>423</td>
+	  <td><center>2578</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, single zone</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>180,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>180,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>428</td>
+	  <td><center>3025</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>9,400</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1996</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Retail</td>
+	  <td><center>25,000</td>
+	  <td><center>1996</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>428</td>
+	  <td><center>2796</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>12</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>9,400</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1996</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Retail</td>
+	  <td><center>25,000</td>
+	  <td><center>1996</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>416</td>
+	  <td><center>2781</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>350</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>130,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1954</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>130,000</td>
+	  <td><center>1954</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>3008</td>
+	  <td><center>Heating</td>
+	  <td><center>Chiller, heat recovery, centrifugal</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>52,000</td>
+	  <td><center>1</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>3241</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>416</td>
+	  <td><center>2569</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, variable air volume</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>130,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>130,000</td>
+	  <td><center>1954</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>3233</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>429</td>
+	  <td><center>3250</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>9</td>
+	  <td><center>1994</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>109,000</td>
+	  <td><center>1994</td>
+      <td><center>9</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>427</td>
+	  <td><center>2584</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>91,432</td>
+	  <td><center>129</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>91,432</td>
+	  <td><center>1995</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>2787</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>120</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>112,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>3013</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>2575</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, single zone</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>112,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1977</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>3016</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>112,000</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>2570</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>2,300</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>428</td>
+	  <td><center>3249</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1996</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Retail</td>
+	  <td><center>25,000</td>
+	  <td><center>1996</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>428</td>
+	  <td><center>2585</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>9,400</td>
+	  <td><center>2</td>
+	  <td><center>1</td>
+	  <td><center>1996</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Retail</td>
+	  <td><center>25,000</td>
+	  <td><center>1996</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>2788</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>10</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>4,600</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>3014</td>
+	  <td><center>Heating</td>
+	  <td><center>District heating</td>
+	  <td><center></td>
+	  <td><center>25</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1950</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>416</td>
+	  <td><center>3234</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>130,000</td>
+	  <td><center>1954</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>2568</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>133,000</td>
+	  <td><center>152</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>423</td>
+	  <td><center>2790</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>300</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>180,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>180,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>423</td>
+	  <td><center>3243</td>
+	  <td><center>Control</td>
+	  <td><center>Other control system</td>
+	  <td><center>Internal Thermostat (built-in)</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>180,000</td>
+	  <td><center>1985</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>417</td>
+	  <td><center>3012</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>1</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>32,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1956</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>32,000</td>
+	  <td><center>1956</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>2574</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>100,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>2792</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, vertical bore</td>
+	  <td><center></td>
+	  <td><center>50</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>29,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>425</td>
+	  <td><center>3245</td>
+	  <td><center>Control</td>
+	  <td><center>Energy mgmt. system, direct digital controls</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1992</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>School (K-12)</td>
+	  <td><center>39,000</td>
+	  <td><center>1992</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>416</td>
+	  <td><center>3010</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>130,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1954</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>130,000</td>
+	  <td><center>1954</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>2572</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, single zone</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>2566</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>39</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>2567</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>52,000</td>
+	  <td><center>70</td>
+	  <td><center>1</td>
+	  <td><center>1917</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>2568</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>133,000</td>
+	  <td><center>152</td>
+	  <td><center>1</td>
+	  <td><center>1938</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>416</td>
+	  <td><center>2569</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, variable air volume</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>130,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1954</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>130,000</td>
+	  <td><center>1954</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>418</td>
+	  <td><center>2572</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Air handling unit, single zone</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>58,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center>1</td>
+	  <td><center>1963</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Laboratory</td>
+	  <td><center>88,000</td>
+	  <td><center>1963</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>2574</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Fan coil unit</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>100,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1974</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>2576</td>
+	  <td><center>Air Distribution</td>
+	  <td><center>Heat pump, water-to-air, geothermal application</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>4,600</td>
+	  <td><center>2</td>
+	  <td><center>1</td>
+	  <td><center>1978</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>2778</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>320</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1900</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>2780</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>300</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>133,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1938</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>2786</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>600</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>100,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1974</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>2787</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>120</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>112,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1977</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>2788</td>
+	  <td><center>Cooling</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>10</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>4,600</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1978</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>413</td>
+	  <td><center>3007</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>30,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1900</td>
+	  <td><center>1</td>
+	  <td><center>1988</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>30,000</td>
+	  <td><center>1900</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>414</td>
+	  <td><center>3008</td>
+	  <td><center>Heating</td>
+	  <td><center>Chiller, heat recovery, centrifugal</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>52,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1917</td>
+	  <td><center>12</td>
+	  <td><center>1982</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Other</td>
+	  <td><center>52,000</td>
+	  <td><center>1917</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>415</td>
+	  <td><center>3009</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>133,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1938</td>
+	  <td><center>1</td>
+	  <td><center>1980</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>13,300</td>
+	  <td><center>1938</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>419</td>
+	  <td><center>3015</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>7</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>100,000</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1974</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>100,000</td>
+	  <td><center>1974</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>420</td>
+	  <td><center>3016</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, ground water, aquifers</td>
+	  <td><center></td>
+	  <td><center>112,000</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1977</td>
+	  <td><center>1</td>
+	  <td><center>1985</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>112,000</td>
+	  <td><center>1977</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+	
+<tr bgcolor=#FFFFFF onMouseOver="this.bgColor='#CED3FF'" onMouseout="this.bgColor='#FFFFFF'" >
+
+	  <td><center>421</td>
+	  <td><center>3017</td>
+	  <td><center>Heating</td>
+	  <td><center>Heat exchanger, horizontal (trench) ground</td>
+	  <td><center></td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>4,600</td>
+	  <td><center>1</td>
+	  <td><center>1</td>
+	  <td><center>1978</td>
+	  <td><center>1</td>
+	  <td><center>1995</td>
+	  <td><center></td>
+	  <td><center></td>
+	  <td><center>WA</td>
+	  <td><center>Office</td>
+	  <td><center>4,600</td>
+	  <td><center>1978</td>
+      <td><center>1</td>
+	  <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+
+    </tr>
+  
+
+
+</table>
+
+

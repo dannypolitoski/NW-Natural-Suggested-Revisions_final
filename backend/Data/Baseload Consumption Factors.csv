@@ -1,0 +1,16 @@
+Category,SubCategory,Parameter,Value,Unit,Source
+Building,UPC_Decay,Annual_Net_Rate,-0.0119,Ratio,NWN_2025_IRP
+Equipment,Gas_Furnace,Median_Life,18.0,Years,DOE_AEO_2026
+Equipment,Gas_Water_Heater,Median_Life,12.0,Years,DOE_AEO_2026
+Baseload,Cooking,Annual_Consumption,30.0,Therms,RECS_2020_PNW
+Baseload,Drying,Annual_Consumption,20.0,Therms,RECS_2020_PNW
+Baseload,Fireplace,Annual_Consumption,55.0,Therms,RBSA_2022_Metered
+Pilot,Fireplace,Annual_Consumption,82.0,Therms,NEEA_Metering_Study
+Pilot,Water_Heater,Annual_Consumption,46.0,Therms,NEEA_Metering_Study
+Standby,WH_Pre_1990,Base_Loss,75.0,Therms/yr,ASHRAE_90.1_Historical
+Standby,WH_1991_2003,Base_Loss,55.0,Therms/yr,DOE_Test_Proc_1998
+Standby,WH_2004_2014,Base_Loss,40.0,Therms/yr,NAECA_2004_Standard
+Standby,WH_2015_Current,Base_Loss,20.0,Therms/yr,DOE_Final_Rule_2015
+Adjustment,Plumbing,Thermosiphon_Penalty,1.2,Multiplier,RBSA_Ecotope_Study
+Adjustment,Climate,Gorge_Effect_Wind,1.15,Multiplier,NWN_Load_Research
+Adjustment,Climate,Standard_Metro_Base,1.0,Multiplier,Default

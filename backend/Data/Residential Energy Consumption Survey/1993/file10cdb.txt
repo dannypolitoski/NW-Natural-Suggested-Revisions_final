@@ -1,0 +1,1164 @@
+File layout for File 10 (Records are comma-delimited.  First line contains a list of variables on the file.  The remaining lines contain the values of the variables with fixed column positions.)
+
+Variables on all files
+
+HHID     '4-digit identification number'                    Columns 1-4
+NWEIGHT  'The Final Weight'                                 Columns 6-11
+QMAIL    'Mail Questionnaire Codes'                         Columns 13
+REGIONC  'Census Region'                                    Columns 15
+DIVISION 'Census Division'                                  Columns 17
+LRGSTATE 'Four Largest States'                              Columns 19
+CDD65    'Cooling Degree-Days to base 65, 1-93 TO 12-93'    Columns 21-24
+HDD65    'Heating Degree-Days to base 65, 1-93 TO 12-93'    Columns 26-30
+TYPEHUQ  'Type of Home: as report by Respondent'            Columns 32
+
+Variables in File 10 only.
+
+KAVALKER 'Kerosene Data From Supplier Or Household'         Columns 34
+PERIODKR 'Time Period Kerosene Data Available'              Columns 36
+ORIGKERQ 'Source Estimated Kerosene Quantity'               Columns 38
+SCALEKER 'Kerosene Use Scaled Down Non Household Uses'      Columns 40
+ORIGKRC 'Source Of Estimated Kerosene Cost'                 Columns 42
+ORIGKERS 'Summary Code Kerosene Data Source'                Columns 44-45
+KAVALEL 'Electric Data From Supplier Or Household'          Columns 47
+PERIODEL 'Period Of Time Electric Data Available'           Columns 49
+ORIGELQ 'Source Of Estimated Quantity Of Electricity'       Columns 51
+SCALEEL 'Electric Use Scaled Down For Non household Uses'   Columns 53
+ORIGELC 'Source Of Estimated Cost Of Electricity'           Columns 55
+ORIGELS 'Summary Code For Source Of Electric Data'          Columns 57-58
+BEGINELR 'Type Electric Reading On Beginning Date'          Columns 60
+ENDELR 'Type Electric Reading On Ending Date'               Columns 62
+KAVALNG 'Natural Gas Data From Supplier Or Household'       Columns 64
+PERIODNG 'Period Of Time Natural Gas Data Available'        Columns 66
+ORIGNGQ 'Source Of Estimated Quantity Of Natural Gas'       Columns 68
+SCALENG 'Natural Gas Use Scaled Down For Non hsld Uses'     Columns 70
+ORIGNGC 'Source Of Estimated Cost Of Natural Gas'           Columns 72
+ORIGNGS 'Summary Code For Source Of Natural Gas Data'       Columns 74-75
+BEGINNGR 'Type Natural Gas Reading On Beginning Date'       Columns 77
+ENDNGR  'Type Natural Gas Reading On Ending Date'            Columns 79
+KAVALFO 'Fuel Oil Data From Supplier Or Household'          Columns 81
+PERIODFO 'Period Of Time Fuel Oil Data Available'           Columns 83
+ORIGFOQ 'Source Of Estimated Quantity Of Fuel Oil'          Columns 85
+SCALEFO 'Fuel Oil Use Scaled Down For Non household Uses'   Columns 87
+ORIGFOC 'Source Of Estimated Cost Of Fuel Oil'              Columns 89
+ORIGFOS 'Summary Code For Source Of Fuel Oil Data'          Columns 91-92
+TYPEFO1 'Fuel Oil TYPE From Supplier 1'                     Columns 94
+TYPEFO2 'Fuel Oil TYPE From Supplier 2'                     Columns 96
+KAVALPG 'LPG Data From Supplier Or Household'               Columns 98
+PERIODLP 'Period Of Time LPG Data Available'                Columns 100
+ORIGLPQ 'Source Of Estimated Quantity Of LPG'               Columns 102
+SCALELP 'LP Use Scaled Down For Non household Uses'         Columns 104
+ORIGLPC 'Source Of Estimated Cost Of LPG'                   Columns 106
+ORIGLPS 'Summary Code For Source Of LPG Data'               Columns 108-109
+TYPELP1 'LPG Type From Supplier 1'                          Columns 111
+TYPELP2 'LPG Type From Supplier 2'                          Columns 113
+
+Codebook for File 10
+
+Variables HHID, NWEIGHT, QMAIL, REGIONC, DIVISION, LRGSTATE CDD65
+HDD65, and TYPEHUQ are on all files.
+
+HHID '4-digit identification number'                       Columns 1-4
+  Included in all files
+  Numerical Variable
+  Variable length: 4
+
+The variable HHID will be on all files.  Each respondent is assigned
+an unique value of HHID.  It can be used to merge data from one file
+with data from another file.
+
+     Minimum Value: 1,001
+     Maximum Value: 8,111
+
+NWEIGHT 'The Final Weight'                                  Columns 6-11
+  Included in all files
+  Numerical Variable
+  Variable length: 6
+
+     Minimum Value:  2,096
+     Maximum Value: 78,559
+
+The sample design for RECS is not a simple random sample. Consequently,
+to estimate the number or percent of households/housing units with a
+certain characteristic, the sampling weight should be used.  The
+variable NWEIGHT is the sampling weight for the observation.  It is
+approximately the inverse of the probability of selection.  It gives
+the number of households that the response represents in the sample. 
+For most categorical variables, the codebooks contain both the
+unweighted frequency and the weighted frequency.  The unweighted
+frequency gives the number of observations, the weighted frequency
+gives survey estimate of the number of households/housing units for
+each possible value of the variable.  The weighted frequencies are
+rounded to the nearest 100,000 households.  This is the limit of the
+accuracy for RECS.  When the unweighted frequency is less than 10 or
+the weighted frequency is less than 150,000; then weighted frequency is
+suppressed.  A 'Q' is placed in the frequency to denote that the number
+is suppressed.  This indicates that there are too few observation upon
+which to determine an accurate estimate.
+
+QMAIL 'Mail Questionnaire Codes'                           Columns 13
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     1 = Completed
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           115           1,500,000
+     9         6,996          95,100,000
+
+When QMAIL equals 1, the household and housing unit data was 
+not obtained via a personal interview.  The data were obtained using a
+shortened mail questionnaire.  A hot-deck imputation procedure was used
+to match each mail respondent to a personal interview respondent.  The
+critical matching variables were FUELHEAT, FUELH2O, TYPECOOL, TYPEHUQ,
+and REGIONC.  Additional variables used in a scoring function to
+determine the best match were MONEYPY, NHSLDMEM, VEHICLES, HHAGE, and
+TOTROOMS.  The remaining household/housing unit characteristics for the
+mail respondents were determined by the values of the matched personal
+interview respondent.  The energy consumption and expenditures data for
+the mail respondents was based upon data obtained from their energy
+suppliers.  It was not imputed using a hot deck procedure.
+
+Questionnaire data from personal interview respondents sometime is
+missing and needs to be imputed.  'Z' variables are used to indicate
+the presence of imputed data.  For example, if ZURBRUR = 0 then URBRUR
+was not imputed.  If ZURBRUR = 1 then URBRUR was imputed.
+
+Census Division/Region:  A geographic area consisting of several States 
+defined by the U.S. Department of Commerce, Bureau of the Census.  The States 
+are grouped into nine divisions and four regions.
+
+Region    Division            States 
+
+Northeast New England         Connecticut, Maine, Massachusetts, 
+                              New Hampshire, Vermont, and Rhode Island
+
+          Middle Atlantic     New Jersey, New York, and Pennsylvania
+
+Midwest   East North Central  Illinois, Indiana, Michigan, 
+                              Ohio, and Wisconsin
+
+          West North Central  Iowa, Kansas, Minnesota, Missouri,
+                              Nebraska, North Dakota, and South Dakota
+
+South     South Atlantic      Delaware, the District of Columbia,
+                              Florida, Georgia, Maryland, North 
+                              Carolina, South Carolina, Virginia,
+                              and West Virginia 
+
+          East South Central  Alabama, Kentucky, Mississippi, 
+                              and Tennessee
+
+          West South Central  Arkansas, Louisiana, Oklahoma, 
+                              and Texas
+
+West      Mountain            Arizona, Colorado, Idaho, Montana,
+                              Nevada, New Mexico, Utah, and Wyoming
+
+          Pacific             Alaska, California, Hawaii, Oregon, 
+                              and Washington
+
+REGIONC 'Census Region'                                     Columns 15
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     1 = Northeast Census Region
+     2 = Midwest Census Region
+     3 = South Census Region
+     4 = West Census Region
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         1,531          19,500,000
+     2         1,541          23,300,000
+     3         2,494          33,500,000
+     4         1,545          20,400,000
+
+DIVISION 'Census Division'                                  Columns 17
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+ 
+     1 = New England Census Division
+     2 = Middle Atlantic Census Division
+     3 = East North Central Census Division
+     4 = West North Central Census Division
+     5 = South Atlantic Census Division
+     6 = East South Central Census Division
+     7 = West South Central Census Division
+     8 = Mountain Census Division
+     9 = Pacific Census Division
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           567           5,100,000
+     2           964          14,400,000
+     3           970          16,400,000
+     4           571           6,900,000
+     5         1,232          17,400,000
+     6           556           6,000,000
+     7           706          10,100,000
+     8           550           5,400,000
+     9           995          15,000,000
+
+LRGSTATE 'Four Largest States'                                Columns 19
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     0 = Other
+     1 = New York State
+     2 = California
+     3 = Texas
+     4 = Florida
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,133          66,700,000
+     1           475           6,800,000
+     2           699          11,100,000
+     3           437           6,400,000
+     4           367           5,600,000
+
+CDD65 and HDD65 are weather data.  The values of CDD65 and HDD65 were based upon data obtained from the NOAA.  A random error was added to both HDD65 and CDD65 to mask the location of the weather station from which the data was obtained.
+
+CDD65 'Cooling Degree-Days to base 65, 1-93 TO 12-93'        Columns 21-24
+  Included in all files
+  Numerical Variable 
+  Variable length 4
+
+     Minimum Value:     0
+     Maximum Value: 5,656
+
+HDD65 'Heating Degree-Days to base 65, 1-93 TO 12-93'        Columns 26-30
+  Included in all files
+  Numerical Variable 
+  Variable length 5
+
+     Minimum Value:      0
+     Maximum Value: 13,725
+
+Cooling degree days are the number of degrees the average daily
+temperature (ADT) is above the base temperature.  Heating degree days
+are the number of degrees the ADT is below the base temperature.  To
+calculate daily degree days (base 65 degrees):
+
+          ADT = (daily high + daily low)/2
+
+          CDD(daily)     = 0            if ADT <= 65
+                         = ADT - 65     if ADT > 65
+
+          HDD(daily)     = 0            if ADT >= 65
+                         = 65 - ADT     if ADT < 65.
+
+Annual degrees days are calculated by summing the daily degree days. 
+The .5 is carried over in the summation.  The total is rounded up after
+the summation.
+
+TYPEHUQ 'Type of Home: as report by Respondent'               Columns 32
+  Included in all files
+  Categorical Variable
+  Variable length: 1
+  Question (A-1) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     1 = 'Mobile Home'
+     2 = 'Single-Family detached'
+     3 = 'Single-Family Attached'
+     4 = 'Apartment in Building containing 2-4 units'
+     5 = 'Apartment in Building Containing 5 or more units'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           464           5,600,000
+     2         4,385          59,500,000
+     3           547           7,300,000
+     4           563           8,000,000
+     5         1,152          16,200,000
+
+
+The remaining variables a present only in File 10.
+
+
+KAVALKER 'Kerosene Data From Supplier Or Household'         Columns 34
+     Categorical Variable
+     Variable Length 1
+
+     1 = All Uses Paid By Household
+     2 = Some Uses Paid By Household
+     3 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           195           2,635,331
+     3            77             991,456
+     9         6,839          93,004,705
+
+PERIODKR 'Time Period Kerosene Data Available'              Columns 36
+     Categorical Variable
+     Variable Length 1
+
+     1 = Data Complete
+     2 = Data Not Complete
+     5 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           184           2,525,504
+     2            11             109,827
+     5            77             991,456
+     9         6,839          93,004,705
+
+ORIGKERQ 'Source Estimated Kerosene Quantity'               Columns 38
+     Categorical Variable
+     Variable Length 1
+
+     1 = Delivery Record
+     2 = Supplier Estimate
+     3 = Household Estimate
+     4 = Supplier Estimate For Year
+     8 = Regression Estimate
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1            35             427,019
+     3           149           2,098,485
+     8            88           1,101,283
+     9         6,839          93,004,705
+
+SCALEKER 'Kerosene Use Scaled Down Non Household Uses'      Columns 40
+     Categorical Variable
+     Variable Length 1
+
+     0 = Not Used
+     1 = Scale Used
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           267           3,566,422
+     1             5                   Q
+     9         6,839          93,004,705
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGKRC 'Source Of Estimated Kerosene Cost'                 Columns 42
+     Categorical Variable
+     Variable Length 1
+
+     1 = Company Records
+     2 = Quantity-Record; Cost-Regression
+     3 = Regression-Both Quantity And Cost
+     4 = Household Estimate
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1            35             427,019
+     2            21             273,273
+     3            88           1,101,283
+     4           128           1,825,212
+     9         6,839          93,004,705
+
+ORIGKERS 'Summary Code Kerosene Data Source'                Columns 44-45
+     Categorical Variable
+     Variable Length 2
+
+     Codes 11, 12, AND 31   Apply If Some Data Are Available From the Supplier.
+     Code 13 --     Full Year Estimate From Supplier Used For Both    
+               Quantity And Costs.
+     Code 14 --     Full Year Estimate From Supplier Used For Quantity;    
+                    Cost Imputed.
+     Code 15 --     Quantity And Cost Estimate From Household.
+     Code 16 --     Quantity Estimate From Household; Cost Imputed.
+     Codes 41-43    Apply If the Authorization Form Is Signed, But No Data
+                    Were Received From the Supplier.
+     Code 41 --     Includes Households For Which Mail/Telephone 
+                    Questionnaires Indicated That Household Did Not Use Or
+                    Did Not Pay Directly For Fuel, But Surrogate Personal
+                    Interview Household Did Use And Pay Directly For Fuel.
+     Code 51 --     Authorization Form Not Signed
+
+     11 = Quantity, Cost From Data
+     15 = Quantity, Cost Estimate From Household
+     16 = Quantity Household; Cost-Imputed
+     31 = Data Available-Not Used
+     41 = Household Not Identifiable
+     43 = No Company Contact
+     51 = Authorization Form Not Signed
+     99 = Fuel Not Used
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     11           35             427,019
+     15          128           1,825,212
+     16           21             273,273
+     31           11             109,827
+     41            5                   Q
+     43           65             863,496
+     51            7                   Q
+     99        6,839          93,004,705
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+KAVALEL 'Electric Data From Supplier Or Household'          Columns 47
+     Categorical Variable
+     Variable Length 1
+
+     1 = All Uses Paid By Household
+     2 = Some Uses Paid By Household
+     3 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         6,096          82,816,294
+     2            88           1,133,035
+     3           924          12,617,278
+     9             3                   Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+PERIODEL 'Period Of Time Electric Data Available'           Columns 49
+     Categorical Variable
+     Variable Length 1
+
+     1 = 330 Or More Days
+     2 = 146 - 329 Days
+     3 = 60 - 145 Days
+     4 = 1-59 Days
+     5 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         5,368          73,741,371
+     2           689           8,672,915
+     3           117           1,390,592
+     4            10             144,451
+     5           924          12,617,278
+     9             3                   Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGELQ 'Source Of Estimated Quantity Of Electricity'       Columns 51
+     Categorical Variable
+     Variable Length 1
+
+     Codes 1-4      Based On Annualized Billing Records For 330 Or More Days. 
+                    Billing Period Used For Annualized Estimate May Be
+                    Shorter Than Total Period Given In PERIODEL Due To
+                    Elimination Of Estimated Bills At the Ends Of the Billing
+                    Period.
+
+     1 = Actual Readings
+     2 = Start Estimated-End Actual
+     3 = Start Actual-End Estimated
+     4 = Both Periods Estimated
+     5 = 146-329 Day Estimate
+     6 = 60-145 Day Estimate
+     7 = Not All Uses Paid
+     8 = Regression Estimate
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         5,045          69,199,846
+     2           242           3,486,296
+     3             8                   Q
+     4             5                   Q
+     5           673           8,470,930
+     6            28             294,806
+     7            85           1,100,451
+     8         1,022          13,852,737
+     9             3                   Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+SCALEEL 'Electric Use Scaled Down For Non household Uses'   Columns 53
+     Categorical Variable
+     Variable Length 1
+
+     0 = Not Used
+     1 = Scale Used
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,824           92,871,654
+     1           284            3,694,953
+     9             3                    Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGELC 'Source Of Estimated Cost Of Electricity'           Columns 55
+     Categorical Variable
+     Variable Length 1
+
+     1 = Company Records
+     2 = Quantity-Record, Cost Regression
+     3 = Regression-Both Quantity And Cost
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         6,083           82,672,873
+     2             3                    Q
+     3         1,022           13,852,737
+     9             3                    Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGELS 'Summary Code For Source Of Electric Data'          Columns 57-58
+     Categorical Variable
+     Variable Length 2
+
+     Codes 11-31    Apply If Some Data Are   Available From the Supplier.
+     Codes 11-12    Group A Below, Apply If 330 Or More Days Of Data Are
+                    Available.
+     Codes 21-22    Group B Below, Apply If 146-329 Days Of Data Are
+                    Available.
+     Codes 23-24    Group C Below, Apply If 60-145 Days Of Data Are
+                    Available.
+     Codes 25-26    Group D Below, Apply If Not All Uses Of The Fuel Are Paid
+                    By the Household.
+     Codes 41-43    Group E Below, Apply If the Authorization Form Is Signed,
+                    But No Data Were Received From the Supplier.
+     Code 41        Includes Households For Which Mail/Telephone 
+                    Questionnaires Indicated That Household Did Not Use Or
+                    Did Not Pay Directly For Fuel, But Surrogate Personal
+                    Interview Household Did Use And Pay Directly For Fuel.
+
+     11 = A Quantity , Cost From Data
+     12 = A Quantity From Data, Cost Imputed
+     21 = B Quantity , Cost From Data
+     22 = B Quantity From Data, Cost Imputed
+     23 = C Quantity , Cost From Data
+     24 = C Quantity From Data, Cost Imputed
+     25 = D Quantity , Cost From Data
+     26 = D Quantity From Data, Cost Imputed 
+     31 = Data Available-Not Used
+     41 = E Household Not Identified
+     43 = E No Company Contact
+     44 = Supplier reported that the respondent no longer lives in unit 
+     51 = Authorization Form Not Signed
+     61 = Use Included In Rent
+     99 = Fuel Not Used
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     11        5,298           72,817,734
+     12            2                    Q
+     21          672            8,459,882
+     22            1                    Q
+     23           28              294,806
+     25           85                    Q
+     31           98            1,235,459
+     41          192            2,746,126
+     43            7                    Q
+     51          377            5,088,997
+     61          348            4,652,302
+     99            3                    Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+BEGINELR 'Type Electric Reading On Beginning Date'          Columns 60
+     Categorical Variable
+     Variable Length 1
+
+     Used Only For Annualized Estimates Based On
+     Billing Periods Covering 60 Or More Days
+
+     1 = Actual Reading
+     2 = Estimated Bill
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         5,818           78,827,931
+     2           268            3,885,939
+     9         1,025           13,917,622
+
+ENDELR 'Type Electric Reading On Ending Date'               Columns 62
+     Categorical Variable
+     Variable Length 1
+
+     Used Only For Annualized Estimates Based On
+     Billing Periods Covering 60 Or More Days
+
+     1 = Actual Reading
+     2 = Estimated Bill
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         6,054           82,283,566
+     2            32              430,304
+     9         1,025           13,917,622
+
+KAVALNG 'Natural Gas Data From Supplier Or Household'       Columns 64
+     Categorical Variable
+     Variable Length 1
+
+     1 = All Uses Paid By Household
+     2 = Some Uses Paid By Household
+     3 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         3,085           44,023,769
+     2            95            1,551,843
+     3           889           13,078,294
+     9         3,042           37,977,586
+
+PERIODNG 'Period Of Time Natural Gas Data Available'        Columns 66
+     Categorical Variable
+     Variable Length 1
+
+     1 = 330 Or More Days
+     2 = 146 - 329 Days
+     3 = 60 - 145 Days
+     4 = 1 - 59 Days
+     5 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         2,794          40,565,220
+     2           317           4,116,656
+     3            63             812,564
+     4             6                   Q
+     5           889          13,078,294
+     9         3,042          37,977,586
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGNGQ 'Source Of Estimated Quantity Of Natural Gas'       Columns 68
+     Categorical Variable
+     Variable Length 1
+
+     Codes 1-4      Based On Annualized Billing Records For 330 Or More Days. 
+                    Billing Period Used For Annualized Estimate May Be
+                    Shorter Than Total Period Given In PERIODNG Due To
+                    Elimination Of Estimated Bills At the Ends Of the Billing
+                    Period.
+
+     1 = Actual Readings
+     2 = Start Estimated-End Actual
+     3 = Start Actual-End Estimated
+     4 = Both Periods Estimated
+     5 = 146-329 Day Estimate
+     6 = 60-145 Day Estimate
+     7 = Not All Uses Paid
+     8 = Regression Estimate
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         2,221          32,023,863
+     2           437           6,333,859
+     3            22             353,098
+     4            34             573,240
+     5           309           3,940,350
+     6             4                   Q
+     7            90           1,483,405
+     8           952          13,883,579
+     9         3,042          37,977,586
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+SCALENG 'Natural Gas Use Scaled Down For Non household Uses'     Columns 70
+     Categorical Variable
+     Variable Length 1
+
+     0 = Not Used
+     1 = Scale Used
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         4,033          58,209,193
+     1            36             444,713
+     9         3,042          37,977,586
+
+ORIGNGC 'Source Of Estimated Cost Of Natural Gas'           Columns 72
+     Categorical Variable
+     Variable Length 1
+
+     1 = Company Records
+     2 = Quantity Record; Cost Regression 
+     3 = Regression-Both Quantity And Cost
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         3,116          44,756,603
+     2             1                   Q
+     3           952          13,883,579
+     9         3,042          37,977,586
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGNGS 'Summary Code For Source Of Natural Gas Data'       Columns 74-75
+     Categorical Variable
+     Variable Length 2
+
+     Codes 11-31    Apply If Some Data Are Available From the Supplier.
+     Codes 11-12    Group A Below, Apply If 330 Or More Days Of Data Are
+                    Available.
+     Codes 21-22    Group B Below, Apply If 146-329 Days Of Data Are
+                    Available.
+     Codes 23-24    Group C Below, Apply If 60-145 Days Of Data Are
+                    Available.
+     Codes 25-26    Group D Below, Apply If Not All Uses Of The Fuel Are Paid
+                    By the Household.
+     Codes 41-43    Group E Below, Apply If the Authorization Form Is Signed,
+                    But No Data Were Received From the Supplier.
+     Code 41        Includes Households For Which Mail/Telephone 
+                    Questionnaires Indicated That Household Did Not Use Or
+                    Did Not Pay Directly For Fuel, But Surrogate Personal
+                    Interview Household Did Use And Pay Directly For
+                    Fuel.
+
+     11 = A Quantity and Cost From Data
+     12 = A Quantity From Data, Cost Imputed
+     21 = B Quantity and Cost From Data
+     22 = B Quantity From Data, Cost Imputed
+     23 = C Quantity and Cost From Data
+     24 = C Quantity From Data, Cost Imputed
+     25 = D Quantity and Cost From Data
+     26 = D Quantity From Data, Cost Imputed
+     31 = Data Available-Not Used
+     41 = E Household Not Identified
+     43 = E No Company Contact
+     51 = Authorization Form Not Signed
+     61 = Use Included In Rent
+     94 = Fuel Not Used
+     99 = Fuel Not Used
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     11        2,713           39,270,336
+     12            1                    Q
+     21          309            3,940,350
+     23            4                    Q
+     25           90            1,483,405
+     31           63              805,285
+     41           95            1,462,037
+     43           15              371,508
+     51          216            3,094,194
+     61          561            8,123,066
+     94            2                    Q
+     99        3,042           37,977,586
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+BEGINNGR 'Type Natural Gas Reading On Beginning Date'       Columns 77
+     Categorical Variable
+     Variable Length 1
+
+     Used Only For Annualized Estimates Based On
+     Billing Periods Covering 60 Or More Days
+
+     1 = Actual Reading
+     2 = Estimated Bill
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         2,063           37,234,872
+     2           514            7,535,455
+     9         3,994           51,861,165
+
+ENDNGR 'Type Natural Gas Reading On Ending Date'            Columns 79
+     Categorical Variable
+     Variable Length 1
+
+     Used Only For Annualized Estimates Based On
+     Billing Periods Covering 60 Or More Days
+
+     1 = Actual Reading
+     2 = Estimated Bill
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         3,032           43,468,146
+     2            85            1,302,181
+     9         3,994           51,861,165
+
+KAVALFO 'Fuel Oil Data From Supplier Or Household'          Columns 81
+     Categorical Variable
+     Variable Length 1
+
+     1 = All Uses Paid By Household
+     3 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           582            7,055,059
+     3           283            3,736,254
+     9         6,246           85,840,179
+
+PERIODFO 'Period Of Time Fuel Oil Data Available'           Columns 83
+     Categorical Variable
+     Variable Length 1
+
+     1 = Data Complete
+     2 = Data Not Complete
+     5 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           523            6,378,323
+     2            59              676,736
+     5           283            3,736,254
+     9         6,246           85,840,179
+
+ORIGFOQ 'Source Of Estimated Quantity Of Fuel Oil'          Columns 85
+     Categorical Variable
+     Variable Length 1
+
+     1 = Delivery Record
+     2 = Supplier Estimate
+     4 = Supplier Estimate For Year
+     8 = Regression Estimate
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           518           6,315,847
+     2             1                   Q
+     4             4                   Q
+     8           342           4,412,990
+     9         6,246          85,840,179
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+SCALEFO 'Fuel Oil Use Scaled Down For Non household Uses'   Columns 87
+     Categorical Variable
+     Variable Length 1
+
+     0 = Not Used
+     1 = Scale Used
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           850          10,632,987
+     1            15             158,326
+     9         6,246          85,840,179
+
+ORIGFOC 'Source Of Estimated Cost Of Fuel Oil'              Columns 89
+     Categorical Variable
+     Variable Length 1
+
+     Quantity = Quantity
+     Regression = Regression
+
+     1 = Company Records
+     2 = Quantity Record; Cost Regression 
+     3 = Regression-Both Quantity And Cost
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           519           6,341,128
+     2             4                   Q
+     3           342           4,412,990
+     9         6,246          85,840,179
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ORIGFOS 'Summary Code For Source Of Fuel Oil Data'          Columns 91-92
+     Categorical Variable
+     Variable Length 2
+
+     Codes 11, 12, AND 31   Apply If Some Data Are Available From the Supplier.
+     Code 13 --     Full Year Estimate From Supplier Used For Both    
+                    Quantity And Costs.
+     Code 14 --     Full Year Estimate From Supplier Used For Quantity,    
+                    Cost Imputed.
+     Code 15 --     Quantity And Cost Estimate From Household.
+     Code 16 --     Quantity Estimate From Household, Cost Imputed.
+     Codes 41-43    Apply If the Authorization Form Is Signed, But No Data
+                    Were Received From the Supplier.
+     Code 41        Includes Households For Which Mail/Telephone 
+                    Questionnaires Indicated That Household Did Not Use Or
+                    Did Not Pay Directly For Fuel, But Surrogate Personal
+                    Interview Household Did Use And Pay Directly For Fuel.
+
+     11 = Quantity and Cost From Data
+     12 = Quantity from Data, Cost Imputed
+     13 = Full Year Quantity and Cost From Company
+     14 = Full Year Quantity From Company, Cost Imputed
+     15 = Quantity and Cost Estimates From Household
+     16 = Quantity Estimate From Household, Cost Imputed
+     31 = Data Available-Not Used
+     41 = Household Not Identifiable
+     42 = Company Refused
+     43 = No Company Contact
+     51 = Authorization Form Not Signed
+     61 = Use Included In Rent
+     99 = Fuel Not Used
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     11          515           6,301,612
+     12            4                   Q
+     13            4                   Q
+     31           59             676,736
+     41           33             418,674
+     42            9                   Q
+     43           45             629,937
+     51           41             551,731
+     61          155           2,050,798
+     99        6,246          85,840,179
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+TYPEFO1 'Fuel Oil TYPE From Supplier 1'                     Columns 94
+     Categorical Variable
+     Variable Length 1
+
+     Combination Includes Residual And Diesel Fuels
+
+     1 = Fuel Oil NO 1
+     2 = Fuel Oil NO 2
+     5 = Combination'
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1            33             458,034
+     2           522           6,304,665
+     5            27             292,360
+     9         6,529          89,576,433
+
+TYPEFO2 'Fuel Oil TYPE From Supplier 2'                     Columns 96
+     Categorical Variable
+     Variable Length 1
+
+     Combination Includes Residual And Diesel Fuels 
+
+     1 = Fuel Oil NO 1
+     2 = Fuel Oil NO 2
+     5 = Combination
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     2            12              128,869
+     9         7,099           96,502,623
+
+KAVALPG 'LPG Data From Supplier Or Household'               Columns 98
+     Categorical Variable
+     Variable Length 1
+
+     1 = All Uses Paid By Household
+     2 = Some Uses Paid By Household
+     3 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           534           6,431,806
+     3           150           1,681,705
+     9         6,427          88,517,981
+
+PERIODLP 'Period Of Time LPG Data Available'                Columns 100
+     Categorical Variable
+     Variable Length 1
+
+     1 = Data Complete
+     2 = Data Not Complete
+     5 = No Data
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           490           5,940,655
+     2            44             491,151
+     5           150           1,681,705
+     9         6,427          88,517,981
+
+ORIGLPQ 'Source Of Estimated Quantity Of LPG'               Columns 102
+     Categorical Variable
+     Variable Length 1
+
+     1 = Delivery Record
+     3 = Household Estimate
+     8 = Regression Estimate
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           489            5,936,932
+     3             1                    Q
+     8           194            2,172,856
+     9         6,427           88,517,981
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+SCALELP 'LP Use Scaled Down For Non household Uses'         Columns 104
+     Categorical Variable
+     Variable Length 1
+
+     0 = Not Used
+     1 = Scale Used
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           664            7,890,193
+     1            20              223,318
+     9         6,427           88,517,981
+
+ORIGLPC 'Source Of Estimated Cost Of LPG'                   Columns 106
+     Categorical Variable
+     Variable Length 1
+
+     Quantity = Quantity
+     Regression = Regression
+
+     1 = Company Records
+     3 = Regression-Both Quantity And Cost
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           490            5,940,655
+     3           194            2,172,856
+     9         6,427           88,517,981
+
+ORIGLPS 'Summary Code For Source Of LPG Data'               Columns 108-109
+     Categorical Variable
+     Variable Length 2
+
+      Codes 11, 12, AND 31   Apply If Some Data Are Available From the Supplier.
+      Code 13 --     Full Year Estimate From Supplier Used For Both    
+                     Quantity And Costs.
+      Code 14 --     Full Year Estimate From Supplier Used For Quantity,
+                     Cost Imputed.
+      Code 15 --     Quantity And Cost Estimate From Household.
+      Code 16 --     Quantity Estimate From Household, Cost Imputed.
+      Codes 41-43    Apply If the Authorization Form Is Signed, But No Data
+                     Were Received From the Supplier.
+      Code 41        Includes Households For Which Mail/Telephone
+                     Questionnaires Indicated That Household Did Not Use Or
+                     Did Not Pay Directly For Fuel, But Surrogate Personal
+                     Interview Household Did Use And Pay Directly For Fuel.
+
+     11 = Quantity and Cost From Data
+     12 = Quantity From Data, Cost Imputed
+     13 = Full Year Quantity and Cost From Company
+     14 = Full Year Quantity From Company, Cost Imputed
+     15 = Quantity and Cost From Household
+     16 = Quantity From Household, Cost Imputed
+     31 = Data Available-Not Used
+     41 = Household Not Identifiable
+     42 = Company Refused
+     43 = No Company Contact
+     44 = Supplier reported that the respondent no longer lives in unit 
+     51 = Authorization Form Not Signed
+     61 = Use Included In Rent
+     99 = Fuel Not Used
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     11          489            5,936,932
+     13            1                    Q
+     31           44              491,151
+     41           30              292,057
+     42            3                    Q
+     43           63              774,541
+     51           34              366,881
+     61           20              206,083
+     99        6,427           88,517,981
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+TYPELP1 'LPG Type From Supplier 1'                          Columns 111
+     Categorical Variable
+     Variable Length 1
+
+     1 = Propane
+     2 = Butane
+     5 = Other 
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           526            6,348,659
+     2             8                    Q
+     9         6,577           90,199,686
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+TYPELP2 'LPG Type From Supplier 2'                          Columns 113
+     Categorical Variable
+     Variable Length 1
+
+     1 = Propane
+     2 = Butane
+     5 = Other 
+     9 = Not Applicable 
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     9         7,111           96,631,492
+

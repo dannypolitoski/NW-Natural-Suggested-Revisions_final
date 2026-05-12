@@ -1,0 +1,18 @@
+{
+  "original_file": "Data\\Residential Energy Consumption Servey\\recs2020_public_v7.csv",
+  "original_size": 56044261,
+  "chunk_size": 52428800,
+  "num_chunks": 2,
+  "chunks": [
+    {
+      "chunk_number": 0,
+      "chunk_path": "Data\\Residential Energy Consumption Servey\\recs2020_public_v7.csv.chunk.000",
+      "chunk_size": 52428800
+    },
+    {
+      "chunk_number": 1,
+      "chunk_path": "Data\\Residential Energy Consumption Servey\\recs2020_public_v7.csv.chunk.001",
+      "chunk_size": 3615461
+    }
+  ]
+}

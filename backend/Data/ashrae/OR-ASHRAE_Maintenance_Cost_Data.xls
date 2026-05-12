@@ -1,0 +1,267 @@
+
+
+<table border="1">
+<tr>
+<td colspan=6><FONT SIZE="4" COLOR="blue">ASHRAE Maintenance Cost Query Dataset</FONT></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td colspan=4><center><u><i>Search Criteria</i></u></center></td>
+</tr>
+<tr>
+<td><B>REGION</B></td>
+<td colspan=3><center>- Pacific</td>
+</tr><tr>
+<td><B>STATE</B></td>
+<td colspan=3><center>OR</td>
+</tr>
+<tr>
+<td><B>Function</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Size (sf)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Age (years)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Height (stories)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>BOMA Class</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Location</B></td>
+<td colspan=3><center>All</td>
+</tr><tr></tr>
+<tr><TD colspan=2><B>MATCHING BUILDINGS:</B></td><td colspan=2><B><CENTER>3</CENTER></B></td></tr>
+<tr></tr>
+<tr>
+<td colspan=2></td>
+	  <td colspan=3><CENTER><I>Yearly Maintanence Costs</I></CENTER></td>
+	  <TD></td>
+	  	  <td colspan=3><CENTER><I>Maintanence Costs per SF</I></CENTER></td>
+</tr>
+
+<tr>
+
+		<td><B><center>ID</center></B></td>
+		<td><B><center>STATE</center></B></td>
+		<td><B><center>No Adjustment</center></B></td>
+		<td><B><center>CPI-U</center></B></td>
+		<td><B><center>GDP-IPD</center></B></td>
+		<td><B><center>GROSS AREA</center></B></td>
+		<td><B><center>No Adjustment</center></B></td>
+		<td><B><center>CPI-U</center></B></td>
+		<td><B><center>GDP-IPD</center></B></td>
+		<td><B><center>% HEATED</center></B></td>
+		<td><B><center>% COOLED</center></B></td>
+		<td><B><center>First Occupied Year</center></B></td>
+		<td><B><center>First Occupied Month</center></B></td>
+		<td><B><center>FUNCTION</center></B></td>
+		<td><B><center>OTHER FUNCTION</center></B></td>
+		<td><B><center>STORIES</center></B></td>
+		<td><B><center>BOMA CLASS</center></B></td>
+		<td><B><center>LOCATION</center></B></td>
+		<td><B><center>WEEKLY HOURS</center></B></td>
+		<td><B><center>ONSITE STAFF</center></B></td>
+		<td><B><center>OCCUPANCY</center></B></td>
+		<td><B><center>Month Entered</td>
+		<td><B><center>Year Entered</td>
+		<td><B><center>% Inhouse</td>
+		<td><B><center>% Contract</td>
+		<td><B><center>Cost Data Source</td>
+		<td><B><center>InHouse Labor Source</td>
+		<td><B><center>InHouse Predictive %</td>
+		<td><B><center>InHouse Preventive %</td>
+		<td><B><center>InHouse Unplanned %</td>
+		<td><B><center>InHouse % Details</td>
+		<td><B><center>InHouse Labor Hours</td>
+		<td><B><center>InHouse Labor Rate</td>
+		<td><B><center>InHouse Labor Cost</td>
+		<td><B><center>InHouse Materials Cost</td>
+		<td><B><center>InHouse Total Cost</td>
+		<td><B><center>Contract Labor Source</td>
+		<td><B><center>Contract Predictive %</td>
+		<td><B><center>Contract Preventive %</td>
+		<td><B><center>Contract Unplanned %</td>
+		<td><B><center>Contract Total Cost</td>
+
+  </tr>
+  <tr>
+
+		<td></td>
+		<td></td>
+		<td><CENTER><I>$ per year</I></CENTER></td>
+		<td><CENTER><I>$ per year</I></CENTER></td>
+		<td><CENTER><I>$ per year</I></CENTER></td>
+		<td><CENTER><I>square feet</I></CENTER></td>
+		<td><CENTER><I>$ per sf</I></CENTER></td>
+		<td><CENTER><I>$ per sf</I></CENTER></td>
+		<td><CENTER><I>$ per sf</I></CENTER></td>
+		<td></td>
+		<td></td>
+		<td><CENTER><I>year</I></CENTER></td>
+		<td><CENTER><I>month</I></CENTER></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><CENTER><I>hours</I></CENTER></td>
+		<td><CENTER><I># of Staff</I></CENTER></td>
+		<td><CENTER><I></I></CENTER></td>
+
+  </tr>
+  
+    <tr>
+
+      <td><center>358</td>
+      <td><center>OR</td>
+ 	  <td><center>$6,960</td>
+	  <td><center>$8,308</td>
+	  <td><center>$12,398</td>
+	  <td><center>58,000</td>
+  	  <td><center>$0.120</td>
+	  <td><center>$0.143</td>
+	  <td><center>$0.214</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1945</td>
+      <td><center>1</td>
+      <td><center>School (College/University)</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>359</td>
+      <td><center>OR</td>
+ 	  <td><center>$44,784</td>
+	  <td><center>$53,460</td>
+	  <td><center>$79,773</td>
+	  <td><center>248,800</td>
+  	  <td><center>$0.180</td>
+	  <td><center>$0.215</td>
+	  <td><center>$0.321</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1972</td>
+      <td><center>1</td>
+      <td><center>Lodging</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>5</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>360</td>
+      <td><center>OR</td>
+ 	  <td><center>$2,569</td>
+	  <td><center>$2,956</td>
+	  <td><center>$4,479</td>
+	  <td><center>57,915</td>
+  	  <td><center>$0.044</td>
+	  <td><center>$0.051</td>
+	  <td><center>$0.077</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1981</td>
+      <td><center>1</td>
+      <td><center>School (K-12)</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>2000</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>5</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$2,569</td>
+
+
+	
+    </tr>
+  
+</tableM

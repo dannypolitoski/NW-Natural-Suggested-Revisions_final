@@ -1,0 +1,1257 @@
+File layout for File 9 (Records are comma-delimited.  First line contains a 
+list of variables on the file.  The remaining lines contain the values of the 
+variables with fixed column positions.)
+
+Variables on all files
+
+HHID     '4-digit identification number'                    Columns 1-4
+NWEIGHT  'The Final Weight'                                 Columns 6-11
+QMAIL    'Mail Questionnaire Codes'                         Columns 13
+REGIONC  'Census Region'                                    Columns 15
+DIVISION 'Census Division'                                  Columns 17
+LRGSTATE 'Four Largest States'                              Columns 19
+CDD65    'Cooling Degree-Days to base 65, 1-93 TO 12-93'    Columns 21-24
+HDD65    'Heating Degree-Days to base 65, 1-93 TO 12-93'    Columns 26-30
+TYPEHUQ  'Type of Home: as report by Respondent'            Columns 32
+
+Variables in File 9 only.
+
+WEATHERZ 'GOVERNMENT HELPED WEATHERIZE HOME'                Columns 34
+ZWEATHER 'Imputation Flag for WEATHERZ                      Columns 36
+KNOWHEAP 'AWARE OF ENERGY ASSISTANCE PROGRAMS'              Columns 38
+ZKNOWHEA 'Imputation Flag for KNOWHEAP'                     Columns 40
+HEATAID  'GOVERNMENT HELPED PAY TO HEAT HOME'               Columns 42
+ZHEATAID 'Imputation Flag for HEATAID'                      Columns 44
+COOLAID  'GOVERNMENT HELPED PAY TO COOL HOME'               Columns 46
+ZCOOLAID 'Imputation Flag for COOLAID'                      Columns 48
+LIFELINE 'GOVERNMENT PAID OTHER HOME ENERGY COSTS'          Columns 50
+ZLIFELIN 'Imputation Flag for LIFELINE'                     Columns 52
+LIHEAPEM 'GOVERNMENT GAVE EMERGENCY SUPPLIES'               Columns 54
+ZLIHEAPE 'Imputation Flag for LIHEAPEM'                     Columns 56
+CASHAID  'GOVERNMENT GAVE HEAT AID CASH TO HOUSEHOLDER'     Columns 58
+ZCASHAID 'Imputation Flag for CASHAID'                      Columns 60
+FUELPAID 'GOVERNMENT PAYS HEAT COMPANY DIRECTLY'            Columns 62
+ZFUELPAI 'Imputation Flag for FUELPAID'                     Columns 64
+VOUCHERS 'GOVERNMENT SENDS HEAT VOUCHER'                    Columns 66
+ZVOUCHER 'Imputation Flag for VOUCHERS'                     Columns 68
+CHECK2PM 'GOVERNMENT SENDS 2-PARTY CHECK'                   Columns 70
+ZCHECK2P 'Imputation Flag for CHECK2PM'                     Columns 72
+OTHERPMT 'OTHER GOVERNMENT HELP FOR HOME HEATING'           Columns 74
+ZOTHERPM 'Imputation Flag for OTHERPMT'                     Columns 76
+GOVTAMT  'TOTAL HEAT COSTS PAID BY GOVERNMENT'              Columns 78-81
+ZGOVTAMT 'Imputation Flag for GOVTAMT'                      Columns 83 
+NOPYFIX  'UNABLE TO PAY TO REPAIR HEAT SYSTEM'              Columns 85
+ZNOPYFIX 'Imputation Flag for NOPYFIX'                      Columns 87
+NOPYFL   'UNABLE TO PAY FOR HEATING FUEL DELIVERY'          Columns 89
+ZNOPYFL  'Imputation Flag for NOPYFL'                       Columns 91
+NOPYEL   'UNABLE TO PAY UTILITY BILL'                       Columns 93
+ZNOPYEL  'Imputation Flag for NOPYEL'                       Columns 95
+NNOHEAT  'TIMES WITHOUT MAIN HEAT'                          Columns 97-98
+ZNNOHEAT 'Imputation Flag for NNOHEAT'                      Columns 100
+HRSNOHT  'TOTAL HRS OR DAYS W/OUT HEAT'                     Columns 102-104
+ZHRSNOHT 'Imputation Flag for HRSNOHT'                      Columns 106
+NOHOCT   'NO HEAT FOR OCTOBER 1992'                         Columns 108
+ZNOHOCT  'Imputation Flag for NOHOCT'                       Columns 110
+NOHNOV   'NO HEAT FOR NOVEMBER 1992'                        Columns 112
+ZNOHNOV  'Imputation Flag for NOHNOV'                       Columns 114
+NOHDEC   'NO HEAT FOR DECEMBER 1992'                        Columns 116
+ZNOHDEC  'Imputation Flag for NOHDEC'                       Columns 118
+NOHJAN   'NO HEAT FOR JANUARY 1993'                         Columns 120
+ZNOHJAN  'Imputation Flag for NOHJAN'                       Columns 122
+NOHFEB   'NO HEAT FOR FEBRUARY 1993'                        Columns 124
+ZNOHFEB  'Imputation Flag for NOHFEB'                       Columns 126
+NOHMAR   'NO HEAT FOR MARCH 1993'                           Columns 128
+ZNOHMAR  'Imputation Flag for NOHMAR'                       Columns 130
+NOHAPR   'NO HEAT FOR APRIL 1993'                           Columns 132
+ZNOHAPR  'Imputation Flag for NOHAPR'                       Columns 134
+NOHMAY   'NO HEAT FOR MAY 1993'                             Columns 136
+ZNOHMAY  'Imputation Flag for NOHMAY'                       Columns 138
+NOHJUN   'NO HEAT FOR JUNE 1993'                            Columns 140
+ZNOHJUN  'Imputation Flag for NOHJUN'                       Columns 142
+NOHJUL   'NO HEAT FOR JULY 1993'                            Columns 144
+ZNOHJUL  'Imputation Flag for NOHJUL'                       Columns 146
+NOHAUG   'NO HEAT FOR AUGUST 1993'                          Columns 148
+ZNOHAUG  'Imputation Flag for NOHAUG'                       Columns 150
+NOHSEP   'NO HEAT FOR SEPTEMBER 1993'                       Columns 152
+ZNOHSEP  'Imputation Flag for NOHSEP'                       Columns 154
+OTHERWAY 'ABLE TO HEAT HOME OTHER WAY'                      Columns 156
+ZOTHERWA 'Imputation Flag for OTHERWAY'                     Columns 158
+
+Codebook for File 9
+
+Variables HHID, NWEIGHT, QMAIL, REGIONC, DIVISION, LRGSTATE CDD65,
+HDD65, and TYPEHUQ are on all files.
+
+HHID '4-digit identification number'                       Columns 1-4
+  Included in all files
+  Numerical Variable
+  Variable length: 4
+
+The variable HHID will be on all files.  Each respondent is assigned
+an unique value of HHID.  It can be used to merge data from one file
+with data from another file.
+
+     Minimum Value: 1,001
+     Maximum Value: 8,111
+
+NWEIGHT 'The Final Weight'                                  Columns 6-11
+  Included in all files
+  Numerical Variable
+  Variable length: 6
+
+     Minimum Value:  2,096
+     Maximum Value: 78,559
+
+The sample design for RECS is not a simple random sample. Consequently,
+to estimate the number or percent of households/housing units with a
+certain characteristic, the sampling weight should be used.  The
+variable NWEIGHT is the sampling weight for the observation.  It is
+approximately the inverse of the probability of selection.  It gives
+the number of households that the response represents in the sample. 
+For most categorical variables, the codebooks contain both the
+unweighted frequency and the weighted frequency.  The unweighted
+frequency gives the number of observations, the weighted frequency
+gives survey estimate of the number of households/housing units for
+each possible value of the variable.  The weighted frequencies are
+rounded to the nearest 100,000 households.  This is the limit of the
+accuracy for RECS.  When the unweighted frequency is less than 10 or
+the weighted frequency is less than 150,000; then weighted frequency is
+suppressed.  A 'Q' is placed in the frequency to denote that the number
+is suppressed.  This indicates that there are too few observation upon
+which to determine an accurate estimate.
+
+QMAIL 'Mail Questionnaire Codes'                          Columns 13
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     1 = Completed
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           115           1,500,000
+     9         6,996          95,100,000
+
+When QMAIL equals 1, the household and housing unit data was
+not obtained via a personal interview.  The data were obtained using a
+shortened mail questionnaire.  A hot-deck imputation procedure was used
+to match each mail respondent to a personal interview respondent.  The
+critical matching variables were FUELHEAT, FUELH2O, TYPECOOL, TYPEHUQ,
+and REGIONC.  Additional variables used in a scoring function to
+determine the best match were MONEYPY, NHSLDMEM, VEHICLES, HHAGE, and
+TOTROOMS.  The remaining household/housing unit characteristics for the
+mail respondents were determined by the values of the matched personal
+interview respondent.  The energy consumption and expenditures data for
+the mail respondents was based upon data obtained from their energy
+suppliers.  It was not imputed using a hot deck procedure.
+
+Questionnaire data from personal interview respondents sometime is
+missing and needs to be imputed.  'Z' variables are used to indicate
+the presence of imputed data.  For example, if ZURBRUR = 0 then URBRUR
+was not imputed.  If ZURBRUR = 1 then URBRUR was imputed.
+
+Census Division/Region:  A geographic area consisting of several States 
+defined by the U.S. Department of Commerce, Bureau of the Census.  The States 
+are grouped into nine divisions and four regions.
+
+Region    Division            States 
+
+Northeast New England         Connecticut, Maine, Massachusetts, 
+                              New Hampshire, Vermont, and Rhode Island
+
+          Middle Atlantic     New Jersey, New York, and Pennsylvania
+
+Midwest   East North Central  Illinois, Indiana, Michigan, 
+                              Ohio, and Wisconsin
+
+          West North Central  Iowa, Kansas, Minnesota, Missouri,
+                              Nebraska, North Dakota, and South Dakota
+
+South     South Atlantic      Delaware, the District of Columbia,
+                              Florida, Georgia, Maryland, North 
+                              Carolina, South Carolina, Virginia,
+                              and West Virginia 
+
+          East South Central  Alabama, Kentucky, Mississippi, 
+                              and Tennessee
+
+          West South Central  Arkansas, Louisiana, Oklahoma, 
+                              and Texas
+
+West      Mountain            Arizona, Colorado, Idaho, Montana,
+                              Nevada, New Mexico, Utah, and Wyoming
+
+          Pacific             Alaska, California, Hawaii, Oregon, 
+                              and Washington
+
+REGIONC 'Census Region'                                     Columns 15
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     1 = Northeast Census Region
+     2 = Midwest Census Region
+     3 = South Census Region
+     4 = West Census Region
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         1,531          19,500,000
+     2         1,541          23,300,000
+     3         2,494          33,500,000
+     4         1,545          20,400,000
+
+DIVISION 'Census Division'                                  Columns 17
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+ 
+     1 = New England Census Division
+     2 = Middle Atlantic Census Division
+     3 = East North Central Census Division
+     4 = West North Central Census Division
+     5 = South Atlantic Census Division
+     6 = East South Central Census Division
+     7 = West South Central Census Division
+     8 = Mountain Census Division
+     9 = Pacific Census Division
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           567           5,100,000
+     2           964          14,400,000
+     3           970          16,400,000
+     4           571           6,900,000
+     5         1,232          17,400,000
+     6           556           6,000,000
+     7           706          10,100,000
+     8           550           5,400,000
+     9           995          15,000,000
+
+LRGSTATE 'Four Largest States'                                Columns 19
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     0 = Other
+     1 = New York State
+     2 = California
+     3 = Texas
+     4 = Florida
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,133          66,700,000
+     1           475           6,800,000
+     2           699          11,100,000
+     3           437           6,400,000
+     4           367           5,600,000
+
+CDD65 and HDD65 are weather data.  The values of CDD65 and HDD65 were based 
+upon data obtained from the NOAA.  A random error was added to both HDD65 and 
+CDD65 to mask the location of the weather station from which the data was 
+obtained.
+
+CDD65 'Cooling Degree-Days to base 65, 1-93 TO 12-93'        Columns 21-24
+  Included in all files
+  Numerical Variable 
+  Variable length 4
+
+     Minimum Value:     0
+     Maximum Value: 5,656
+
+HDD65 'Heating Degree-Days to base 65, 1-93 TO 12-93'        Columns 26-30
+  Included in all files
+  Numerical Variable 
+  Variable length 5
+
+     Minimum Value:      0
+     Maximum Value: 11,725
+
+Cooling degree days are the number of degrees the average daily
+temperature (ADT) is above the base temperature.  Heating degree days
+are the number of degrees the ADT is below the base temperature.  To
+calculate daily degree days (base 65 degrees):
+
+          ADT = (daily high + daily low)/2
+
+          CDD(daily)     = 0            if ADT <= 65
+                         = ADT - 65     if ADT > 65
+
+          HDD(daily)     = 0            if ADT >= 65
+                         = 65 - ADT     if ADT < 65.
+
+Annual degrees days are calculated by summing the daily degree days. 
+The .5 is carried over in the summation.  The total is rounded up after
+the summation.
+
+TYPEHUQ 'Type of Home: as report by Respondent'               Columns 32
+  Included in all files
+  Categorical Variable
+  Variable Length: 1
+  Question (A-1) 
+  Question same as RECS90
+  Imputed for nonresponse
+
+     1 = 'Mobile Home'
+     2 = 'Single-Family detached'
+     3 = 'Single-Family Attached'
+     4 = 'Apartment in Building containing 2-4 units'
+     5 = 'Apartment in Building Containing 5 or more units'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1         464           5,600,000
+       2       4,385          59,500,000
+       3         547           7,300,000
+       4         563           8,000,000
+       5       1,152          16,200,000
+
+The remaining variables are present only in File 9.
+
+WEATHERZ  'GOVERNMENT HELPED WEATHERIZE HOME'              Columns 34
+  Categorical Variable 
+  Variable Length 1
+  Question (M-1)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,463            47,700,000
+       1          67               900,000
+       9       3,581            48,000,000
+
+ZWEATHER 'Imputation Flag for WEATHERZ                     Columns 36
+  Categorical Variable 
+  Variable length 1
+
+   0 = WEATHERZ not imputed
+   1 = WEATHERZ imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,898          93,600,000
+     1         213           3,100,000
+
+KNOWHEAP  'AWARE OF ENERGY ASSISTANCE PROGRAMS'             Columns 38
+  Categorical Variable 
+  Variable Length 1
+  Question (M-2)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       1,978            27,300,000
+       1       1,552            21,300,000
+       9       3,581            48,000,000
+
+ZKNOWHEA 'Imputation Flag for KNOWHEAP'                     Columns 40
+  Categorical Variable 
+  Variable length 1
+
+   0 = KNOWHEAP not imputed
+   1 = KNOWHEAP imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,892          93,500,000
+     1         219           3,200,000
+
+HEATAID  'GOVERNMENT HELPED PAY TO HEAT HOME'               Columns 42
+  Categorical Variable 
+  Variable Length 1
+  Question (M-3A)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,240            44,800,000
+       1         290             3,800,000
+       9       3,581            48,000,000
+
+ZHEATAID 'Imputation Flag for HEATAID'                     Columns 44
+  Categorical Variable 
+  Variable length 1
+
+   0 = HEATAID not imputed
+   1 = HEATAID imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,912          93,800,000
+     1         199           2,900,000
+
+COOLAID  'GOVERNMENT HELPED PAY TO COOL HOME'               Columns 46
+  Categorical Variable 
+  Variable Length 1
+  Question (M-3B)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,492            48,100,000
+       1          38               500,000
+       9       3,581            48,000,000
+
+ZCOOLAID 'Imputation Flag for COOLAID'                      Columns 48
+  Categorical Variable 
+  Variable length 1
+
+   0 = COOLAID not imputed
+   1 = COOLAID imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,915          93,800,000
+     1         196           2,800,000
+
+LIFELINE  'GOVERNMENT PAID OTHER HOME ENERGY COSTS'         Columns 50
+  Categorical Variable 
+  Variable Length 1
+  Question (M-3C)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,482            47,900,000
+       1          48               700,000
+       9       3,581            48,000,0000
+
+ZLIFELIN 'Imputation Flag for LIFELINE'                     Columns 52
+  Categorical Variable 
+  Variable length 1
+
+   0 = LIFELINE not imputed
+   1 = LIFELINE imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,911          93,800,000
+     1         200           2,900,000
+
+LIHEAPEM  'GOVERNMENT GAVE EMERGENCY SUPPLIES'              Columns 54
+  Categorical Variable 
+  Variable Length 1
+  Question (M-3D)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,521            48,500,000
+       1           9                     Q
+       9       3,581            48,000,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZLIHEAPE 'Imputation Flag for LIHEAPEM'                    Columns 56
+  Categorical Variable 
+  Variable length 1
+
+   0 = LIHEAPEM not imputed
+   1 = LIHEAPEM imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,908          93,700,000
+     1         203           2,900,000
+
+CASHAID  'GOVERNMENT GAVE HEAT AID CASH TO HOUSEHOLDER'    Columns 58
+  Categorical Variable 
+  Variable Length 1
+  Question (M-5A)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         233             3,000,000
+       1          57               700,000
+       9       6,821            92,900,000
+
+ZCASHAID 'Imputation Flag for CASHAID'                     Columns 60
+  Categorical Variable 
+  Variable length 1
+
+   0 = CASHAID not imputed
+   1 = CASHAID imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,095          96,400,0000
+     1          16             200,000
+
+FUELPAID  'GOVERNMENT PAYS HEAT COMPANY DIRECTLY'           Columns 62
+  Categorical Variable 
+  Variable Length 1
+  Question (M-5B)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0          85             1,100,000
+       1         205             2,700,000
+       9       6,821            92,900,000
+
+ZFUELPAI 'Imputation Flag for FUELPAID'                     Columns 64
+  Categorical Variable 
+  Variable length 1
+
+   0 = FUELPAID not imputed
+   1 = FUELPAID imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,092          96,400,000
+     1          19             200,000
+
+VOUCHERS  'GOVERNMENT SENDS HEAT VOUCHER'                   Columns 66
+  Categorical Variable 
+  Variable Length 1
+  Question (M-5C)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         281             3,700,000
+       1           9                     Q
+       9       6,821            92,900,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZVOUCHER 'Imputation Flag for VOUCHERS'                     Columns 68
+  Categorical Variable 
+  Variable length 1
+
+   0 = VOUCHERS not imputed
+   1 = VOUCHERS imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,093          96,400,000
+     1          18             200,000
+
+CHECK2PM  'GOVERNMENT SENDS 2-PARTY CHECK'                  Columns 70
+  Categorical Variable 
+  Variable Length 1
+  Question (M-5D)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         276             3,600,000
+       1          14               200,000
+       9       6,821            92,900,000
+
+ZCHECK2P 'Imputation Flag for CHECK2PM'                      Columns 72
+  Categorical Variable 
+  Variable length 1
+
+   0 = CHECK2PM not imputed
+   1 = CHECK2PM imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,095          96,400,000
+     1          16             200,000
+
+OTHERPMT  'OTHER GOVERNMENT HELP FOR HOME HEATING'          Columns 74
+  Categorical Variable 
+  Variable Length 1
+  Question (M-5E)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         282             3,600,000
+       1           8                     Q
+       9       6,821            92,900,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZOTHERPM 'Imputation Flag for OTHERPMT'                     Columns 76
+  Categorical Variable 
+  Variable length 1
+
+   0 = OTHERPMT not imputed
+   1 = OTHERPMT imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,054          95,900,000
+     1          57             700,000
+
+GOVTAMT  'TOTAL HEAT COSTS PAID BY GOVERNMENT'              Columns 78-81
+  Numerical Variable
+  Variable length: 4
+  Question (M-6)
+  Question same as RECS90                                          
+  Imputed for nonresponse
+  Numbers represent dollar amounts
+  with no implied decimals.
+
+  RANGE IS:
+  9 TO 1440                                                
+  9999 = NOT APPLICABLE                                              
+
+              Number         Weighted
+              Of             Number of
+    Value     Observations   Households
+  9 TO 1440     290           3,800,000
+  9999        6,821          92,900,000
+
+ZGOVTAMT 'Imputation Flag for GOVTAMT'                      Columns 83
+  Categorical Variable 
+  Variable length 1
+
+   0 = GOVTAMT not imputed
+   1 = GOVTAMT imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,024          95,400,000
+     1          87           1,200,000
+
+NOPYFIX  'UNABLE TO PAY TO REPAIR HEAT SYSTEM'              Columns 85
+  Categorical Variable 
+  Variable Length 1
+  Question (M-7A)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,460            47,600,000
+       1          70             1,000,000
+       9       3,581            48,000,000
+
+ZNOPYFIX 'Imputation Flag for NOPYFIX'                      Columns 87
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOPYFIX not imputed
+   1 = NOPYFIX imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,909          93,800,000
+     1         202           2,900,000
+
+NOPYFL  'UNABLE TO PAY FOR HEATING FUEL DELIVERY'           Columns 89
+  Categorical Variable 
+  Variable Length 1
+  Question (M-7B)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,482            47,900,000
+       1          48               700,000
+       9       3,581            48,000,000
+
+ZNOPYFL 'Imputation Flag for NOPYFL'                      Columns 91
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOPYFL not imputed
+   1 = NOPYFL imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,031          95,600,000
+     1          80           1,100,000
+
+NOPYEL  'UNABLE TO PAY UTILITY BILL'                       Columns 93
+  Categorical Variable 
+  Variable Length 1
+  Question (M-7C)
+  Question different from RECS90 - has same name
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0       3,463            47,700,000
+       1          67               900,000
+       9       3,581            48,000,000
+
+ZNOPYEL 'Imputation Flag for NOPYEL'                      Columns 95
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOPYEL not imputed
+   1 = NOPYEL imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       6,940          94,200,000
+     1         171           2,400,000
+
+NNOHEAT  'TIMES WITHOUT MAIN HEAT'                          Columns 97-98
+  Numerical Variable
+  Variable length: 2
+  Question (M-8)
+  Question same as RECS90                                          
+  Imputed for nonresponse
+
+  RANGE IS:
+  1 TO 93
+
+  93 = 93 TIMES OR MORE
+  99 = NOT APPLICABLE                                              
+
+              Number         Weighted
+              Of             Number of
+    Value     Observations   Households
+   1 TO 93      151           2,000,000
+   99         6,960          94,600,000
+
+ZNNOHEAT 'Imputation Flag for NNOHEAT'                      Columns 100
+  Categorical Variable 
+  Variable length 1
+
+   0 = NNOHEAT not imputed
+   1 = NNOHEAT imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,082          96,300,000
+     1          29             400,000
+
+HRSNOHT  'TOTAL HRS OR DAYS W/OUT HEAT'                     Columns 102-104
+  Numerical Variable
+  Variable length: 3
+  Question (M-9)
+  Question same as RECS90                                          
+  Imputed for nonresponse
+
+  RANGE IS:
+  2 TO 993
+
+  993 = 993 HOURS OR MORE
+  999 = NOT APPLICABLE                                              
+
+              Number         Weighted
+              Of             Number of
+    Value     Observations   Households
+   2 TO 993     151           2,000,000
+   999        6,960          94,600,000
+
+ZHRSNOHT 'Imputation Flag for HRSNOHT'                      Columns 106
+  Categorical Variable 
+  Variable length 1
+
+   0 = HRSNOHT not imputed
+   1 = HRSNOHT imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,074          96,200,000
+     1          37             500,000
+
+NOHOCT  'NO HEAT FOR OCTOBER 1992'                          Columns 108
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 - NOHOCT89 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         120             1,600,000
+       1          31               400,000
+       9       6,960            94,600,000
+
+ZNOHOCT 'Imputation Flag for NOHOCT'                        Columns 110
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHOCT not imputed
+   1 = NOHOCT imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHNOV  'NO HEAT FOR NOVEMBER 1992'                         Columns 112
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 - NOHNOV89 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         111             1,500,000
+       1          40               500,000
+       9       6,960            94,600,000
+
+ZNOHNOV 'Imputation Flag for NOHNOV'                        Columns 114
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHNOV not imputed
+   1 = NOHNOV imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHDEC  'NO HEAT FOR DECEMBER 1992'                         Columns 116
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 - NOHDEC89 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         114             1,600,000
+       1          37               400,000
+       9       6,960            94,600,000
+
+ZNOHDEC 'Imputation Flag for NOHDEC'                        Columns 118
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHDEC not imputed
+   1 = NOHDEC imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHJAN  'NO HEAT FOR JANUARY 1993'                          Columns 120
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHJAN90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         103             1,400,000
+       1          48               700,000
+       9       6,960            94,600,000
+
+ZNOHJAN 'Imputation Flag for NOHJAN'                        Columns 122
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHJAN not imputed
+   1 = NOHJAN imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHFEB  'NO HEAT FOR FEBRUARY 1993'                         Columns 124
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHFEB90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         122             1,600,000
+       1          29               400,000
+       9       6,960            94,600,000
+
+ZNOHFEB 'Imputation Flag for NOHFEB'                        Columns 126
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHFEB not imputed
+   1 = NOHFEB imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          960400,000
+     1          51             700,000
+
+NOHMAR  'NO HEAT FOR MARCH 1993'                            Columns 128
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHMAR90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         133             1,800,000
+       1          18               200,000
+       9       6,960            94,600,000
+
+ZNOHMAR 'Imputation Flag for NOHMAR'                        Columns 130
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHMAR not imputed
+   1 = NOHMAR imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHAPR  'NO HEAT FOR APRIL 1993'                             Columns 132
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHAPR90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         142             1,900,000
+       1           9                     Q
+       9       6,960            94,600,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZNOHAPR 'Imputation Flag for NOHAPR'                        Columns 134
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHAPR not imputed
+   1 = NOHAPR imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHMAY  'NO HEAT FOR MAY 1993'                              Columns 136
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHMAY90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         139             1,900,000
+       1          12               100,000
+       9       6,960            94,600,000
+
+ZNOHMAY 'Imputation Flag for NOHMAY'                        Columns 138
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHMAY not imputed
+   1 = NOHMAY imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHJUN  'NO HEAT FOR JUNE 1993'                             Columns 140
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHJUN90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         133             1,800,000
+       1          18               200,000
+       9       6,960            94,600,000
+
+ZNOHJUN 'Imputation Flag for NOHJUN'                        Columns 142
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHJUN not imputed
+   1 = NOHJUN imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHJUL  'NO HEAT FOR JULY 1993'                             Columns 144
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHJUL90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         135             1,800,000
+       1          16               200,000
+       9       6,960            94,600,000
+
+ZNOHJUL 'Imputation Flag for NOHJUL'                        Columns 146
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHJUL not imputed
+   1 = NOHJUL imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHAUG  'NO HEAT FOR AUGUST 1993'                           Columns 148
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHAUG90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         137             1,800,000
+       1          14               200,000
+       9       6,960            94,600,000
+
+ZNOHAUG 'Imputation Flag for NOHAUG'                        Columns 150
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHAUG not imputed
+   1 = NOHAUG imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+NOHSEP  'NO HEAT FOR SEPTEMBER 1993'                        Columns 152
+  Categorical Variable 
+  Variable Length 1
+  Question (M-10)
+  Question same as RECS90 – NOHSEP90 in RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         123             1,600,000
+       1          28               400,000
+       9       6,960            94,600,000
+
+ZNOHSEP 'Imputation Flag for NOHSEP'                        Columns 154
+  Categorical Variable 
+  Variable length 1
+
+   0 = NOHSEP not imputed
+   1 = NOHSEP imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,060          96,000,000
+     1          51             700,000
+
+OTHERWAY  'ABLE TO HEAT HOME OTHER WAY'                     Columns 156
+  Categorical Variable 
+  Variable Length 1
+  Question (M-11)
+  Question same as RECS90
+  Imputed for nonresponse
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE' 
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0          60               800,000
+       1          91             1,200,000
+       9       6,960            94,600,000
+
+ZOTHERWA 'Imputation Flag for OTHERWAY'                     Columns 158
+  Categorical Variable 
+  Variable length 1
+
+   0 = OTHERWAY not imputed
+   1 = OTHERWAY imputed
+
+             Number         Weighted
+             Of             Number of
+   Value     Observations   Households
+     0       7,088          96,300,000
+     1          23             300,000

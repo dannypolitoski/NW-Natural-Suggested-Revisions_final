@@ -1,0 +1,15 @@
+Schedule,Type,Description,Rate/Value,Unit
+2,Residential,Customer Charge (Single Family),10.00,Month
+2,Residential,Customer Charge (Multi Family),8.00,Month
+2,Residential,Usage Charge,1.41220,per therm
+3,Basic Firm Sales,Customer Charge,10.00,Month
+3,Basic Firm Sales,Usage Charge (Commercial),1.23970,per therm
+3,Basic Firm Sales,Usage Charge (Industrial),1.08572,per therm
+31,Non-Res Firm Sales,Customer Charge,325.00,Month
+32,Large Vol Firm Sales,Customer Charge,675.00,Month
+32,Large Vol Firm Sales,Volumetric (1st 10k therms),0.67950,per therm
+32,Large Vol Firm Sales,Pipeline Capacity (per MDDV),1.47,Charge
+33,High-Volume Trans,Customer Charge,38000.00,Month
+33,High-Volume Trans,Transportation Charge,250.00,Month
+33,High-Volume Trans,Volumetric (All therms),0.06550,per therm
+T,Penalty,Unauthorized Use Violation,10.00,per therm

@@ -1,0 +1,145 @@
+Age,Reservation,Year,Population,Source
+0-4,Grand Ronde,2030,31,Forecast
+ 5-9,Grand Ronde,2030,43,Forecast
+ 10-14,Grand Ronde,2030,71,Forecast
+15-19,Grand Ronde,2030,61,Forecast
+20-24,Grand Ronde,2030,23,Forecast
+25-29,Grand Ronde,2030,57,Forecast
+30-34,Grand Ronde,2030,34,Forecast
+35-39,Grand Ronde,2030,55,Forecast
+40-44,Grand Ronde,2030,46,Forecast
+45-49,Grand Ronde,2030,31,Forecast
+50-54,Grand Ronde,2030,32,Forecast
+55-59,Grand Ronde,2030,31,Forecast
+60-64,Grand Ronde,2030,33,Forecast
+65-69,Grand Ronde,2030,53,Forecast
+70-74,Grand Ronde,2030,53,Forecast
+75-79,Grand Ronde,2030,36,Forecast
+80-84,Grand Ronde,2030,8,Forecast
+85+,Grand Ronde,2030,8,Forecast
+0-4,Celilo Village,2030,3,Forecast
+ 5-9,Celilo Village,2030,8,Forecast
+ 10-14,Celilo Village,2030,11,Forecast
+15-19,Celilo Village,2030,6,Forecast
+20-24,Celilo Village,2030,6,Forecast
+25-29,Celilo Village,2030,4,Forecast
+30-34,Celilo Village,2030,2,Forecast
+35-39,Celilo Village,2030,5,Forecast
+40-44,Celilo Village,2030,4,Forecast
+45-49,Celilo Village,2030,7,Forecast
+50-54,Celilo Village,2030,2,Forecast
+55-59,Celilo Village,2030,4,Forecast
+60-64,Celilo Village,2030,5,Forecast
+65-69,Celilo Village,2030,1,Forecast
+70-74,Celilo Village,2030,0,Forecast
+75-79,Celilo Village,2030,2,Forecast
+80-84,Celilo Village,2030,0,Forecast
+85+,Celilo Village,2030,0,Forecast
+0-4,Grand Ronde,2020,29,Estimate
+ 5-9,Grand Ronde,2020,46,Estimate
+ 10-14,Grand Ronde,2020,62,Estimate
+15-19,Grand Ronde,2020,53,Estimate
+20-24,Grand Ronde,2020,24,Estimate
+25-29,Grand Ronde,2020,50,Estimate
+30-34,Grand Ronde,2020,31,Estimate
+35-39,Grand Ronde,2020,41,Estimate
+40-44,Grand Ronde,2020,32,Estimate
+45-49,Grand Ronde,2020,27,Estimate
+50-54,Grand Ronde,2020,30,Estimate
+55-59,Grand Ronde,2020,29,Estimate
+60-64,Grand Ronde,2020,32,Estimate
+65-69,Grand Ronde,2020,53,Estimate
+70-74,Grand Ronde,2020,33,Estimate
+75-79,Grand Ronde,2020,20,Estimate
+80-84,Grand Ronde,2020,6,Estimate
+85+,Grand Ronde,2020,6,Estimate
+0-4,Celilo Village,2020,6,Estimate
+ 5-9,Celilo Village,2020,10,Estimate
+ 10-14,Celilo Village,2020,10,Estimate
+15-19,Celilo Village,2020,10,Estimate
+20-24,Celilo Village,2020,9,Estimate
+25-29,Celilo Village,2020,8,Estimate
+30-34,Celilo Village,2020,2,Estimate
+35-39,Celilo Village,2020,5,Estimate
+40-44,Celilo Village,2020,3,Estimate
+45-49,Celilo Village,2020,5,Estimate
+50-54,Celilo Village,2020,2,Estimate
+55-59,Celilo Village,2020,5,Estimate
+60-64,Celilo Village,2020,6,Estimate
+65-69,Celilo Village,2020,1,Estimate
+70-74,Celilo Village,2020,0,Estimate
+75-79,Celilo Village,2020,1,Estimate
+80-84,Celilo Village,2020,2,Estimate
+85+,Celilo Village,2020,0,Estimate
+0-4,Grand Ronde,2010,49,Estimate
+ 5-9,Grand Ronde,2010,30,Estimate
+ 10-14,Grand Ronde,2010,19,Estimate
+15-19,Grand Ronde,2010,36,Estimate
+20-24,Grand Ronde,2010,27,Estimate
+25-29,Grand Ronde,2010,44,Estimate
+30-34,Grand Ronde,2010,16,Estimate
+35-39,Grand Ronde,2010,11,Estimate
+40-44,Grand Ronde,2010,31,Estimate
+45-49,Grand Ronde,2010,31,Estimate
+50-54,Grand Ronde,2010,18,Estimate
+55-59,Grand Ronde,2010,25,Estimate
+60-64,Grand Ronde,2010,22,Estimate
+65-69,Grand Ronde,2010,30,Estimate
+70-74,Grand Ronde,2010,17,Estimate
+75-79,Grand Ronde,2010,12,Estimate
+80-84,Grand Ronde,2010,9,Estimate
+85+,Grand Ronde,2010,7,Estimate
+0-4,Celilo Village,2010,9,Estimate
+ 5-9,Celilo Village,2010,7,Estimate
+ 10-14,Celilo Village,2010,10,Estimate
+15-19,Celilo Village,2010,12,Estimate
+20-24,Celilo Village,2010,6,Estimate
+25-29,Celilo Village,2010,5,Estimate
+30-34,Celilo Village,2010,4,Estimate
+35-39,Celilo Village,2010,3,Estimate
+40-44,Celilo Village,2010,4,Estimate
+45-49,Celilo Village,2010,4,Estimate
+50-54,Celilo Village,2010,1,Estimate
+55-59,Celilo Village,2010,4,Estimate
+60-64,Celilo Village,2010,3,Estimate
+65-69,Celilo Village,2010,0,Estimate
+70-74,Celilo Village,2010,2,Estimate
+75-79,Celilo Village,2010,0,Estimate
+80-84,Celilo Village,2010,0,Estimate
+85+,Celilo Village,2010,0,Estimate
+0-4,Grand Ronde,2000,3,Estimate
+ 5-9,Grand Ronde,2000,8,Estimate
+ 10-14,Grand Ronde,2000,2,Estimate
+15-19,Grand Ronde,2000,1,Estimate
+20-24,Grand Ronde,2000,1,Estimate
+25-29,Grand Ronde,2000,7,Estimate
+30-34,Grand Ronde,2000,8,Estimate
+35-39,Grand Ronde,2000,2,Estimate
+40-44,Grand Ronde,2000,2,Estimate
+45-49,Grand Ronde,2000,6,Estimate
+50-54,Grand Ronde,2000,4,Estimate
+55-59,Grand Ronde,2000,3,Estimate
+60-64,Grand Ronde,2000,3,Estimate
+65-69,Grand Ronde,2000,1,Estimate
+70-74,Grand Ronde,2000,2,Estimate
+75-79,Grand Ronde,2000,2,Estimate
+80-84,Grand Ronde,2000,0,Estimate
+85+,Grand Ronde,2000,0,Estimate
+0-4,Celilo Village,2000,4,Estimate
+ 5-9,Celilo Village,2000,6,Estimate
+ 10-14,Celilo Village,2000,7,Estimate
+15-19,Celilo Village,2000,2,Estimate
+20-24,Celilo Village,2000,2,Estimate
+25-29,Celilo Village,2000,3,Estimate
+30-34,Celilo Village,2000,1,Estimate
+35-39,Celilo Village,2000,5,Estimate
+40-44,Celilo Village,2000,1,Estimate
+45-49,Celilo Village,2000,3,Estimate
+50-54,Celilo Village,2000,2,Estimate
+55-59,Celilo Village,2000,3,Estimate
+60-64,Celilo Village,2000,2,Estimate
+65-69,Celilo Village,2000,1,Estimate
+70-74,Celilo Village,2000,0,Estimate
+75-79,Celilo Village,2000,0,Estimate
+80-84,Celilo Village,2000,1,Estimate
+85+,Celilo Village,2000,1,Estimate

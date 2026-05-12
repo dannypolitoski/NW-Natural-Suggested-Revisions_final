@@ -1705,9 +1705,9 @@
       });
     }
 
-    if (hasIrp) drawLine(primaryIrp, UPC_LINE_COLORS.irp, true, 2);
     drawLine(primaryUpc, UPC_LINE_COLORS.primary, false, 3);
     if (compareUpc) drawLine(compareUpc, UPC_LINE_COLORS.compare, false, 3);
+    if (hasIrp) drawLine(primaryIrp, UPC_LINE_COLORS.irp, true, 2);
 
     // Legend
     legend.innerHTML = "";

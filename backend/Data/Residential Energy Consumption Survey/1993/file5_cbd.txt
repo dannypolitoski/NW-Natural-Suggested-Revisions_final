@@ -1,0 +1,2827 @@
+File layout for File 5 (Records are comma-delimited.  First line contains a 
+list of variables on the file.  The remaining lines contain the values of the 
+variables with fixed column positions.)
+
+Variables on all files
+
+HHID     '4-digit identification number'                    Columns 1-4
+NWEIGHT  'The Final Weight'                                 Columns 6-11
+QMAIL    'Mail Questionnaire Codes'                         Columns 13
+REGIONC  'Census Region'                                    Columns 15
+DIVISION 'Census Division'                                  Columns 17
+LRGSTATE 'Four Largest States'                              Columns 19
+CDD65    'Cooling Degree-Days to base 65, 1-93 TO 12-93'    Columns 21-24
+HDD65    'Heating Degree-Days to base 65, 1-93 TO 12-93'    Columns 26-30
+TYPEHUQ  'Type of Home: as report by Respondent'            Columns 32
+
+Variables in File 5 only.
+
+ADQINSUL 'How well insulated is home'                       Columns 34
+ZADQINSU 'Imputation Flag for ADQINSUL'                     Columns 36
+HINATTIC 'Have roof/ceiling insulation'                     Columns 38
+ZHINATTI 'Imputation Flag for HINATTIC'                     Columns 40
+WALLINS  'Insulation in outside walls'                      Columns 42
+ZWALLINS 'Imputation Flag for WALLINS'                      Columns 44
+WATERINS 'Hot water heater insulated'                       Columns 46
+ZWATERIN 'Imputation Flag for WATERINS'                     Columns 48
+PIPEINS  'Hot water pipes insulated'                        Columns 50
+ZPIPEINS 'Imputation Flag for PIPEINS'                      Columns 52
+DUCTS    'Heat & cool ducts insulated'                      Columns 54
+ZDUCTS   'Imputation Flag for DUCTS'                        Columns 56
+STRIP    'Have weather stripping'                           Columns 58
+ZSTRIP   'Imputation Flag for STRIP'                        Columns 60
+CAULKADD 'Caulking present in home'                         Columns 62
+ZCAULKAD 'Imputation Flag for CAULKADD'                     Columns 64
+SETBACK  'Auto set-back/clock thermo'                       Columns 66
+ZSETBACK 'Imputation Flag for SETBACK'                      Columns 68
+EQPTUNUP 'Regular maintenance of heating equipment'         Columns 70
+ZEQPTUNU 'Imputation Flag for EQPTUNUP'                     Columns 72
+TREESHAD 'Trees shade home'                                 Columns 74
+ZTREESHA 'Imputation Flag for TREESHAD'                     Columns 76
+KLOWE    'Have heard of low-e glass'                        Columns 78
+ZKLOWE   'Imputation Flag for KLOWE'                        Columns 80
+ULOWE    'Use low-e window glass'                           Columns 82
+ZULOWE   'Imputation Flag for ULOWE'                        Columns 84
+KINSTWH  'Heard of point of use water heater'               Columns 86
+ZKINSTWH 'Imputation Flag for KINSTWH'                      Columns 88
+UINSTWH  'use pt of use water heater'                       Columns 90
+ZUINSTWH 'Imputation Flag for UINSTWH'                      Columns 92
+KGRUNDHP 'Heard of ground-source heat pump'                 Columns 94
+ZKGRUNDH 'Imputation Flag for KGRUNDHP'                     Columns 96
+UGRUNDHP 'Use ground-source heat pump'                      Columns 98
+ZUGRUNDH 'Imputation Flag for KGRUNDHP'                     Columns 100
+KWATERHP 'Heard of water-source heat pump'                  Columns 102
+ZKWATERH 'Imputation Flag for KWATERHP'                     Columns 104
+UWATERHP 'Use water-source heat pump'                       Columns 106
+ZUWATERH 'Imputation Flag for UWATERHP'                     Columns 108
+KHTSTORE 'Heard of thermal storage'                         Columns 110 
+ZKHTSTOR 'Imputation Flag for KHTSTORE'                     Columns 112
+UHTSTORE 'Use thermal storage'                              Columns 114
+ZUHTSTOR 'Imputation Flag for UHTSTORE'                     Columns 116
+KHPWHTR  'Heard of heat pump water heater'                  Columns 118
+ZKHPWHTR 'Imputation Flag for KHPWHTR'                      Columns 120
+UHPWHTR  'Use heat pump water heater'                       Columns 122
+ZUHPWHTR 'Imputation Flag for UHPWHTR'                      Columns 124
+KCOMBO   'Heard of combo heater'                            Columns 126
+ZKCOMBO  'Imputation Flag for KCOMBO'                       Columns 128
+UCOMBO   'Use combo heater'                                 Columns 130
+ZUCOMBO  'Imputation Flag for UCOMBO'                       Columns 132
+KHALOGEN 'Heard of halogen light bulbs'                     Columns 134
+ZKHALOGE 'Imputation Flag for KHALOGEN'                     Columns 136
+UHALOGEN 'use halogen light bulbs'                          Columns 138
+ZUHALOGE 'Imputation Flag for UHALOGEN'                     Columns 140
+KCFLUOR  'Heard of compact fluorescent lights'              Columns 142
+ZKCFLUOR 'Imputation Flag for KCFLUOR'                      Columns 144
+UCFLUOR  'Use compact fluorescent light bulbs'              Columns 146
+ZUCFLUOR 'Imputation Flag for UCFLUOR'                      Columns 148
+DOOR1SUM 'Number of sliding glass doors'                    Columns 150
+ZDOOR1SU 'Imputation Flag for DOOR1SUM'                     Columns 152
+DOOR1GLS 'Type glass in sliding door'                       Columns 154
+ZDOOR1GL 'Imputation Flag for DOOR1GLS'                     Columns 156
+WINDOWS  'Number of windows in home'                        Columns 158-159
+ZWINDOWS 'Imputation Flag for WINDOWS'                      Columns 161
+WINDOWGL 'Type glass in most windows'                       Columns 163
+ZWINDOWG 'Imputation Flag for WINDOWGL'                     Columns 165
+STRMPLAC 'Storm/plastic covers'                             Columns 167
+ZSTRMPLA 'Imputation Flag for STRMPLAC'                     Columns 169
+WFRAME   'Type of window frame'                             Columns 171
+ZWFRAME  'Imputation Flag for WFRAME'                       Columns 173
+ORIGWIND 'Number of original windows replaced'              Columns 175
+ZORIGWIN 'Imputation Flag for ORIGWIND'                     Columns 177
+WINDREP  'Type glass in replaced windows'                   Columns 179
+ZWINDREP 'Imputation Flag for WINDREP'                      Columns 181
+WINDAGE  'How long ago windows replaced'                    Columns 183
+ZWINDAGE 'Imputation Flag for WINDAGE'                      Columns 185
+WINDFAN  'Used window fan'                                  Columns 187
+ZWINDFAN 'Imputation Flag for WINDFAN'                      Columns 189
+PORTFAN  'Used portable fan'                                Columns 191
+ZPORTFAN 'Imputation Flag for PORTFAN'                      Columns 193
+ATTICEXH 'Used attic exhaust fan'                           Columns 195
+ZATTICEX 'Imputation Flag for ATTICEXH'                     Columns 197
+ATTICFAN 'Used whole house cooling fan'                     Columns 199
+ZATTICFA 'Imputation Flag for ATTICFAN'                     Columns 201
+CFAN     'Used ceiling fan'                                 Columns 203
+ZCFAN    'Imputation Flag for CFAN'                         Columns 205
+NUMCFAN  'Number of ceiling fans used'                      Columns 207
+ZNUMCFAN 'Imputation Flag for NUMCFAN'                      Columns 209
+HBUSNESS 'Home based business'                              Columns 211
+ZHBUSNES 'Imputation Flag for HBUSNESS'                     Columns 213
+OTHWORK  'Other using much energy'                          Columns 215
+ZOTHWORK 'Imputation Flag for OTHWORK'                      Columns 217
+ATHOME   'Someone home all day'                             Columns 219
+ZATHOME  'Imputation Flag for ATHOME'                       Columns 221
+DSMPROG  'DEMAND SIDE MGT PGMS OFFERED'                     Columns 223
+ZDSMPROG 'Imputation Flag for DSMPROG'                      Columns 225
+DSMPARTI 'IN DEMAND SIDE MGT PGM'                           Columns 227
+ZDSMPART 'Imputation Flag for DSMPARTI'                     Columns 229
+ELPROG   'IN ELECTRIC DSM PROGRAM'                          Columns 231
+ZELPROG  'Imputation Flag for ELPROG'                       Columns 233
+NGPROG   'IN NATURAL GAS DSM PGM'                           Columns 235
+ZNGPROG  'Imputation Flag for NGPROG'                       Columns 237
+ENGAUPGM 'IN ENERGY AUDIT'                                  Columns 239
+ZENGAUPG 'Imputation Flag for ENGAUPG'                      Columns 241
+LDCNTPGM 'IN LOAD CTRL PROGRAM'                             Columns 243
+ZLDCNTPG 'Imputation Flag for LDCNTPGM'                     Columns 245
+LOADAC   'LOAD CTRL DISCNT FOR A/C'                         Columns 247
+ZLOADAC  'Imputation Flag for LOADAC'                       Columns 249
+LOADWH   'LOAD CTRL DISCNT FOR WTR HTR'                     Columns 251
+ZLOADWH  'Imputation Flag for LOADWH'                       Columns 253
+LOADOTH  'LOAD CTRL DISCNT FOR OTH EQ'                      Columns 255
+ZLOADOTH 'Imputation Flag for LOADOTH'                      Columns 257
+CONSEPGM 'IN ENERGY CONSERV PGM'                            Columns 259
+ZCONSEPG 'Imputation Flag for CONSEPGM'                     Columns 261
+CONCFLOR 'CONSRV PGM GAVE CMPT FLR LT'                      Columns 263
+ZCONCFLO 'Imputation Flag for CONCFLOR'                     Columns 265
+CONSHOWR 'CNS PGM GAVE LO-FLO SHWR HD'                      Columns 267
+ZCONSHOW 'Imputation Flag for CONSHOWR'                     Columns 269
+CONWH    'CONSRV PGM GAVE WTR HTR BLNKT'                    Columns 271
+ZCONWH   'Imputation Flag for CONWH'                        Columns 273
+CONINS   'CONSRV PGM GAVE INSULATION'                       Columns 275
+ZCONINS  'Imputation Flag for CONINS'                       Columns 277
+CONCAULK 'CONSRV PGM GAVE CAULK/STRIP'                      Columns 279
+ZCONCAUL 'Imputation Flag for CONCAULK'                     Columns 281
+CONWIND  'CONSRV PGM GAVE WINDOWS'                          Columns 283
+ZCONWIND 'Imputation Flag for CONWIND'                      Columns 285
+CONMAINH 'CONSRV PGM GAVE MAINTENANCE'                      Columns 287
+ZCONMAIN 'Imputation Flag for CONMAINH'                     Columns 289
+CONOTH   'CONSRV PGM GAVE OTHER ITEM'                       Columns 291
+ZCONOTH  'Imputation Flag for CONOTH'                       Columns 293
+REBATPGM 'IN REBATE PROGRAM'                                Columns 295
+ZREBATPG 'Imputation Flag for REBATPGM'                     Columns 297
+MONAC    'GOT REBATE FOR A/C EQUIP'                         Columns 299
+ZMONAC   'Imputation Flag for MONAC'                        Columns 301
+MONWH    'GOT REBATE FOR WATER HEATER'                      Columns 303
+ZMONWH   'Imputation Flag for MONWH'                        Columns 305
+MONFURN  'GOT REBATE FOR HEAT EQUIP'                        Columns 307
+ZMONFURN 'Imputation Flag for MONFURN'                      Columns 309
+MONFRIG  'GOT REBATE FOR REFRIGERATOR'                      Columns 311
+ZMONFRIG 'Imputation Flag for MONFRIG'                      Columns 313
+MONCFLOR 'GOT REBATE - CMPCT FLR LTS'                       Columns 315
+ZMONCFLO 'Imputation Flag for MONCFLOR'                     Columns 317
+MONOTH   'GOT REBATE FOR OTHER EQUIP'                       Columns 319
+ZMONOTH  'Imputation Flag for MONOTH'                       Columns 321
+MONIMPOR 'HOW IMPT WAS REBATE'                              Columns 323
+ZMONIMPO 'Imputation Flag for MONIMPOR'                     Columns 325
+FUELPGM  'IN PGM--SAID TO SWITCH FUEL'                      Columns 327
+ZFUELPGM 'Imputation Flag for FUELPGM'                      Columns 329
+TOU      'PARTICIPATED IN TIME-OF-USE PGM'                  Columns 331
+ZTOU     'Imputation Flag for TOU'                          Columns 333
+
+
+
+Codebook for File 5
+
+Variables HHID, NWEIGHT, QMAIL, REGIONC, DIVISION, LRGSTATE CDD65,
+HDD65, and TYPEHUQ are on all files.
+
+HHID '4-digit identification number'                       Columns 1-4
+  Included in all files
+  Numerical Variable
+  Variable length: 4
+
+The variable HHID will be on all files.  Each respondent is assigned
+an unique value of HHID.  It can be used to merge data from one file
+with data from another file.
+
+     Minimum Value: 1,001
+     Maximum Value: 8,111
+
+NWEIGHT 'The Final Weight'                                  Columns 6-11
+  Included in all files
+  Numerical Variable
+  Variable length: 6
+
+     Minimum Value:  2,096
+     Maximum Value: 78,559
+
+The sample design for RECS is not a simple random sample. Consequently,
+to estimate the number or percent of households/housing units with a
+certain characteristic, the sampling weight should be used.  The
+variable NWEIGHT is the sampling weight for the observation.  It is
+approximately the inverse of the probability of selection.  It gives
+the number of households that the response represents in the sample. 
+For most categorical variables, the codebooks contain both the
+unweighted frequency and the weighted frequency.  The unweighted
+frequency gives the number of observations, the weighted frequency
+gives survey estimate of the number of households/housing units for
+each possible value of the variable.  The weighted frequencies are
+rounded to the nearest 100,000 households.  This is the limit of the
+accuracy for RECS.  When the unweighted frequency is less than 10 or
+the weighted frequency is less than 150,000; then weighted frequency is
+suppressed.  A 'Q' is placed in the frequency to denote that the number
+is suppressed.  This indicates that there are too few observation upon
+which to determine an accurate estimate.
+
+QMAIL 'Mail Questionnaire Codes'                          Columns 13
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     1 = Completed
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           115           1,500,000
+     9         6,996          95,100,000
+
+When QMAIL equals 1, the household and housing unit data was
+not obtained via a personal interview.  The data were obtained using a
+shortened mail questionnaire.  A hot-deck imputation procedure was used
+to match each mail respondent to a personal interview respondent.  The
+critical matching variables were FUELHEAT, FUELH2O, TYPECOOL, TYPEHUQ,
+and REGIONC.  Additional variables used in a scoring function to
+determine the best match were MONEYPY, NHSLDMEM, VEHICLES, HHAGE, and
+TOTROOMS.  The remaining household/housing unit characteristics for the
+mail respondents were determined by the values of the matched personal
+interview respondent.  The energy consumption and expenditures data for
+the mail respondents was based upon data obtained from their energy
+suppliers.  It was not imputed using a hot deck procedure.
+
+Questionnaire data from personal interview respondents sometime is
+missing and needs to be imputed.  'Z' variables are used to indicate
+the presence of imputed data.  For example, if ZURBRUR = 0 then URBRUR
+was not imputed.  If ZURBRUR = 1 then URBRUR was imputed.
+
+Census Division/Region:  A geographic area consisting of several States 
+defined by the U.S. Department of Commerce, Bureau of the Census.  The States 
+are grouped into nine divisions and four regions.
+
+Region    Division            States 
+
+Northeast New England         Connecticut, Maine, Massachusetts, 
+                              New Hampshire, Vermont, and Rhode Island
+
+          Middle Atlantic     New Jersey, New York, and Pennsylvania
+
+Midwest   East North Central  Illinois, Indiana, Michigan, 
+                              Ohio, and Wisconsin
+
+          West North Central  Iowa, Kansas, Minnesota, Missouri,
+                              Nebraska, North Dakota, and South Dakota
+
+South     South Atlantic      Delaware, the District of Columbia,
+                              Florida, Georgia, Maryland, North 
+                              Carolina, South Carolina, Virginia,
+                              and West Virginia 
+
+          East South Central  Alabama, Kentucky, Mississippi, 
+                              and Tennessee
+
+          West South Central  Arkansas, Louisiana, Oklahoma, 
+                              and Texas
+
+West      Mountain            Arizona, Colorado, Idaho, Montana,
+                              Nevada, New Mexico, Utah, and Wyoming
+
+          Pacific             Alaska, California, Hawaii, Oregon, 
+                              and Washington
+
+REGIONC 'Census Region'                                     Columns 15
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     1 = Northeast Census Region
+     2 = Midwest Census Region
+     3 = South Census Region
+     4 = West Census Region
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         1,531          19,500,000
+     2         1,541          23,300,000
+     3         2,494          33,500,000
+     4         1,545          20,400,000
+
+DIVISION 'Census Division'                                  Columns 17
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+ 
+     1 = New England Census Division
+     2 = Middle Atlantic Census Division
+     3 = East North Central Census Division
+     4 = West North Central Census Division
+     5 = South Atlantic Census Division
+     6 = East South Central Census Division
+     7 = West South Central Census Division
+     8 = Mountain Census Division
+     9 = Pacific Census Division
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           567           5,100,000
+     2           964          14,400,000
+     3           970          16,400,000
+     4           571           6,900,000
+     5         1,232          17,400,000
+     6           556           6,000,000
+     7           706          10,100,000
+     8           550           5,400,000
+     9           995          15,000,000
+
+LRGSTATE 'Four Largest States'                                Columns 19
+  Included in all files
+  Categorical Variable 
+  Variable length 1
+
+     0 = Other
+     1 = New York State
+     2 = California
+     3 = Texas
+     4 = Florida
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,133          66,700,000
+     1           475           6,800,000
+     2           699          11,100,000
+     3           437           6,400,000
+     4           367           5,600,000
+
+CDD65 and HDD65 are weather data.  The values of CDD65 and HDD65 were based 
+upon data obtained from the NOAA.  A random error was added to both HDD65 and 
+CDD65 to mask the location of the weather station from which the data was 
+obtained.
+
+CDD65 'Cooling Degree-Days to base 65, 1-93 TO 12-93'        Columns 21-24
+  Included in all files
+  Numerical Variable 
+  Variable length 4
+
+     Minimum Value:     0
+     Maximum Value: 5,656
+
+HDD65 'Heating Degree-Days to base 65, 1-93 TO 12-93'        Columns 26-30
+  Included in all files
+  Numerical Variable 
+  Variable length 5
+
+     Minimum Value:      0
+     Maximum Value: 13,725
+
+Cooling degree days are the number of degrees the average daily
+temperature (ADT) is above the base temperature.  Heating degree days
+are the number of degrees the ADT is below the base temperature.  To
+calculate daily degree days (base 65 degrees):
+
+          ADT = (daily high + daily low)/2
+
+          CDD(daily)     = 0            if ADT <= 65
+                         = ADT - 65     if ADT > 65
+
+          HDD(daily)     = 0            if ADT >= 65
+                         = 65 - ADT     if ADT < 65.
+
+Annual degrees days are calculated by summing the daily degree days. 
+The .5 is carried over in the summation.  The total is rounded up after
+the summation.
+
+TYPEHUQ 'Type of Home: as report by Respondent'              Columns 32
+  Included in all files
+  Categorical Variable
+  Variable length: 1
+  Question (A-1) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     1 = 'Mobile Home'
+     2 = 'Single-Family detached'
+     3 = 'Single-Family Attached'
+     4 = 'Apartment in Building containing 2-4 units'
+     5 = 'Apartment in Building Containing 5 or more units'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           464           5,600,000
+     2         4,385          59,500,000
+     3           547           7,300,000
+     4           563           8,000,000
+     5         1,152          16,200,000
+
+The remaining variables are present only in File 5.
+
+ADQINSUL  'HOW WELL INSULATED IS HOME'                      Columns 34
+  Categorical Variable
+  Variable length: 1
+  Question (H-1) 
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     1 = 'WELL INSULATED'       
+     2 = 'ADEQUATELY INSULATED'
+     3 = 'POORLY INSULATED'     
+     4 = 'NO INSULATION'        
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         2,872          36,000,000
+     2         2,707          38,400,000
+     3         1,430          20,800,000
+     4           102           1,400,000
+
+ZADQINSU 'Imputation Flag for ADQINSUL'                     Columns 36
+  Categorical Variable 
+  Variable length 1
+
+     0 = ADQINSUL not imputed
+     1 = ADQINSUL imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,888          93,700,000
+     1           223           2,900,000 
+
+HINATTIC  'HAVE ROOF/CEILING INSULATN'                      Columns 38
+  Categorical Variable
+  Variable length: 1
+  Question (H-2A) 
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           431           6,400,000
+     1         4,427          58,600,000
+     6           538           7,400,000
+     9         1,715          24,200,000
+
+ZHINATTI 'Imputation Flag for HINATTIC'                     Columns 40
+  Categorical Variable 
+  Variable length 1
+
+     0 = HINATTIC not imputed
+     1 = HINATTIC imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,081          96,300,000
+     1            30             400,000 
+
+WALLINS  'INSULATION IN OUTSIDE WALLS'                      Columns 42
+  Categorical Variable
+  Variable length: 1
+  Question (H-2B) 
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           726          11,400,000
+     1         3,954          50,700,000
+     6           716          10,300,000
+     9         1,715          24,200,000
+
+ZWALLINS 'Imputation Flag for WALLINS'                      Columns 44
+  Categorical Variable 
+  Variable length 1
+
+     0 = WALLINS not imputed
+     1 = WALLINS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,078          96,200,000
+     1            33             400,000 
+
+WATERINS  'HOT WATER HEATER INSULATED'                      Columns 46
+  Categorical Variable
+  Variable length: 1
+  Question (H-2C) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,824          51,500,000
+     1         1,299          17,400,000
+     6           273           3,500,000
+     9         1,715          24,200,000
+
+ZWATERIN 'Imputation Flag for WATERINS'                     Columns 48
+  Categorical Variable 
+  Variable length 1
+
+     0 = WATERINS not imputed
+     1 = WATERINS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,072          96,100,000
+     1            39             500,000 
+
+PIPEINS  'HOT WATER PIPES INSULATED'                        Columns 50
+  Categorical Variable
+  Variable length: 1
+  Question (H-2D) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,080          42,600,000
+     1         1,711          21,900,000
+     6           605           7,800,000
+     9         1,715          24,200,000
+
+ZPIPEINS 'Imputation Flag for PIPEINS'                     Columns 52
+  Categorical Variable 
+  Variable length 1
+
+     0 = PIPEINS not imputed
+     1 = PIPEINS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,067          96,000,000
+     1            44             600,000 
+
+DUCTS  'HEAT & COOL DUCTS INSULATED'                        Columns 54
+  Categorical Variable
+  Variable length: 1
+  Question (H-2E) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,090          42,600,000
+     1         1,671          21,400,000
+     6           635           8,400,000
+     9         1,715          24,200,000
+
+ZDUCTS 'Imputation Flag for DUCTS'                         Columns 56
+  Categorical Variable 
+  Variable length 1
+
+     0 = DUCTS not imputed
+     1 = DUCTS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,085          96,300,000
+     1            26             300,000 
+
+STRIP  'HAVE WEATHER STRIPPING'                             Columns 58
+  Categorical Variable
+  Variable length: 1
+  Question (H-2F) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,648          23,300,000
+     1         3,489          45,700,000
+     6           259           3,400,000
+     9         1,715          24,200,000
+
+ZSTRIP 'Imputation Flag for STRIP'                         Columns 60
+  Categorical Variable 
+  Variable length 1
+
+     0 = STRIP not imputed
+     1 = STRIP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,077          96,200,000
+     1            34             400,000 
+
+CAULKADD  'CAULKING PRESENT IN HOME'                        Columns 62
+  Categorical Variable
+  Variable length: 1
+  Question (H-2G) 
+  QUESTION SAME AS RECS90
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,232          17,100,000
+     1         3,863          51,200,000
+     6           301           4,100,000
+     9         1,715          24,200,000
+
+ZCAULKAD 'Imputation Flag for CAULKADD '                     Columns 64
+  Categorical Variable 
+  Variable length 1
+
+     0 = CAULKADD not imputed
+     1 = CAULKADD imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,078          96,200,000
+     1            33             400,000 
+
+SETBACK  'AUTO SET-BACK/CLOCK THERMO'                       Columns 66
+  Categorical Variable
+  Variable length: 1
+  Question (H-3A) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,298          85,800,000
+     1           813          10,800,000
+
+ZSETBACK 'Imputation Flag for SETBACK'                     Columns 68
+  Categorical Variable 
+  Variable length 1
+
+     0 = SETBACK not imputed
+     1 = SETBACK imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,981          94,800,000
+     1           130           1,900,000
+
+EQPTUNUP  'REG MAINT OF HEAT EQUIP'                         Columns 70
+  Categorical Variable
+  Variable length: 1
+  Question (H-3B) 
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,478          47,200,000
+     1         3,633          49,400,000
+
+ZEQPTUNU 'Imputation Flag for EQPTUNUP'                     Columns 72
+  Categorical Variable 
+  Variable length 1
+
+     0 = EQPTUNUP not imputed
+     1 = EQPTUNUP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,671          90,600,000
+     1           440           6,000,000
+
+TREESHAD  'TREES SHADE HOME'                                Columns 74
+  Categorical Variable
+  Variable length: 1
+  Question (H-3C) 
+  QUESTION DIFFERENT FROM RECS90 - WAS TREEROOF AND TREEWIND
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,990          51,700,000   
+     1         3,121          44,900,000   
+
+ZTREESHA 'Imputation Flag for TREESHAD'                     Columns 76
+  Categorical Variable 
+  Variable length 1
+
+     0 = TREESHAD not imputed
+     1 = TREESHAD imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,073          96,100,000
+     1            38             500,000 
+
+KLOWE  'HAVE HEARD OF LOW-E GLASS'                          Columns 78
+  Categorical Variable
+  Variable length: 1
+  Question (H-4A) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,194          71,300,000     
+     1         1,917          25,400,000     
+
+ZKLOWE 'Imputation Flag for KLOWE'                         Columns 80
+  Categorical Variable 
+  Variable length 1
+
+     0 = KLOWE not imputed
+     1 = KLOWE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,078          96,200,000
+     1            33             500,000 
+
+ULOWE  'USE LOW-E WINDOW GLASS'                              Columns 82
+  Categorical Variable
+  Variable length: 1
+  Question (H-5A) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,551          21,100,000
+     1           366           4,200,000
+     9         5,194          71,300,000
+
+ZULOWE 'Imputation Flag for ULOWE'                         Columns 84
+  Categorical Variable 
+  Variable length 1
+
+     0 = ULOWE not imputed
+     1 = ULOWE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,024          95,500,000    
+     1            87           1,100,000    
+
+KINSTWH  'HEARD OF PT OF USE WTR HTR'                       Columns 86
+  Categorical Variable
+  Variable length: 1
+  Question (H-4B) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,594          76,000,000    
+     1         1,517          20,600,000    
+
+ZKINSTWH 'Imputation Flag for KINSTWH '                      Columns 88
+  Categorical Variable 
+  Variable length 1
+
+     0 = KINSTWH not imputed
+     1 = KINSTWH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,097          96,500,000
+     1            14             200,000 
+
+UINSTWH  'USE PT OF USE WATER HEATER'                       Columns 90
+  Categorical Variable
+  Variable length: 1
+  Question (H-5B) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,450          19,800,000
+     1            67             800,000
+     9         5,594          76,000,000
+
+ZUINSTWH 'Imputation Flag for UINSTWH '                      Columns 92
+  Categorical Variable 
+  Variable length 1
+
+     0 = UINSTWH not imputed
+     1 = UINSTWH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,059          96,000,000
+     1            52             700,000 
+
+KGRUNDHP  'HEARD OF GRND-SRCE HT PMP'                       Columns 94
+  Categorical Variable
+  Variable length: 1
+  Question (H-4C) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,259          71,500,000   
+     1         1,852          25,200,000   
+
+ZKGRUNDH 'Imputation Flag for KGRUNDHP '                      Columns 96
+  Categorical Variable 
+  Variable length 1
+
+     0 = KGRUNDHP not imputed
+     1 = KGRUNDHP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,095          96,500,000
+     1            16             200,000 
+
+UGRUNDHP  'USE GRND-SOURCE HEAT PUMP'                        Columns 98
+  Categorical Variable
+  Variable length: 1
+  Question (H-5C) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,820          24,900,000
+     1            32             300,000
+     9         5,259          71,500,000
+
+ZUGRUNDH 'Imputation Flag for UGRUNDHP'                     Columns 100
+  Categorical Variable 
+  Variable length 1
+
+     0 = UGRUNDHP not imputed
+     1 = UGRUNDHP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,096          96,500,000
+     1            15             200,000 
+
+KWATERHP  'HEARD OF WTR-SOURCE HT PMP'                      Columns 102
+  Categorical Variable
+  Variable length: 1
+  Question (H-4D) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,743          78,100,000   
+     1         1,368          18,500,000   
+
+ZKWATERH 'Imputation Flag for KWATERHP'                     Columns 104
+  Categorical Variable 
+  Variable length 1
+
+     0 = KWATERHP not imputed
+     1 = KWATERHP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,093          96,400,000
+     1            18             200,000 
+
+UWATERHP  'USE WATER-SOURCE HEAT PUMP'                      Columns 106
+  Categorical Variable
+  Variable length: 1
+  Question (H-5D) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,358          18,300,000
+     1            10             200,000
+     9         5,743          78,100,000
+
+ZUWATERH 'Imputation Flag for UWATERHP'                      Columns 108
+  Categorical Variable 
+  Variable length 1
+
+     0 = UWATERHP not imputed
+     1 = UWATERHP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,104          96,500,000
+     1             7                   Q 
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+KHTSTORE  'HEARD OF THERMAL STORAGE'                        Columns 110 
+  Categorical Variable
+  Variable length: 1
+  Question (H-4E) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,785          78,300,000   
+     1         1,326          18,300,000   
+
+ZKHTSTOR 'Imputation Flag for KHTSTORE'                      Columns 112
+  Categorical Variable 
+  Variable length 1
+
+     0 = KHTSTORE not imputed
+     1 = KHTSTORE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,094          96,400,000
+     1            17             200,000 
+
+UHTSTORE  'USE THERMAL STORAGE'                             Columns 114
+  Categorical Variable
+  Variable length: 1
+  Question (H-5E) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,304          18,100,000
+     1            22             300,000
+     9         5,785          78,300,000
+
+ZUHTSTOR 'Imputation Flag for UHTSTORE'                      Columns 116
+  Categorical Variable 
+  Variable length 1
+
+     0 = UHTSTORE not imputed
+     1 = UHTSTORE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,059          96,100,000
+     1            52             600,000 
+
+KHPWHTR  'HEARD OF HT PUMP WATER HTR'                       Columns 118
+  Categorical Variable
+  Variable length: 1
+  Question (H-4F) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,416          73,700,000    
+     1         1,695          22,900,000    
+
+ZKHPWHTR 'Imputation Flag for KHPWHTR'                      Columns 120
+  Categorical Variable 
+  Variable length 1
+
+     0 = KHPWHTR not imputed
+     1 = KHPWHTR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,091          96,400,000
+     1            20             200,000 
+
+UHPWHTR  'USE HEAT PUMP WATER HEATER'                       Columns 122
+  Categorical Variable
+  Variable length: 1
+  Question (H-5F) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         1,658          22,500,000
+     1            37             500,000
+     9         5,416          73,700,000
+
+ZUHPWHTR 'Imputation Flag for UHPWHTR'                      Columns 124
+  Categorical Variable 
+  Variable length 1
+
+     0 = UHPWHTR not imputed
+     1 = UHPWHTR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,030          95,600,000   
+     1            81           1,100,000   
+
+KCOMBO 'HEARD OF COMBO HEATER'                             Columns 126
+  Categorical Variable
+  Variable length: 1
+  Question (H-4G) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,286          85,800,000    
+     1           825          10,800,000    
+
+ZKCOMBO 'Imputation Flag for KCOMBO'                      Columns 128
+  Categorical Variable 
+  Variable length 1
+
+     0 = KCOMBO not imputed
+     1 = KCOMBO imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,084          96,300,000    
+     1            27             400,000    
+
+UCOMBO  'USE COMBO HEATER'                                 Columns 130
+  Categorical Variable
+  Variable length: 1
+  Question (H-5G) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           815          10,800,000
+     1            10             100,000
+     9         6,286          85,800,000
+
+ZUCOMBO 'Imputation Flag for UCOMBO'                      Columns 132
+  Categorical Variable 
+  Variable length 1
+
+     0 = UCOMBO not imputed
+     1 = UCOMBO imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,091          96,400,000
+     1            20             200,000 
+
+KHALOGEN  'HEARD OF HALOGEN LT BULBS'                       Columns 134
+  Categorical Variable
+  Variable length: 1
+  Question (H-4H) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         2,425          33,200,000   
+     1         4,686          63,500,000   
+
+ZKHALOGE 'Imputation Flag for KHALOGEN '                    Columns 136
+  Categorical Variable 
+  Variable length 1
+
+     0 = KHALOGEN not imputed
+     1 = KHALOGEN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,092          96,400,000
+     1            13             200,000 
+
+UHALOGEN  'USE HALOGEN LIGHT BULBS'                         Columns 138
+  Categorical Variable
+  Variable length: 1
+  Question (H-5H) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,851          52,200,000
+     1           835          11,200,000
+     9         2,425          33,200,000
+
+ZUHALOGE 'Imputation Flag for UHALOGEN '                    Columns 140
+  Categorical Variable 
+  Variable length 1
+
+     0 = UHALOGEN not imputed
+     1 = UHALOGEN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,953          94,600,000   
+     1           158           2,000,000   
+
+KCFLUOR  'HEARD OF COMPACT FLUOR LTS'                       Columns 142
+  Categorical Variable
+  Variable length: 1
+  Question (H-4I) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,589          49,100,000    
+     1         3,522          47,500,000    
+
+ZKCFLUOR 'Imputation Flag for KCFLUOR'                     Columns 144
+  Categorical Variable 
+  Variable length 1
+
+     0 = KCFLUOR not imputed
+     1 = KCFLUOR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,090          96,300,000
+     1            21             300,000 
+
+UCFLUOR  'USE COMPACT FLUOR LT BULBS'                       Columns 146
+  Categorical Variable
+  Variable length: 1
+  Question (H-5I) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         2,880          39,000,000
+     1           642           8,600,000
+     9         3,589          49,100,000
+
+ZUCFLUOR 'Imputation Flag for UCFLUOR'                     Columns 148
+  Categorical Variable 
+  Variable length 1
+
+     0 = UCFLUOR not imputed
+     1 = UCFLUOR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,017          95,500,000
+     1            94           1,200,000 
+
+DOOR1SUM  'NUM OF SLIDING GLASS DOORS'                      Columns 150
+  Numerical Variable
+  Variable length: 1
+  Question H-6
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NONE'
+     1 = '1 DOOR'
+     2 = '2 DOORS'
+     3 = '3 DOORS'
+     4 = '4 DOORS'
+     5 = '5 DOORS'
+     6 = '6 DOORS'
+     7 = '7 OR MORE DOORS'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         4,887          65,800,000   
+     1         1,700          23,600,000   
+     2           352           5,000,000   
+     3            85           1,200,000   
+     4            54             600,000   
+     5            13             100,000   
+     6            11             200,000   
+     7             9                   Q   
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZDOOR1SU 'Imputation Flag for DOOR1SUM'                    Columns 152
+  Categorical Variable 
+  Variable length 1
+
+     0 = DOOR1SUM not imputed
+     1 = DOOR1SUM imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,034          95,600,000   
+     1            77           1,000,000   
+
+DOOR1GLS  'TYPE GLASS IN SLIDING DOOR'                      Columns 154
+  Categorical Variable
+  Variable length: 1
+  Question (H-7) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     1 = 'SINGLE PANE'
+     2 = 'DOUBLE PANE'
+     3 = 'DOUBLE W/LOW-E'
+     4 = 'TRIPLE PANE'
+     5 = 'TRIPLE W/LOW-E'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           780          12,200,000
+     2         1,332          17,500,000
+     3            82             800,000
+     4            26             300,000
+     5             4                   Q
+     9         4,887          65,800,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZDOOR1GL 'Imputation Flag for DOOR1GLS'                    Columns 156
+  Categorical Variable 
+  Variable length 1
+
+     0 = DOOR1GLS not imputed
+     1 = DOOR1GLS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,987          95,000,000   
+     1           124           1,600,000   
+
+WINDOWS  'NUMBER OF WINDOWS IN HOME'                        Columns 158-159
+  Numerical Variable
+  Variable length: 2
+  Question H-8
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'None'
+     1 = '1 to 15'
+     2 = '16 to 25'
+     3 = '26 to 39'
+     4 = '40 to 84'
+     5 = '95 or More'
+     
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+	 0           6                   Q
+	 1       5,353          73,300,000
+	 2	   1,414          19,000,000
+	 3         264           3,300,000
+	 4	      72             800,000
+	 5           2                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZWINDOWS 'Imputation Flag for WINDOWS'                    Columns 161
+  Categorical Variable 
+  Variable length 1
+
+     0 = WINDOWS not imputed
+     1 = WINDOWS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,099          96,500,000
+     1            12             100,000 
+
+WINDOWGL  'TYPE GLASS IN MOST WINDOWS'                      Columns 163
+   Categorical Variable
+   Variable length: 1
+   Question (H-9) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     1 = 'SINGLE PANE'
+     2 = 'DOUBLE PANE'
+     3 = 'DOUBLE W/LOW-E'
+     4 = 'TRIPLE PANE'
+     5 = 'TRIPLE W/LOW-E'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      1        4,200          61,500,000
+      2        2,658          32,500,000
+      3          174           1,700,000
+      4           59             800,000
+      5           14             100,000
+      9            6                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZWINDOWG 'Imputation Flag for WINDOWGL'                    Columns 165
+  Categorical Variable 
+  Variable length 1
+
+     0 = WINDOWGL not imputed
+     1 = WINDOWGL imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,918          94,300,000   
+     1           193           2,300,000   
+
+STRMPLAC  'STORM/PLASTIC COV'                               Columns 167
+   Categorical Variable
+   Variable length: 1
+   Question (H-10) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NONE'
+     1 = 'STORM WINDOWS'
+     2 = 'PLASTIC COVERS'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         4,306          56,400,000
+     1         2,544          36,500,000
+     2           255           3,700,000
+     9             6                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZSTRMPLA 'Imputation Flag for STRMPLAC '                    Columns 169
+  Categorical Variable 
+  Variable length 1
+
+     0 = STRMPLAC not imputed
+     1 = STRMPLAC imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,061          96,000,000   
+     1            50             700,000   
+
+WFRAME  'TYPE OF WINDOW FRAME'                              Columns 171
+   Categorical Variable
+   Variable length: 1
+   Question (H-11) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     1 = 'METAL FRAMES'
+     2 = 'WOOD/VINYL FRAMES'
+     3 = 'OTHER'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         3,943          53,300,000
+     2         3,149          43,100,000
+     3            13             200,000
+     9             6                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZWFRAME  'Imputation Flag for WFRAME '                      Columns 173
+  Categorical Variable 
+  Variable length 1
+
+     0 = WFRAME not imputed
+     1 = WFRAME imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,045          95,700,000     
+     1            66             900,000     
+
+ORIGWIND  'NUM OF ORIG WNDWS REPLACED'                      Columns 175
+   Categorical Variable
+   Variable length: 1
+   Question (H-12) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NONE REPLACED'
+     1 = 'ALL REPLACED'
+     2 = 'SOME REPLACED'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,345          70,300,000
+     1           717          10,700,000
+     2         1,043          15,500,000
+     9             6                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZORIGWIN  'Imputation Flag for ORIGWIND'                   Columns 177
+  Categorical Variable 
+  Variable length 1
+
+     0 = ORIGWIND not imputed
+     1 = ORIGWIND imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,296          85,200,000 
+     1           815          11,500,000 
+
+WINDREP  'TYPE GLASS IN REPLACD WNDWS'                      Columns 179
+   Categorical Variable
+   Variable length: 1
+   Question (H-13) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     1 = 'SINGLE PANE'
+     2 = 'DOUBLE PANE'
+     3 = 'DOUBLE W/LOW-E'
+     4 = 'TRIPLE PANE'
+     5 = 'TRIPLE W/LOW-E'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           468           7,100,000
+     2           492           7,200,000
+     3            56             800,000
+     4            24             400,000
+     5             3                   Q
+     9         6,068          81,100,000
+
+ZWINDREP  'Imputation Flag for WINDREP'                    Columns 181
+  Categorical Variable 
+  Variable length 1
+
+     0 = WINDREP not imputed
+     1 = WINDREP imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,072          96,000,000
+     1            39             600,000
+
+WINDAGE  'HOW LONG AGO WNDWS REPLACED'                      Columns 183
+   Categorical Variable
+   Variable length: 1
+   Question (H-14) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     1 = 'LESS THAN 2 YEARS'
+     2 = '2-4 YEARS'
+     3 = '5-9 YEARS'
+     4 = '10-19 YEARS'
+     5 = '20 YEARS OR MORE'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           513           7,200,000
+     2           484           7,100,000
+     3           418           6,500,000
+     4           264           4,200,000
+     5            81           1,200,000
+     9         5,351          70,400,000
+
+ZWINDAGE  'Imputation Flag for WINDAGE'                     Columns 185
+  Categorical Variable 
+  Variable length 1
+
+     0 = WINDAGE not imputed
+     1 = WINDAGE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,849          92,600,000
+     1           262           4,000,000
+
+WINDFAN  'USED WINDOW FAN'                                  Columns 187
+   Categorical Variable
+   Variable length: 1
+   Question (H-15A) 
+   QUESTION DIFFERENT FROM RECS90 - WAS INCLUDED IN OTHERFAN
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,184          83,700,000
+     1           927          12,900,000
+
+ZWINDFAN  'Imputation Flag for WINDFAN'                     Columns 189
+  Categorical Variable 
+  Variable length 1
+
+     0 = WINDFAN not imputed
+     1 = WINDFAN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,760          92,300,000
+     1           351           4,300,000
+
+PORTFAN  'USED PORTABLE FAN'                                Columns 191
+   Categorical Variable
+   Variable length: 1
+   Question (H-15B) 
+   QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,548          46,600,000
+     1         3,563          50,000,000
+
+ZPORTFAN  'Imputation Flag for PORTFAN'                     Columns 193
+  Categorical Variable 
+  Variable length 1
+
+     0 = PORTFAN not imputed
+     1 = PORTFAN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,772          92,500,000
+     1           339           4,100,000
+
+ATTICEXH  'USED ATTIC EXHAUST FAN'                          Columns 195
+   Categorical Variable
+   Variable length: 1
+   Question (H-15C) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,491          87,600,000
+     1           620           9,000,000
+
+ZATTICEX  'Imputation Flag for ATTICEXH'                   Columns 197
+  Categorical Variable 
+  Variable length 1
+
+     0 = ATTICEXH not imputed
+     1 = ATTICEXH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,734          92,000,000
+     1           377           4,600,000
+
+ATTICFAN  'USED WHOLE HS COOLING FAN'                       Columns 199
+   Categorical Variable
+   Variable length: 1
+   Question (H-15D) 
+   QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,829          92,600,000
+     1           282           4,100,000
+
+ZATTICFA  'Imputation Flag for ATTICFAN'                   Columns 201
+  Categorical Variable 
+  Variable length 1
+
+     0 = ATTICFAN not imputed
+     1 = ATTICFAN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,732          91,900,000
+     1           379           4,700,000
+
+CFAN  'USED CEILING FAN'                                    Columns 203
+   Categorical Variable
+   Variable length: 1
+   Question (H-15E) 
+   QUESTION DIFFERENT FROM RECS90 - WAS INCLUDED IN OTHERFAN
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,255          44,800,000
+     1         3,856          51,800,000
+
+ZCFAN  'Imputation Flag for CFAN'                          Columns 205
+  Categorical Variable 
+  Variable length 1
+
+     0 = CFAN not imputed
+     1 = CFAN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,758          92,300,000
+     1           353           4,300,000
+
+NUMCFAN  'NUMBER OF CEILING FANS USED'                      Columns 207
+   Categorical Variable
+   Variable length: 1
+   Question (H-16) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     1 = 'ONE'
+     2 = 'TWO'
+     3 = 'THREE'
+     4 = 'FOUR'
+     5 = 'FIVE'
+     6 = 'SIX'
+     7 = 'SEVEN OR MORE FANS'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         1,598          22,300,000
+     2           896          12,000,000
+     3           542           7,300,000
+     4           403           5,100,000
+     5           245           3,100,000
+     6           102           1,300,000
+     7            70             800,000
+     9         3,255          44,800,000
+
+ZNUMCFAN  'Imputation Flag for NUMCFAN'                    Columns 209
+  Categorical Variable 
+  Variable length 1
+
+     0 = NUMCFAN not imputed
+     1 = CFAN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,924          94,400,000
+     1           187           2,200,000
+HBUSNESS  'HOME BASED BUSINESS'                             Columns 211
+   Categorical Variable
+   Variable length: 1
+   Question (H-17A) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,640          90,500,000
+     1           471           6,100,000
+
+ZHBUSNES  'Imputation Flag for HBUSNESS'                   Columns 213
+  Categorical Variable 
+  Variable length 1
+
+     0 = HBUSNESS not imputed
+     1 = HBUSNESS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,074          96,100,000
+     1            37             500,000
+
+OTHWORK  'OTHER USING MUCH ENERGY'                          Columns 215
+   Categorical Variable
+   Variable length: 1
+   Question (H-17B) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,916          94,100,000
+     1           195           2,500,000
+
+ZOTHWORK  'Imputation Flag for OTHWORK'                     Columns 217
+  Categorical Variable 
+  Variable length 1
+
+     0 = OTHWORK not imputed
+     1 = OTHWORK imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,056          95,900,000
+     1            55             800,000
+ATHOME  'SOMEONE HOME ALL DAY'                              Columns 219
+   Categorical Variable
+   Variable length: 1
+   Question (H-17C) 
+   QUESTION NEW TO RECS93
+   IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,733          50,700,000
+     1         3,378          46,000,000
+
+ZATHOME  'Imputation Flag for ATHOME'                       Columns 221
+  Categorical Variable 
+  Variable length 1
+
+     0 = ATHOME not imputed
+     1 = ATHOME imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,057          95,900,000
+     1            54             700,000
+
+DSMPROG  'DEMAND SIDE MGT PGMS OFFERED'                     Columns 223
+  Categorical Variable
+  Variable length: 1
+  Question (I-1) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         2,952          40,000,000
+     1         2,577          34,800,000
+     6         1,582          21,800,000
+
+ZDSMPROG  'Imputation Flag for DSMPROG'                     Columns 225
+  Categorical Variable 
+  Variable length 1
+
+     0 = DSMPROG not imputed
+     1 = DSMPROG imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,092          96,400,000
+     1            19             300,000
+
+DSMPARTI  'IN DEMAND SIDE MGT PGM'                          Columns 227
+  Categorical Variable
+  Variable length: 1
+  Question (I-2) 
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     6 = 'DONT KNOW'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         3,378          46,400,000
+     1           589           7,600,000
+     6           192           2,700,000
+     9         2,952          40,000,000
+
+ZDSMPART  'Imputation Flag for DSMPARTI'                     Columns 229
+  Categorical Variable 
+  Variable length 1
+
+     0 = DSMPARTI not imputed
+     1 = DSMPARTI imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         6,456          87,800,000
+     1           655           8,800,000
+
+ELPROG  'IN ELECTRIC DSM PROGRAM'                            Columns 231
+  Categorical Variable
+  Variable length: 1
+  Question (I-3)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            58             900,000
+     1           193           2,700,000
+     9         6,860          93,000,000
+
+ZELPROG  'Imputation Flag for ELPROG'                      Columns 233
+  Categorical Variable 
+  Variable length 1
+     0 = ELPROG not imputed
+     1 = ELPROG imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,098          96,400,000
+     1            13             200,000
+
+NGPROG  'IN NATURAL GAS DSM PGM'                            Columns 235
+  Categorical Variable
+  Variable length: 1
+  Question (I-3)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           139           1,900,000
+     1           112           1,700,000
+     9         6,860          93,000,000
+
+ZNGPROG  'Imputation Flag for NGPROG'                       Columns 237
+  Categorical Variable 
+  Variable length 1
+
+     0 = NGPROG not imputed
+     1 = NGPROG imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,098          96,400,000
+     1            13             200,000
+
+ENGAUPGM  'IN ENERGY AUDIT'                                 Columns 239
+  Categorical Variable
+  Variable length: 1
+  Question (I-4)
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           482           6,200,000
+     1           107           1,400,000
+     9         6,522          89,000,000
+
+ZENGAUPG  'Imputation Flag for ENGAUPG'                     Columns 241
+  Categorical Variable 
+  Variable length 1
+
+     0 = ENGAUPG not imputed
+     1 = ENGAUPG imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,099          96,400,000
+     1            12             200,000
+
+LDCNTPGM  'IN LOAD CTRL PROGRAM'                            Columns 243
+  Categorical Variable
+  Variable length: 1
+  Question (I-5)
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           373      5,100,000
+     1           216      2,600,000
+     9         6,522     89,000,000
+
+ZLDCNTPG  'Imputation Flag for LDCNTPGM'                    Columns 245
+  Categorical Variable 
+  Variable length 1
+
+     0 = LDCNTPGM not imputed
+     1 = LDCNTPGM imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,098          96,400,000
+     1            13             200,000
+
+LOADAC  'LOAD CTRL DISCNT FOR A/C'                          Columns 247
+  Categorical Variable
+  Variable length: 1
+  Question (I-6)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            63             800,000
+     1           153           1,800,000
+     9         6,895          94,100,000
+
+ZLOADAC  'Imputation Flag for LOADAC'                       Columns 249
+  Categorical Variable 
+  Variable length 1
+
+     0 = LOADAC not imputed
+     1 = LOADAC imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,105          96,500,000
+     1             6                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+LOADWH  'LOAD CTRL DISCNT FOR WTR HTR'                      Columns 251
+  Categorical Variable
+  Variable length: 1
+  Question (I-6)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            99           1,200,000
+     1           117           1,400,000
+     9         6,895          94,100,000
+
+ZLOADWH  'Imputation Flag for LOADWH'                       Columns 253
+  Categorical Variable 
+  Variable length 1
+
+     0 = LOADWH not imputed
+     1 = LOADWH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,106          96,500,000
+     1             5                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+LOADOTH  'LOAD CTRL DISCNT FOR OTH EQ'                      Columns 255
+  Categorical Variable
+  Variable length: 1
+  Question (I-6)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           179           2,100,000
+     1            37             400,000
+     9         6,895          94,100,000
+
+ZLOADOTH  'Imputation Flag for LOADOTH'                     Columns 257
+  Categorical Variable 
+  Variable length 1
+
+     0 = LOADOTH not imputed
+     1 = LOADOTH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,104          96,500,000
+     1             7                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONSEPGM  'IN ENERGY CONSERV PGM'                           Columns 259
+  Categorical Variable
+  Variable length: 1
+  Question (I-7)
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           460           6,000,000
+     1           129           1,700,000
+     9         6,522          89,000,000
+
+ZCONSEPG  'Imputation Flag for CONSEPGM'                    Columns 261
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONSEPGM not imputed
+     1 = CONSEPGM imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,099          96,400,000
+     1            12             200,000
+
+CONCFLOR  'CONSRV PGM GAVE CMPT FLR LT'                     Columns 263
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            92           1,200,000
+     1            37             500,000
+     9         6,982          95,000,000
+
+ZCONCFLO  'Imputation Flag for CONCFLOR'                    Columns 265
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONCFLOR not imputed
+     1 = CONCFLOR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,110          96,600,000
+     1             1                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONSHOWR  'CNS PGM GAVE LO-FLO SHWR HD'                     Columns 267
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            45             600,000
+     1            84           1,100,000
+     9         6,982          95,000,000
+
+ZCONSHOW  'Imputation Flag for CONSHOWR'                    Columns 269
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONSHOWR not imputed
+     1 = CONSHOWR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,110          96,600,000
+     1             1                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONWH  'CONSRV PGM GAVE WTR HTR BLNKT'                      Columns 271
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            80           1,000,000
+     1            49             700,000
+     9         6,982          95,000,000
+
+ZCONWH  'Imputation Flag for CONWH'                         Columns 273
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONWH not imputed
+     1 = CONWH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,110          96,600,000
+     1             1                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONINS  'CONSRV PGM GAVE INSULATION'                        Columns 275
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           102           1,300,000
+     1            27             300,000
+     9         6,982          95,000,000
+
+ZCONINS  'Imputation Flag for CONINS'                       Columns 277
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONINS not imputed
+     1 = CONINS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,110          96,600,000
+     1             1                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONCAULK  'CONSRV PGM GAVE CAULK/STRIP'                     Columns 279
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           108           1,400,000
+     1            21             300,000
+     9         6,982          95,000,000
+
+ZCONCAUL  'Imputation Flag for CONCAULK'                    Columns 281
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONCAULK not imputed
+     1 = CONCAULK imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,110          96,600,000
+     1             1                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONWIND  'CONSRV PGM GAVE WINDOWS'                          Columns 283
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           127           1,600,000
+     1             2                   Q
+     9         6,982          95,000,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZCONWIND  'Imputation Flag for CONWIND'                     Columns 285
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONWIND not imputed
+     1 = CONWIND imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,110          96,600,000
+     1             1                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONMAINH  'CONSRV PGM GAVE MAINTENANCE'                     Columns 287
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           112           1,400,000
+     1            17             300,000
+     9         6,982          95,000,000
+
+ZCONMAIN  'Imputation Flag for CONMAINH'                    Columns 289
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONMAINH not imputed
+     1 = CONMAINH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,108          96,600,000
+     1             3                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+CONOTH  'CONSRV PGM GAVE OTHER ITEM'                        Columns 291
+  Categorical Variable
+  Variable length: 1
+  Question (I-8)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           101           1,300,000
+     1            28             400,000
+     9         6,982          95,000,000
+
+ZCONOTH  'Imputation Flag for CONOTH'                       Columns 293
+  Categorical Variable 
+  Variable length 1
+
+     0 = CONOTH not imputed
+     1 = CONOTH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,093          96,400,000
+     1            18             200,000
+
+REBATPGM  'IN REBATE PROGRAM'                               Columns 295
+  Categorical Variable
+  Variable length: 1
+  Question (I-9)
+  QUESTION DIFFERENT FROM RECS90 - HAS SAME NAME
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           550           7,100,000
+     1            39             500,000
+     9         6,522          89,000,000
+
+ZREBATPG  'Imputation Flag for REBATPGM'                    Columns 297
+  Categorical Variable 
+  Variable length 1
+
+     0 = REBATPGM not imputed
+     1 = REBATPGM imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,101          96,500,000
+     1            10             200,000
+
+MONAC  'GOT REBATE FOR A/C EQUIP'                           Columns 299
+  Categorical Variable
+  Variable length: 1
+  Question (I-10)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            31             500,000
+     1             8                   Q
+     9         7,072          96,100,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZMONAC  'Imputation Flag for MONAC'                         Columns 301
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONAC not imputed
+     1 = MONAC imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,108          96,600,000
+     1             3                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+MONWH  'GOT REBATE FOR WATER HEATER'                        Columns 303
+  Categorical Variable
+  Variable length: 1
+  Question (I-10)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            34             400,000
+     1             5                   Q
+     9         7,072          96,100,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZMONWH  'Imputation Flag for MONWH'                         Columns 305
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONWH not imputed
+     1 = MONWH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,108          96,600,000
+     1             3                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+MONFURN  'GOT REBATE FOR HEAT EQUIP'                        Columns 307
+  Categorical Variable
+  Variable length: 1
+  Question (I-10)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            23             300,000
+     1            16             200,000
+     9         7,072          96,100,000
+
+ZMONFURN  'Imputation Flag for MONFURN'                     Columns 309
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONFURN not imputed
+     1 = MONFURN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,108          96,600,000
+     1             3                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+MONFRIG  'GOT REBATE FOR REFRIGERATOR'                      Columns 311
+  Categorical Variable
+  Variable length: 1
+  Question (I-10)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            36             500,000
+     1             3                   Q
+     9         7,072          96,100,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZMONFRIG  'Imputation Flag for MONFRIG'                     Columns 313
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONFRIG not imputed
+     1 = MONFRIG imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,108          96,600,000
+     1             3                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+MONCFLOR  'GOT REBATE - CMPCT FLR LTS'                      Columns 315
+  Categorical Variable
+  Variable length: 1
+  Question (I-10)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            35             400,000
+     1             4                   Q
+     9         7,072          96,100,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+ZMONCFLO  'Imputation Flag for MONCFLOR'                    Columns 317
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONCFLOR not imputed
+     1 = MONCFLOR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,108          96,600,000
+     1             3                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+MONOTH  'GOT REBATE FOR OTHER EQUIP'                        Columns 319
+  Categorical Variable
+  Variable length: 1
+  Question (I-10)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            28             400,000
+     1            11             200,000
+     9         7,072          96,100,000
+
+ZMONOTH  'Imputation Flag for MONOTH'                       Columns 321
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONOTH not imputed
+     1 = MONOTH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,105          96,600,000
+     1             6                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+MONIMPOR  'HOW IMPT WAS REBATE'                             Columns 323
+  Categorical Variable
+  Variable length: 1
+  Question (I-11)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'WOULDVE GOT ANYWAY'
+     1 = 'SOMEWHAT IMPORTANT'
+     2 = 'VERY IMPORTANT'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0            18             200,000
+     1             8                   Q
+     2            13             200,000
+     9         7,072          96,100,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZMONIMPO  'Imputation Flag for MONIMPOR'                    Columns 325
+  Categorical Variable 
+  Variable length 1
+
+     0 = MONIMPOR not imputed
+     1 = MONIMPOR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,106          96,500,000
+     1             5                   Q
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+FUELPGM  'IN PGM--SAID TO SWITCH FUEL'                      Columns 327
+  Categorical Variable
+  Variable length: 1
+  Question (I-12)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           578           7,400,000
+     1            11             200,000
+     9         6,522          89,000,000
+
+ZFUELPGM  'Imputation Flag for FUELPGM'                     Columns 329
+  Categorical Variable 
+  Variable length 1
+
+     0 = FUELPGM not imputed
+     1 = FUELPGM imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,101          96,500,000
+     1            10             200,000
+
+TOU  'PARTICIPATED IN TIME-OF-USE PGM'                      Columns 331
+  Categorical Variable
+  Variable length: 1
+  Question (I-13)
+  QUESTION NEW TO RECS93
+  IMPUTED FOR NONRESPONSE
+
+     0 = 'NO'
+     1 = 'YES'
+     9 = 'NOT APPLICABLE'
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0           468           6,100,000
+     1           121           1,600,000
+     9         6,522          89,000,000
+
+ZTOU  'Imputation Flag for TOU'                             Columns 333
+  Categorical Variable 
+  Variable length 1
+
+     0 = TOU not imputed
+     1 = TOU imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,091          96,400,000
+     1            20             300,000

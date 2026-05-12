@@ -1,0 +1,84 @@
+Project Documentation: PNW Residential Energy Modeling Parameters (2026)
+1. Building Envelope UA (Heat Loss) Defaults
+
+Based on NEEA RBSA 2022 and established PNW construction archetypes. To calculate total heat loss, use: Q=Area×U×(Tin​−Tout​).
+Era / Vintage	Construction Type	Typical Insulation	Assembly U-Value
+Pre-1950	2x4 Wood Frame	Uninsulated / Sawdust	0.250 (R≈4)
+1951–1980	2x4 Wood Frame	R-11 Fiberglass Batt	0.081 (R≈12)
+1981–2010	2x6 Wood Frame	R-19/R-21 Fiberglass	0.056 (R≈18)
+2011–2026	2x6 + Ext. Foam	R-21 + R-5 Continuous	0.038 (R≈26)
+2. Equipment Reliability & Useful Life
+
+These Weibull parameters are derived from ASHRAE 2026 and DOE NEMS assumptions for replacement modeling.
+
+    Gas Furnace: Median Life: 18.0 yrs | Scale (η): 21.5 | Shape (β): 2.1
+
+    Gas Water Heater: Median Life: 12.0 yrs | Scale (η): 13.5 | Shape (β): 2.8
+
+    Heat Pump / AC: Median Life: 15.0 yrs | Scale (η): 16.5 | Shape (β): 2.5
+
+3. Annual Baseload & Pilot Loads (Therms/yr)
+
+    Cooking: 30 Therms (Range/Oven).
+
+    Clothes Drying: 20 Therms (if gas dryer present).
+
+    Fireplace: 55 Therms (Usage) + 82 Therms (Standing Pilot - Pre-2015 only).
+
+    Water Heater Pilot: 46 Therms (Pre-2015 only).
+
+    Water Heater Standby:
+
+        Pre-1990: 75 Therms
+
+        1991–2003: 55 Therms
+
+        2004–2014: 40 Therms
+
+        2015–2026: 20 Therms
+
+4. Model Adjustments & Multipliers
+
+    Plumbing Penalty (1.20x): Applied to Water Heater Standby Loss if hot water pipes are uninsulated (standard in RBSA pre-2010 audits).
+
+    Gorge Effect (1.15x): Multiplier for annual heating and standby loads for sites in high-wind/colder microclimates (e.g., Troutdale, Gresham, Hood River).
+
+    Zoning Scaler:
+
+        R2.5 (Townhome/Shared Wall): 0.80x
+
+        R5 (Standard Detached): 1.00x
+
+        R10/RF (Large Estate): 1.25x
+
+5. Load Forecast Decay
+
+    Net Annual UPC Decline: -1.19% (NW Natural 2025 IRP Reference Case).
+
+    Driver: Includes Energy Trust of Oregon (ETO) savings, building code dilution, and climate warming trends.
+
+Infiltration & Air Leakage Modeling: PNW Residential Stock
+
+The air leakage parameters in this model are derived from the 2022 RBSA Final Report and Blower Door (CFM50) testing data collected across the Northwest.
+
+Key Methodological Steps:
+
+    Standardized Leakage (ACH50​): All field-measured leakage is converted to Air Changes per Hour at 50 Pascals (ACH50​) by normalizing the measured cubic feet per minute (CFM50) against the home's conditioned volume.
+
+    LBL Infiltration Credit (N-Factor): To convert high-pressure blower door results to "natural" daily infiltration (ACHnat​), the model applies the Lawrence Berkeley National Laboratory (LBL) N-factor. A regional default of N=20 is used for the Pacific Northwest, though this factor is adjusted based on building height and local shielding (urban vs. rural).
+
+    Stack & Wind Effects: The infiltration UA accounts for the "Stack Effect" (buoyancy of warm air) and wind-driven pressure. Older RBSA vintages (pre-1980) typically exhibit ACH50​ values of 10.0–15.0, whereas new construction under modern WA/OR codes is required to be ≤ 3.0.
+
+    Thermal Impact: Air leakage is modeled as a sensible heat loss using the specific heat of air (approx. 0.018Btu/ft3⋅°F at sea level).
+
+Heat Pump Retrofit Methodology: PNW Residential Stock
+
+The Heat Pump scenario in this model accounts for the shifting efficiency (HSPF2) and thermal requirements of the Pacific Northwest climate.
+
+Key Methodological Steps:
+
+    Thermal Balance Point: The model calculates the "Balance Point"—the outdoor temperature at which the home's heat loss (UA) exactly matches the heat pump's maximum output. In Portland (Climate Zone 4), a "Heat Pump Ready" home typically targets a balance point below 30°F.
+
+    Weatherization Logic: In the Heat_Pump scenario, the model assumes a "Retrofit Package" is applied to older vintages (Pre-1980) to bring their Infiltration (ACH50​) and Wall U-values closer to 1990s standards. This prevents excessive "strip heat" usage during Gorge wind events.
+
+    HSPF2 Scaling: Efficiencies are modeled using the newer HSPF2 (Heating Seasonal Performance Factor) standard, which accounts for higher external static pressure in ductwork, a common issue identified in the 2022 RBSA.

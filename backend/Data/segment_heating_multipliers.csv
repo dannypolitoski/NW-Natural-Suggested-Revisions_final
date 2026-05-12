@@ -1,0 +1,5 @@
+segment,multiplier,source,notes
+RESSF,1.05,RBSA_building_shell,"Single-family: larger footprint, more exposed walls/roof, slightly above average"
+RESMF,0.70,RBSA_building_shell,"Multi-family: shared walls reduce heat loss ~30%, smaller units"
+MOBILE,1.20,RBSA_building_shell,"Mobile homes: poor insulation, thin walls, high heat loss (not in NWN gas service)"
+Unclassified,1.00,default,"Unknown segment: use fleet average"

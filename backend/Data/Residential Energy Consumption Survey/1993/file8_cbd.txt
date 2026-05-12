@@ -1,0 +1,2439 @@
+File layout for File 8 (Records are comma-delimited.  First line contains a
+list of variables on the file.  The remaining lines contain the values of 
+the variables with fixed column positions.) File 8 also includes some vehicle data.
+
+Variables on all files
+
+HHID     '4-digit identification number'                    Columns 1-4
+NWEIGHT  'The Final Weight'                                 Columns 6-11
+QMAIL    'Mail Questionnaire Codes'                         Columns 13
+REGIONC  'Census Region'                                    Columns 15
+DIVISION 'Census Division'                                  Columns 17
+LRGSTATE 'Four Largest States'                              Columns 19
+CDD65    'Cooling Degree-Days to base 65, 1-97 TO 12-97'    Columns 21-24
+HDD65    'Heating Degree-Days to base 65, 1-97 TO 12-97'    Columns 26-30
+TYPEHUQ  'Type of Home: as report by Respondent'            Columns 32
+
+Variables in File 8 only.
+
+NHSLDMEM 'Number of Household Members'                      Columns 34-35
+ANSWERHH 'Householder Respondent or Not'                    Columns 37
+HOUSEHLD 'Householder'                                      Columns 39
+HHSEX    'Sex of Householder'                               Columns 41
+ZHHSEX   'Imputation Flag for HHSEX'                        Columns 43   
+HHAGE    'Age of Householder'                               Columns 45
+ZHHAGE   'Imputation Flag for HHAGE'                        Columns 47  
+EMPLOYHH 'Employment of Householder'                        Columns 49
+ZEMPLYHH 'Imputation Flag for EMPLOYHH'                     Columns 51  
+ 
+ANSWER02 'Member2 Respondent or Not'                        Columns 53
+KIN02    'Member2 Relationship to Householder'              Columns 55-56
+ZKIN02   'Imputation Flag for KIN02'                        Columns 58  
+YEAR02   'Age of HH Member2'                                Columns 60
+ZYEARS02 'Imputation Flag for YEARS02'                      Columns 62  
+ANSWER03 'Member3 Respondent or Not'                        Columns 64
+KIN03    'Member3 Relationship to Householder'              Columns 66-67
+ZKIN03   'Imputation Flag for KIN03'                        Columns 69  
+YEAR03   'Age of HH Member3'                                Columns 71
+ZYEARS03 'Imputation Flag for YEARS03'                      Columns 73 
+ANSWER04 'Member4 Respondent or Not'                        Columns 75
+KIN04    'Member4 Relationship to Householder'              Columns 77-78
+ZKIN04   'Imputation Flag for KIN04'                        Columns 80
+YEAR04   'Age of HH Member4'                                Columns 82
+ZYEARS04 'Imputation Flag for YEARS04'                      Columns 84  
+ANSWER05 'Member5 Respondent or Not'                        Columns 86
+KIN05    'Member5 Relationship to Householder'              Columns 88-89 
+ZKIN05   'Imputation Flag for KIN05'                        Columns 91  
+YEAR05   'Age of HH Member5'                                Columns 93
+ZYEARS05 'Imputation Flag for YEARS05'                      Columns 95  
+ANSWER06 'Member6 Respondent or Not'                        Columns 97
+KIN06    'Member6 Relationship to Householder'              Columns 99-100
+ZKIN06   'Imputation Flag for KIN06'                        Columns 102  
+YEAR06   'Age of HH Member6'                                Columns 104
+ZYEARS06 'Imputation Flag for YEARS06'                      Columns 106  
+ANSWER07 'Member7 Respondent or Not'                        Columns 108
+KIN07    'Member7 Relationship to Householder'              Columns 110-111
+ZKIN07   'Imputation Flag for KIN07'                        Columns 113  
+YEAR07   'Age of HH Member7'                                Columns 115
+ZYEARS07 'Imputation Flag for YEARS07'                      Columns 117  
+ANSWER08 'Member8 Respondent or Not'                        Columns 119
+KIN08    'Member8 Relationship to Householder'              Columns 121-122
+ZKIN08   'Imputation Flag for KIN08'                        Columns 124
+YEAR08   'Age of HH Member8'                                Columns 126
+ZYEARS08 'Imputation Flag for YEARS08'                      Columns 128  
+ANSWER09 'Member9 Respondent or Not'                        Columns 130
+KIN09    'Member9 Relationship to Householder'              Columns 132-133
+YEAR09   'Age of HH Member9'                                Columns 135
+ANSWER10 'Member10 Respondent or Not'                       Columns 137
+KIN10    'Member10 Relationship to Householder'             Columns 139-140
+YEAR10   'Age of HH Member10'                               Columns 142
+ANSWER11 'Member11 Respondent or Not'                       Columns 144
+KIN11    'Member11 Relationship to Householder'             Columns 146-147
+YEAR11   'Age of HH Member11'                               Columns 149
+ANSWER12 'Member12 Respondent or Not'                       Columns 151
+KIN12    'Member12 Relationship to Householder'             Columns 153-154
+YEAR12   'Age of HH Member12'                               Columns 156
+DRIVEMON 'Number of Drivers in HH'                          Columns 158-159
+ZDRIVEMO 'Imputation Flag for DRIVEMON'                     Columns 161 
+DRIVECAR 'Have Regular Use of Vehicle'                      Columns 163    
+ZDRIVEMO 'Imputation Flag for DRIVEMON'                     Columns 165 
+VEHICLES 'Number of Vehicles in the Household'              Columns 167-168
+ZDRIVEMO 'Imputation Flag for DRIVEMON'                     Columns 170
+GRADHH   'Householder Highest Grade Completed'              Columns 172-173
+ZGRADHH  'Imputation Flag for GRADHH'                       Columns 175
+MARRIED  'Marital Status of Householder'                    Columns 177
+ZMARRIED 'Imputation Flag for MARRIED'                      Columns 179
+SDESCENT 'Householder of Hispanic Origin'                   Columns 181
+ZSDESCEN 'Imputation Flag for SDESCENT'                     Columns 183
+ORIGIN   'Race of Householder'                              Columns 185
+ZORIGIN  'Imputation Flag for ORIGIN'                       Columns 187
+WAGES    'Received Wages in Past 12 Months'                 Columns 189
+ZWAGES   'Imputation Flag for WAGES'                        Columns 191
+SELFHIRE 'Self-Employed Income in Past 12 months'           Columns 193
+ZSELFHIR 'Imputation Flag for SELFHIRE'                     Columns 195
+SSECURTY 'Social Security in Past 12 Months'                Columns 197
+ZSSECURT 'Imputation Flag for SSECURTY'                     Columns 199
+PENSIONS 'Pension in Past 12 Months'                        Columns 201
+ZPENSION 'Imputation Flag for PENSION'                      Columns 203
+FSTAMPS  'Food Stamps in Past 12 Months'                    Columns 205
+ZFSTAMPS 'Imputation Flag for FSTAMPS'                      Columns 207
+AFDC     'AFDC in Past 12 Months'                           Columns 209  
+ZAFDC    'Imputation Flag for AFDC'                         Columns 211
+UNEMPLOY 'Unemployment in Past 12 Months'                   Columns 213
+ZUNEMPLO 'Imputation Flag for UNEMPLOY'                     Columns 215
+SSI      'Income From SSI in Past 12 Months'                Columns 217
+ZSSI     'Imputation Flag for SSI'                          Columns 219
+OTHERAID 'Other Public Aid in Past 12 Months'               Columns 221
+ZOTHERAI 'Imputation Flag for OTHERAID'                     Columns 223
+MONEYPY  'Family Income in Past 12 Months'                  Columns 225-226 
+ZMONEYPY 'Imputation Flag for MONEYPY'                      Columns 228
+INC45PLU 'Family Income More/Less than $45,000'             Columns 230
+SPOUSE   'Spouse'                                           Columns 232
+SPSEX    'Sex of Spouse'                                    Columns 234
+SPAGE    'Age of Spouse'                                    Columns 236
+EMPLOYSP 'Employment of Spouse'                             Columns 238-239
+NYR0012  'Number of HH Members 12 and Under'                Columns 241
+NYR1320  'Number of HH Members between 13 and 20'           Columns 243
+NYR2133  'Number of HH Members between 21 and 33'           Columns 245
+NYR3464  'Number of HH Members between 34 and 64'           Columns 247
+NYR6595  'Number of HH Members 65 and Older'                Columns 249
+FAMILY   'type of family structure in the household'        Columns 251
+ 
+Codebook for File 8
+
+Variables HHID, NWEIGHT, QMAIL, REGIONC, DIVISION, LRGSTATE, CDD65, HDD65,
+and TYPEHUQ are on all files.
+
+HHID '4-digit identification number'                       Columns 1-4
+     Included in all files
+     Numerical Variable
+     Variable length: 4
+
+     The variable HHID will be on all files.  Each respondent is assigned an
+     unique value of HHID.  It can be used to merge data from one file with
+     data from another file.
+
+     Minimum Value: 1,001
+     Maximum Value: 8,111
+
+NWEIGHT 'The Final Weight'                                  Columns 6-11
+     Included in all files
+     Numerical Variable
+     Variable length: 6
+
+     Minimum Value:  2,096
+     Maximum Value: 78,559
+
+The sample design for RECS is not a simple random sample. 
+Consequently, to estimate the number or percent of households/housing 
+units with a certain characteristic, the sampling weight should be used.  
+The variable NWEIGHT is the sampling weight for the observation.  It is 
+approximately the inverse of the probability of selection.  It gives the 
+number of households that the response represents in the sample.  For 
+most categorical variables, the codebooks contain both the unweighted 
+frequency and the weighted frequency.  The unweighted frequency gives the 
+number of observations, the weighted frequency gives survey estimate of 
+the number of households/housing units for each possible value of the 
+variable.  The weighted frequencies are rounded to the nearest 100,000 
+households.  This is the limit of the accuracy for RECS.  When the 
+unweighted frequency is less than 10 or the weighted frequency is less 
+than 150,000; then weighted frequency is suppressed.  A 'Q' is placed in 
+the frequency to denote that the number is suppressed.  This indicates 
+that there are too few observation upon which to determine an accurate 
+estimate.
+
+QMAIL 'Mail Questionnaire Codes'                         Columns 13
+     Included in all files
+     Categorical Variable 
+     Variable length 1
+
+     1 = Completed
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           115             1,500,000
+     9         6,996            95,100,000
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+     When QMAIL equals 1, the household and housing unit data was not
+     obtained via a personal interview.  The data were obtained using a
+     shortened mail questionnaire.  A hot-deck imputation procedure was used
+     to match each mail respondent to a personal interview respondent.  The
+     critical matching variables were FUELHEAT, FUELH2O, TYPECOOL, TYPEHUQ,
+     and REGIONC.  Additional variables used in a scoring function to
+     determine the best match were MONEYPY, NHSLDMEM, VEHICLES, HHAGE, and
+     TOTROOMS.  The remaining household/housing unit characteristics for the
+     mail respondents were determined by the values of the matched personal
+     interview respondent.  The energy consumption and expenditures data for
+     the mail respondents was based upon data obtained from their energy
+     suppliers.  It was not imputed using a hot deck procedure.
+
+     Questionnaire data from personal interview respondents sometime is
+     missing and needs to be imputed.  'Z' variables are used to indicate 
+the
+     presence of imputed data.  For example, if ZURBRUR = 0 then URBRUR was
+     not imputed.  If ZURBRUR = 1 then URBRUR was imputed.
+
+Census Division/Region:   A geographic area consisting of several States
+defined by the U.S. Department of Commerce, Bureau of the Census.  The 
+States
+are grouped into nine divisions and four regions.
+
+Region    	Division		           States 
+
+Northeast 	New England		      Connecticut, Maine, Massachusetts, 
+					      New Hampshire, Vermont, and Rhode Island
+
+          	Middle Atlantic    	New Jersey, New York, and Pennsylvania
+
+Midwest   	East North Central	Illinois, Indiana, Michigan, 
+                	              	Ohio, and Wisconsin
+
+          	West North Central  	Iowa, Kansas, Minnesota, Missouri,
+                              	Nebraska, North Dakota, and South Dakota
+
+South     	South Atlantic		Delaware, the District of Columbia,
+                              	Florida, Georgia, Maryland, North 
+                             		Carolina, South Carolina, Virginia,
+                              	and West Virginia 
+
+          	East South Central  	Alabama, Kentucky, Mississippi, 
+                              	and Tennessee
+
+          	West South Central  	Arkansas, Louisiana, Oklahoma, 
+                              	and Texas
+
+West      	Mountain            	Arizona, Colorado, Idaho, Montana,
+                              	Nevada, New Mexico, Utah, and Wyoming
+
+          	Pacific             	Alaska, California, Hawaii, Oregon, 
+                              	and Washington
+
+REGIONC 'Census Region'                                     Columns 15
+     Included in all files
+     Categorical Variable 
+     Variable length 1
+
+     1 = Northeast Census Region
+     2 = Midwest Census Region
+     3 = South Census Region
+     4 = West Census Region
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1         1,531               19,500,000
+     2         1,541               23,300,000
+     3         2,494               33,500,000
+     4         1,545               20,400,000
+
+DIVISION 'Census Division'                                  Columns 17
+     Included in all files
+     Categorical Variable 
+     Variable length 1
+ 
+     1 = New England Census Division
+     2 = Middle Atlantic Census Division
+     3 = East North Central Census Division
+     4 = West North Central Census Division
+     5 = South Atlantic Census Division
+     6 = East South Central Census Division
+     7 = West South Central Census Division
+     8 = Mountain Census Division
+     9 = Pacific Census Division
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           567           5,100,000
+     2           964          14,400,000
+     3           970          16,400,000
+     4           571           6,900,000
+     5         1,232          17,400,000
+     6           556           6,000,000
+     7           706          10,100,000
+     8           550           5,400,000
+     9           995          15,000,000
+
+LRGSTATE 'Four Largest States'                              Columns 19
+     Included in all files
+     Categorical Variable 
+     Variable length 2
+
+     0 = Other
+     1 = New York State
+     2 = California
+     3 = Texas
+     4 = Florida
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         5,133          66,700,000
+     1           475           6,800,000
+     2           699          11,100,000 
+     3           437           6,400,000
+     4           367           5,600,000
+
+CDD65 and HDD65 are weather data.  The values of CDD65 and HDD65 were based
+upon data obtained from the NOAA.  A random error was added to both HDD65 
+and
+CDD65 to mask the location of the weather station from which the data was
+obtained.
+
+CDD65 'Cooling Degree-Days to base 65, 1-93 TO 12-93'       Columns 21-24
+     Included in all files
+     Numerical Variable 
+     Variable length 4
+
+     Minimum Value:     0
+     Maximum Value: 5,656
+
+HDD65 'Heating Degree-Days to base 65, 1-93 TO 12-93'       Columns 26-30
+     Included in all files
+     Numerical Variable 
+     Variable length 5
+
+     Minimum Value:      0
+     Maximum Value: 13,725
+
+     Cooling degree days are the number of degrees the average daily
+     temperature (ADT) is above the base temperature.  Heating degree days
+     are the number of degrees the ADT is below the base temperature.  To
+     calculate daily degree days (base 65 degrees):
+
+          ADT = (daily high + daily low)/2
+
+          CDD(daily)     = 0            if ADT <= 65
+                         = ADT - 65     if ADT > 65
+
+          HDD(daily)     = 0            if ADT >= 65
+                         = 65 - ADT     if ADT < 65.
+
+          Annual degrees days are calculated by summing the daily degree 
+days. 
+     The .5 is carried over in the summation.  The total is rounded up after
+     the summation.
+
+TYPEHUQ 'Type of Home: as report by Respondent'             Columns 32
+     Included in all files
+     Categorical Variable
+     Variable length: 1
+     Question (A-1) 
+     Question Same as RECS90
+     Imputed for Nonresponse
+
+     1 = Mobile Home
+     2 = Single-Family detached
+     3 = Single-Family Attached
+     4 = Apartment in Building containing 2-4 units
+     5 = Apartment in Building Containing 5 or more units
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     1           464           5,600,000
+     2         4,385          59,500,000
+     3           547           7,300,000 
+     4           563           8,000,000
+     5         1,152          16,200,000
+
+The remaining variables are present only in File 3.
+
+NHSLDMEM 'Number of HH Members'                             Columns 34-35
+     Numerical Variable
+     Variable Length 2
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed 
+
+	1  = One Member
+	2  = Two Members
+	3  = Three Members
+	4  = Four Members
+	5  = Five Members
+	6  = Six Members
+	7  = Seven Members
+	8  = Eight Members
+	9  = Nine Members
+	10 = Ten Members
+	11 = Eleven Members
+	12 = Twelve Members
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          1,517       23,500,000
+	 2          2,348       31,700,000
+       3          1,270       16,600,000
+	 4          1,160       14,600,000
+       5            540        6,800,000
+	 6            162        2,000,000
+       7             61          900,000
+	 8             25          300,000
+       9             10          100,000
+	10             12          200,000
+      11              2                Q 
+	12              4                Q
+
+     Q = Data withheld because fewer than 10 observation in the category. 
+
+ANSWERHH 'Householder is Respondent or Not'     Columns 37
+     Categorical Variable
+     Variable Length 1
+     Question L-1A
+     Question Same as RECS90 
+     Variable Not Imputed
+     
+     0 = Someone Other than Householder
+     1 = Householder is Respondent
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0            681        8,800,000
+       1          6,430       87,800,000
+
+HOUSEHLD 'Householder'                             Columns 39
+     Categorical Variable
+     Variable Length 1
+     Question L-1A
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     1 = Householder
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          7,111       96,600,000
+
+HHSEX 'Sex of Householder'                             Columns 41
+     Categorical Variable
+     Variable Length 1
+     Question L-1B
+     Question Same as RECS90 
+     Imputed for Nonresponse
+
+     1 = Female
+     2 = Male
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          3,254       44,600,000
+       2          3,857       52,000,000
+
+
+ZHHSEX 'Imputation Flag for HHSEX'                     Columns 43
+     Categorical Variable 
+     Variable length 1
+
+     0 = HHSEX not imputed
+     1 = HHSEX imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,076       96,300,000
+       1             35          400,000
+
+
+
+       1      20      20         3          56        700,000
+       2      33      33         3       1,709     22,700,000
+       3      64      64         3       3,904     51,700,000
+       4      95      95         3       1,442     21,500,000
+
+
+HHAGE1 'Age Range of Householder'                   Columns 45
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+
+     0 = No Age Given
+     1 = Householder Age between  0-20 Years Old
+     2 = Householder Age between 21-33 Years Old
+     3 = Householder Age between 34-64 Years Old
+     4 = Householder Age is 65 Years Old or Older
+     
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1             56          700,000
+       2          1,709       22,700,000
+       3          3,904       51,700,000
+       4          1,442       21,500,000
+
+ZHHAGE 'Imputation Flag for HHAGE'                     Columns 47
+     Categorical Variable 
+     Variable length 1
+
+     0 = HHAGE not imputed
+     1 = HHAGE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,064       96,000,000
+       1             47          700,000
+
+
+EMPLOYHH 'Employment of Householder'                   Columns 49
+     Categorical Variable
+     Variable Length 1
+     Question L-3
+     Question Same as RECS90 
+     Imputed for Nonresponse
+
+     0 = Not Employed
+     1 = Full Time
+     2 = Part Time
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          2,610       36,500,000
+       1          3,864       51,600,000
+       2            637        8,600,000
+
+ZEMPLYHH 'Imputation Flag for EMPLOYHH'                  Columns 51
+     Categorical Variable 
+     Variable length 1
+
+     0 = EMPLOYHH not imputed
+     1 = EMPLOYHH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,077       96,200,000
+       1             34          400,000
+
+ANSWER02 'Member02 Respondent or Not'                 Columns 53
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          4,934       64,600,000
+       1            660        8,500,000
+       9          1,517       23,500,000
+
+KIN02 'Relationship of to Householder'                   Columns 55-56
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      02          4,119       53,500,000
+      03            789       10,300,000
+      04             35          400,000
+      05              1                Q
+      06             48          600,000
+      21            124        1,600,000
+      31              3                Q
+      41            273        3,900,000
+      51            202        2,700,000
+      99          1,517       23,500,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+ZKIN02 'Imputation Flag for KIN02'                     Columns 58
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN02 not imputed
+     1 = KIN02 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,076       96,200,000
+       1             35          500,000
+
+YEAR02 'Age Range of Member02'                             Columns 60
+     Numerical Variable
+     Variable Length 2
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          1,517       23,500,000
+       1            288        3,600,000
+       2            356        4,500,000
+       3          1,447       18,500,000
+       4          2,892       37,600,000
+       5             611       8,900,000
+
+ZYEARS02 'Imputation Flag for YEARS02'                     Columns 62
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS02 not imputed
+     1 = YEARS02 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,076       96,300,000
+       1             35          400,000
+
+ANSWER03 'Member03 Respondent or Not'                 Columns 64
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          3,228       41,200,000
+       1             18          200,000
+       9          3,865       55,200,000
+
+KIN03 'Relationship of Member03 to Householder'       Columns 66-67
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      02             14          200,000
+      03          2,286       36,000,000
+      04             88        1,100,000
+      05              7                Q
+      06             61          800,000
+      07              1                Q
+      21            116        1,500,000
+      31              6                Q
+      41            110        1,600,000
+      51             17          200,000
+      99          3,865       55,200,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+ZKIN03 'Imputation Flag for KIN03'                     Columns 69
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN03 not imputed
+     1 = KIN03 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,084       96,300,000
+       1             27          400,000
+
+YEAR03 'Age Range of Member03'                             Columns 71
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          3,865       55,200,000
+       1          1,602       19,600,000
+       2            985       12,700,000
+       3            436        5,900,000
+       4            162        2,400,000
+       5             61          800,000
+
+ZYEARS03 'Imputation Flag for YEARS03'                     Columns 73
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS03 not imputed
+     1 = YEARS03 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,087       96,300,000
+       1             24          300,000
+
+ANSWER04 'Member04 Respondent or Not'                 Columns 75
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          1,975       24,800,000
+       1              1                Q
+       9          5,135       71,800,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+KIN04 'Relationship of Member04 to Householder'       Columns 77-78
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      02              9                Q
+      03          1,741       21,700,000
+      04             82        1,000,000
+      05              3                Q
+      06             16          300,000
+      21             64          800,000
+      31              2                Q
+      41             54          800,000
+      51              5                Q
+      99          5,135       71,800,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+ZKIN04 'Imputation Flag for KIN04'                     Columns 80
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN04 not imputed
+     1 = KIN04 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,093       96,400,000
+       1             18          200,000
+
+YEAR04 'Age Range of Member04'                     Columns 82
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          5,135       71,800,000
+       1          1,296       15,900,000
+       2            464        5,900,000
+       3            154        2,200,000
+       4             51          700,000
+       5             11          200,000
+
+ZYEARS04 'Imputation Flag for YEARS04'                     Columns 84
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS02 not imputed
+     1 = YEARS02 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,094       96,500,000
+       1             17          200,000
+
+ANSWER05 'Member05 Respondent or Not'                 Columns 86
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0            815       10,200,000
+       1              1                Q
+       9          6,295       86,400,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+KIN05 'Relationship of Member05 to Householder'       Columns 88-89
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+02	5                Q
+      03            664        8,400,000
+      04             73          900,000
+      05              4                Q
+      06             13          200,000
+      07              1                Q
+      21             29          300,000
+      31              1                Q
+      41             26          300,000
+      99          6,295       86,400,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+ZKIN05 'Imputation Flag for KIN05'                     Columns 91
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN05 not imputed
+     1 = KIN05 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,103       96,500,000
+       1              8                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+YEAR05 'Age Range of Member05'                     Columns 93
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,295       86,400,000
+       1            604        7,400,000
+       2            141        1,900,000
+       3             36          500,000
+       4             24          200,000
+       5             11          200,000
+
+ZYEARS05 'Imputation Flag for YEARS05'                     Columns 95
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS05 not imputed
+     1 = YEARS05 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,104       96,600,000
+       1              7                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER06 'Member02 Respondent or Not'                 Columns 97
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0            276        3,500,000
+       9          6,835       93,200,000
+
+KIN06 'Relationship of Member06 to Householder'       Columns 99-100
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      02              4                Q
+      03            208        2,600,000
+      04             35          500,000
+      05              2                Q
+      06              2                Q
+      21             14          200,000
+      31              1                Q
+      41             10          100,000
+      99          6,835       93,200,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ZKIN06 'Imputation Flag for KIN06'                     Columns 102
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN06 not imputed
+     1 = KIN06 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,108       96,600,000
+       1              3                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+YEAR06 'Age Range of Member06'                             Columns 104
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,835       93,200,000
+       1            200        2,500,000
+       2             53          700,000
+       3             14          200,000
+       4              7                Q
+       5              2                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ZYEARS06 'Imputation Flag for YEARS06'                     Columns 106
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS06 not imputed
+     1 = YEARS06 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,108       96,600,000
+       1              3                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER07 'Member02 Respondent or Not'                 Columns 108
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0            114        1,500,000
+       9          6,997       95,100,000
+
+KIN07 'Relationship of Member07 to Householder'       Columns 110-111
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      03             71          900,000
+      04             16          200,000
+      05              2                Q
+      06              1                Q
+      21             16          200,000
+      31              2                Q
+      41              6                Q
+      99          6,997       95,100,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+ZKIN07 'Imputation Flag for KIN07'                     Columns 113
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN07 not imputed
+     1 = KIN07 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,108       96,600,000
+       1              3                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+YEAR07 'Age Range of Member07'                             Columns 115
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,997       95,100,000
+       1             80        1,000,000
+       2             22          300,000
+       3              8                Q
+       4              2                Q
+       5              2                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ZYEARS07 'Imputation Flag for YEARS07'                     Columns 117
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS08 not imputed
+     1 = YEARS08 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,108       96,600,000
+       1              3                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER08 'Member08 Respondent or Not'                 Columns 119
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0             53          600,000
+       9          7,058       96,000,000
+
+KIN08 'Relationship of Member08 to Householder'       Columns 121-122
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      02              1                Q
+      03             36          400,000
+      04              8                Q
+      21              6                Q
+      31              1                Q
+      41              1                Q
+      99          7,056       96,000,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+ZKIN08 'Imputation Flag for KIN08'                     Columns 124
+     Categorical Variable 
+     Variable length 1
+
+     0 = KIN08 not imputed
+     1 = KIN08 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,110       96,600,000
+       1              1                Q
+
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+YEAR08 'Age Range of Member08'                             Columns 126
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,058       96,000,000
+       1             43          500,000
+       2              7                Q
+       3              3                Q
+
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ZYEARS08 'Imputation Flag for YEARS08'                     Columns 128
+     Categorical Variable 
+     Variable length 1
+     
+     0 = YEARS08 not imputed
+     1 = YEARS08 imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,109       96,600,000
+       1              8                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER09 'Member09 Respondent or Not'                 Columns 130
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0             27          300,000
+       1              1                Q
+       9          7,083       93,300,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+KIN09 'Relationship of Member09 to Householder'       Columns 132-133
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      03             16          200,000
+      04              4                Q
+      05              1                Q
+      21              6                Q
+      41              1                Q
+      99          7,083       96,300,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+        
+YEAR09 'Age Range of Member09'                             Columns 135
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,083       96,300,000
+       1             24          300,000
+       2              1                Q
+       3              3                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER10 'Member10 Respondent or Not'                 Columns 137
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0             18          200,000
+       9          7,093       96,400,000
+
+KIN10 'Relationship of Member10 to Householder'       Columns 139-140
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      02              1                Q
+      03              8                Q
+      04              5                Q
+      21              3                Q
+      51              1                Q
+      99          7,093       96,400,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+YEAR10 'Age Range of Member10'                             Columns 142
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,093       96,400,000
+       1             15          200,000
+       2              1                Q
+       4              2                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER11 'Member11 Respondent or Not'                 Columns 144
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0              6                Q
+       9          7,105       96,600,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+KIN11 'Relationship of Member11 to Householder'       Columns 146-147
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      03              1                Q
+      04              2                Q
+      21              3                Q
+      99          7,105       96,600,000
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+YEAR11 'Age Range of Member11'                             Columns 149
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,105       96,600,000
+       1              4                Q
+       2              1                Q
+       4              1                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+ANSWER12 'Member12 Respondent or Not'                 Columns 151
+     Categorical Variable
+     Variable Length 1
+     Question L-1
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = Other Person in Household
+     1 = Respondent
+     9 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0              4                Q
+       9          7,107       96,600,000
+
+KIN12 'Relationship of Member12 to Householder'       Columns 153-154
+     Categorical Variable
+     Variable Length 2
+     Question L-1A
+     Question Different from RECS90 - Has Same Name 
+     Imputed for Nonresponse
+
+     02 = Spouse
+     03 = Child
+     04 = Grandchild
+     05 = Great Grandchild
+     06 = Parent
+     07 = Grandparent
+     21 = Other Relative
+     31 = Foster Child  
+     41 = Other Nonrelative
+     51 = Partner
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      03              1                Q
+      04              1                Q
+      21              2                Q
+      99          7,107       96,600,000
+
+YEAR12 'Age Range of Member12'                             Columns 156
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+     
+     0 = No Answer
+     1 = 12 Years Old or Younger
+     2 = Between 13 and 20 Years Old
+     3 = Between 21 and 33 Years Old
+     4 = Between 34 and 64 Years Old
+     5 = 65 Years Old or Older
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,107       96,600,000
+       1              2                Q
+       2              1                Q
+       4              1                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+DRIVEMON 'Number of Drivers in HH'                          Columns 158-159
+     Numerical Variable
+     Variable Length 2
+     Question L-4
+     Question Same as RECS90 
+     Imputed For Nonresponse
+
+      0  = None
+      1  = One 
+	2  = Two 
+	3  = Three
+	4  = Four 
+	5  = Five 
+	6  = Six 
+	7  = Seven 
+	8  = Eight 
+	9  = Nine 
+	10 = Ten 
+	11 = Eleven 
+	12 = Twelve 
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0            749       10,400,000
+       1          2,013       29,500,000
+       2          3,549       45,700,000
+       3            598        8,200,000
+       4            165        2,400,000
+       5             29          400,000
+       6              7                Q
+       7              1                Q
+
+     Q = Data withheld because fewer than 10 observation in the category.
+
+ZDRIVEMO  'Imputation Flag for DRIVEMON'                  Columns 161
+     Categorical Variable 
+     Variable length 1
+
+     0 = DRIVEMON not imputed
+     1 = DRIVEMON imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,046       95,800,000
+       1             65          800,000
+
+DRIVECAR  'Have Regular Use of Vehicle'                         Columns 163
+     Categorical Variable 
+     Variable Length 1
+     Question N-1
+     Question Same as RECS90
+     Imputed for nonresponse
+
+     0 = No
+     1 = Yes
+
+               Number           Weighted
+               Of               Number of
+     Value     Observations     Households
+       0         859            11,900,000
+       1       6,252            84,700,000
+
+ZDRIVECA 'Imputation Flag for DRIVECAR'                      Columns 165
+     Categorical Variable 
+     Variable length 1
+
+     0 = DRIVECAR not imputed
+     1 = DRIVECAR imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,100          96,500,000
+     1            11             100,000 
+
+VEHICLES  'Number of Vehicles'                          Columns 167-168
+     Categorical Variable 
+     Variable length 2
+     Question N-2
+     Question same as RECS90
+     Imputed for nonresponse
+
+     01 = One Vehicle
+     02 = Two Vehicles  
+     03 = Three Vehicles   
+     04 = Four Vehicles 
+     05 = Five Vehicles  
+     06 = Six Vehicles 
+     07 = Seven Vehicles  
+     08 = Eight Vehicles       
+     09 = Nine Vehicles      
+     10 = Ten Vehicles      
+     99 = Not Applicable
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+      01       2,406          34,200,000
+      02       2,814          36,400,000
+      03         791          10,800,000
+      04         207           2,700,000
+      05          23             400,000
+      06           6                   Q
+      07           3                   Q
+      08           2                   Q
+      99         859          11,900,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZVEHICLE 'Imputation Flag for VEHICLES'                      Columns 170
+  Categorical Variable 
+  Variable length 1
+
+     0 = VEHICLES not imputed
+     1 = VEHICLES imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+     0         7,083          96,300,000
+     1            28             400,000
+
+GRADHH   'Householder Highest Grade Completed'              Columns 172-173
+     Categorical Variable 
+     Variable Length 2
+     Question L-5
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+     00 = No Schooling
+     04 = Kindergarten to 4th	Grade
+     08 = 5th to 8th Grade
+     11 = 9th to 11th Grade
+     12 = Twelfth Grade
+     13 = One year of College
+     14 = Two years of College
+     15 = Three years of College
+     16 = Four years of College
+     17 = Five years of College
+     18 = Six or more years of College
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0             18          200,000
+       4            104        1,400,000
+       8            498        6,800,000
+      11            759       10,000,000
+      12          2,430       33,100,000
+      13            495        6,700,000
+      14            745       10,400,000
+      15            273        3,900,000
+      16            953       12,600,000
+      17            221        2,800,000
+      18            615        8,700,000
+
+ZGRADHH 'Imputation Flag for GRADHH'                     Columns 175
+     Categorical Variable 
+     Variable length 1
+
+     0 = GRADHH not imputed
+     1 = GRADHH imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,051       95,900,000
+       1             60          800,000
+
+MARRIED  'Marital Status of Householder'                    Columns 177
+     Categorical Variable 
+     Variable Length 1
+     Question L-6
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      1  = Currently Married
+      2  = Widowed 
+	3  = Divorced or Separated 
+	4  = Never Married
+5	= Unmarried, Partner
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          4,181       54,400,000
+       2            830       12,500,000
+       3          1,062       15,100,000
+       4            861       12,100,000
+       5            177        2,500,000
+       
+ZMARRIED 'Imputation Flag for MARRIED'                     Columns 179
+     Categorical Variable 
+     Variable length 1
+
+     0 = MARRIED not imputed
+     1 = MARRIED imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,061       96,000,000
+       1             50          600,000
+
+SDESCENT 'Householder of Hispanic Origin'                   Columns 181
+     Categorical Variable 
+     Variable Length 1
+     Question L-7
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes 
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,506       88,700,000
+       1            605        7,900,000
+
+ZSDESCEN  'Imputation Flag for SDESCENT'                     Columns 183
+     Categorical Variable 
+     Variable length 1
+
+     0 = SDESCENT not imputed
+     1 = SDESCENT imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,031       95,600,000
+       1             80        1,000,000
+
+ORIGIN   'Race of Householder'                              Columns 185
+     Categorical Variable 
+     Variable Length 1
+     Question L-8
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      1  = White 
+	2  = Black
+	3  = American Indian or Alaskan Native
+4	= Asian or Pacific Islander
+      5  = Other
+      7  = Hispanic (If Volunteered) 
+	
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          5,864       80,200,000
+       2            861       10,900,000
+       3             41          600,000
+       4            208        3,100,000
+       5              9                Q
+       7            128        1,700,000
+
+  Q = Data withheld because fewer than 10 observation in the category.
+
+ZORIGIN  'Imputation Flag for ORIGIN'                     Columns 187
+     Categorical Variable 
+     Variable length 1
+
+     0 = ORIGIN not imputed
+     1 = ORIGIN imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,036       95,700,000
+       1             75          900,000
+
+WAGES    'Received Wages in Past 12 Months'                 Columns 189
+     Categorical Variable 
+     Variable Length 1
+     Question L-9A
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          1,914       27,100,000
+       1          5,197       69,500,000
+
+ZWAGES  'Imputation Flag for WAGES'                     Columns 191
+     Categorical Variable 
+     Variable length 1
+
+     0 = WAGES not imputed
+     1 = WAGES imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,063       96,100,000
+       1             48          600,000
+
+SELFHIRE 'Self-Employed Income in Past 12 months'           Columns 193 
+     Categorical Variable 
+     Variable Length 1
+     Question L-9B
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+1	= Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,064       82,700,000
+       1          1,047       13,900,000
+
+ZSELFHIR  'Imputation Flag for SELFHIRE'                     Columns 195
+     Categorical Variable 
+     Variable length 1
+
+     0 = SELFHIRE not imputed
+     1 = SELFHIRE imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,063       96,100,000
+       1             48          600,000
+
+SSECURTY 'Social Security in Past 12 Months'                Columns 197
+     Categorical Variable 
+     Variable Length 1
+     Question L-9C
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          5,208       69,100,000
+       1          1,903       27,500,000
+
+ZSSECURT  'Imputation Flag for SSECURTY'                     Columns 199
+     Categorical Variable 
+     Variable length 1
+
+     0 = SSECURTY not imputed
+     1 = SSECURTY imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,111       96,600,000
+       
+PENSIONS 'Pension in Past 12 Months'                        Columns 201
+     Categorical Variable 
+     Variable Length 1
+     Question L-9D
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          5,909       79,000,000
+       1          1,202       17,600,000
+
+ZPENSION  'Imputation Flag for PENSIONS'                     Columns 203
+     Categorical Variable 
+     Variable length 1
+
+     0 = PENSIONS not imputed
+     1 = PENSIONS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,064       96,100,000
+       1             47          500,000
+
+FSTAMPS  'Food Stamps in Past 12 Months'                    Columns 205
+     Categorical Variable 
+     Variable Length 1
+     Question L-9E
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,517       89,400,000
+       1            594        7,200,000
+
+ZFSTAMPS  'Imputation Flag for FSTAMPS'                     Columns 207
+     Categorical Variable 
+     Variable length 1
+
+     0 = FSTAMPS not imputed
+     1 = FSTAMPS imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,070       96,100,000
+       1             41          500,000
+
+AFDC     'AFDC in Past 12 Months'                           Columns 209
+     Categorical Variable 
+     Variable Length 1
+     Question L-9F
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,801       92,900,000
+       1            310        3,700,000
+
+ZAFDC  'Imputation Flag for AFDC'                     Columns 211
+     Categorical Variable 
+     Variable length 1
+
+     0 = AFDC not imputed
+     1 = AFDC imputed
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,065       96,100,000
+       1             46          600,000
+
+UNEMPLOY 'Unemployment in Past 12 Months'                   Columns 213        
+     Categorical Variable 
+     Variable Length 1
+     Question L-9G
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+1	= Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,775       91,900,000
+       1            336        4,800,000
+
+ZUNEMPLO  'Imputation Flag for UNEMPLOY '                     Columns 215
+     Categorical Variable 
+     Variable length 1
+
+     0 = UNEMPLOY not imputed
+     1 = UNEMPLOY imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,068       96,100,000
+       1             43          500,000
+
+SSI      'Income From SSI in Past 12 Months'                Columns 217
+     Categorical Variable 
+     Variable Length 1
+     Question L-9H
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,760       92,300,000
+       1            351        4,300,000
+
+ZSSI 'Imputation Flag for SSI'                     Columns 219
+     Categorical Variable 
+     Variable length 1
+
+     0 = SSI not imputed
+     1 = SSI imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,063       96,100,000
+       1             48          500,000
+
+OTHERAID 'Other Public Aid in Past 12 Months'               Columns 221
+     Categorical Variable 
+     Variable Length 1
+     Question L-9I
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0  = No
+      1  = Yes
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,937       94,400,000
+       1            174        2,200,000
+
+ZOTHERAI 'Imputation Flag for OTHERAID '                     Columns 223
+     Categorical Variable 
+     Variable length 1
+
+     0 = OTHERAID not imputed
+     1 = OTHERAID imputed
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          7,065       96,100,000
+       1             46          600,000
+
+MONEYPY  'Family Income in Past 12 Months'                  Columns 225-226        
+     Categorical Variable 
+     Variable Length 2
+     Question L-10
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      01 = Less Than $3,000
+      02 = $3,000 - $3,999 
+      03 = $4,000 - $4,999
+      04 = $5,000 - $5,999 
+      05 = $6,000 - $7,499
+      06 = $7,500 - $8,999 
+      07 = $9,000 - $9,999
+      08 = $10,000 - $10,999 
+      09 = $11,000 - $12,499
+      10 = $12,500 - $13,999 
+      11 = $14,000 - $14,999
+      12 = $15,000 - $17,499 
+      13 = $17,500 - $19,999
+      14 = $20,000 - $22,499 
+      15 = $22,500 - $24,999
+      16 = $25,000 - $27,499 
+      17 = $27,500 - $29,999
+      18 = $30,000 - $32,499 
+      19 = $32,500 - $34,999
+      20 = $35,000 - $39,999 
+      21 = $40,000 - $44,999
+      22 = $45,000 - $49,999 
+      23 = $50,000 - $74,999
+      24 = $75,000 - $99,999 
+      25 = $100,000 or More
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       01           129        1,800,000
+       02            86        1,100,000
+       03            91        1,100,000
+       04           169        2,200,000
+       05           216        2,900,000
+       06           219        3,000,000
+       07           177        2,500,000
+       08           212        2,900,000
+       09           221        3,200,000
+       10           203        2,800,000
+       11           164        2,300,000
+       12           296        4,000,000
+       13           397        5,600,000
+       14           319        4,600,000
+       15           295        4,100,000
+       16           269        4,100,000
+       17           189        2,600,000
+       18           324        4,500,000
+       19           207        2,800,000
+       20           385        5,400,000
+       21           409        5,500,000
+       22           480        6,600,000
+       23         1,017       12,600,000
+       24           359        4,700,000
+       25           278        3,600,000
+
+
+ZMONEYPY  'Imputation Flag for MONEYPY'                     Columns 228
+     Categorical Variable 
+     Variable length 1
+
+     0 = MONEYPY not imputed
+     1 = MONEYPY imputed
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          6,293       85,600,000
+       1            818       11,100,000
+
+INC45PLU 'Family Income More/Less than $45,000'             Columns 230
+     Categorical Variable 
+     Variable Length 1
+     Question L-11
+     Question Different from RECS90 - Has Same Name
+     Imputed For Nonresponse
+
+      0 = Over  $45,000
+      1 = Under $45,000 
+      6 = Don't Know
+      7 = Refused 
+      8 = No Answer
+      9 = Not Applicable 
+      
+                     Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0            143        2,000,000
+       1            357        4,700,000
+       6             66        1,000,000
+       7            218        2,900,000
+       8             36          400,000
+       9          6,291       85,500,000
+       
+SPOUSE 'Spouse'                             Columns 232
+     Categorical Variable
+     Variable Length 1
+     Question L-1A
+     Question Same as RECS90 
+     Variable Not Imputed
+
+     0 = No Spouse
+     1 = Spouse
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          2,734       39,700,000
+       1          4,377       56,900,000
+
+SPSEX 'Sex of Spouse'                             Columns 234
+     Categorical Variable
+     Variable Length 1
+     Question L-1B
+     Question Same as RECS90 
+     Imputed for Nonresponse
+
+     0 = No Spouse
+     1 = Female
+     2 = Male
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          2,735       39,800,000
+       1          1,653       22,200,000
+       2          2,723       34,600,000
+
+SPAGE1 'Age Range of Spouse'                             Columns 236
+     Numerical Variable
+     Variable Length 1
+     Question L-1C
+     Question Same as RECS90 
+     Imputed for Nonresponse
+
+     0 = No Age Given
+     1 = Spouse Age between  0-20 Years Old
+     2 = Spouse Age between 21-33 Years Old
+     3 = Spouse Age between 34-64 Years Old
+     4 = Spouse Age is 65 Years Old or Older
+     
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          2,754       40,000,000
+       2          1,133       14,200,000
+       3          2,668       34,400,000
+       4            556        8,200,000
+
+EMPLOYSP 'Employment of Spouse'                   Columns 238-239
+     Categorical Variable
+     Variable Length 2
+     Question L-3
+     Question Same as RECS90 
+     Imputed for Nonresponse
+
+      0 = No Spouse 
+     10 = Spouse Not Employed
+     11 = Spouse Works Full Time
+     12 = Spouse Works Part Time
+
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          2,734       39,700,000
+      10          1,238       16,600,000
+      11          2,326       30,000,000
+      12            813       10,300,000
+
+NYR0012 'Number of HH Members Between the Ages of 0-12'   Columns 241
+     Numerical Variable
+     Variable Length 1
+     Variable Not Imputed 
+
+      0  = No Members
+	1  = One Member
+	2  = Two Members
+	3  = Three Members
+	4  = Four Members
+	5  = Five Members
+      6  = Six Member
+	7  = Seven Members
+                      
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          4,764       67,900,000
+       1          1,074       13,100,000
+       2            883       10,700,000
+       3            283        3,600,000
+       4             76        1,000,000
+       5             23          300,000
+       6              6                Q
+       7              2                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+NYR1320 'Number of HH Members Between the Ages of 13-20'   Columns 243
+     Numerical Variable
+     Variable Length 1
+     Variable Not Imputed 
+
+      0  = No Members
+	1  = One Member
+	2  = Two Members
+	3  = Three Members
+	4  = Four Members
+	5  = Five Members
+      6  = Six Member
+	7  = Seven Members
+                      
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          5,593       72,800,000
+       1          1,036       13,100,000
+       2            377       13,800,000
+       3             78          800,000
+       4             21          200,000
+       5              5                Q
+       6              1                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+NYR2133 'Number of HH Members Between the Ages of 21-33'   Columns 245
+     Numerical Variable
+     Variable Length 1
+     Variable Not Imputed 
+
+      0  = No Members
+	1  = One Member
+	2  = Two Members
+	3  = Three Members
+	4  = Four Members
+	5  = Five Members
+      6  = Six Member
+	7  = Seven Members
+                      
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          4,595       63,300,000
+       1          1,378       18,500,000
+       2          1,059       13,800,000
+       3             58          800,000
+       4             16          200,000
+       5              5                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+NYR3464 'Number of HH Members Between the Ages of 34-64'   Columns 247
+     Numerical Variable
+     Variable Length 1
+     Variable Not Imputed 
+
+      0  = No Members
+	1  = One Member
+	2  = Two Members
+	3  = Three Members
+	4  = Four Members
+	5  = Five Members
+      6  = Six Member
+	7  = Seven Members
+                      
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          2,673       37,700,000
+       1          1,908       26,200,000
+       2          2,461       31,700,000
+       3             61          900,000
+       4              7                Q 
+       5              1                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+NYR6595 'Number of HH Members 65 or Older'               Columns 249
+     Numerical Variable
+     Variable Length 1
+     Variable Not Imputed 
+
+      0  = No Members
+	1  = One Member
+	2  = Two Members
+	3  = Three Members
+	4  = Four Members
+	5  = Five Members
+      6  = Six Member
+	7  = Seven Members
+                      
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       0          5,510       72,800,000
+       1          1,068       16,100,000
+       2            527        7,700,000
+       3              6                Q
+
+      Q = Data withheld because fewer than 10 observation in the category.
+
+FAMILY 'Type of Family Structure in a HH'                Columns 251
+     Numerical Variable
+     Variable Length 1
+     Variable Not Imputed 
+
+      1  = Single Person
+	2  = Two People, Not a Couple
+	3  = Three People
+	4  = Two People, Couple (married or unmarried) 
+	5  = Couple with Others 
+ 
+               Number         Weighted
+               Of             Number of
+     Value     Observations   Households
+       1          1,517       23,500,000
+       2            614        8,300,000
+       3            603        7,900,000
+       4          1,734       23,400,000
+       5          2,643       33,500,000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

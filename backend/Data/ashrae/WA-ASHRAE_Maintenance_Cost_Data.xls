@@ -1,0 +1,795 @@
+
+
+<table border="1">
+<tr>
+<td colspan=6><FONT SIZE="4" COLOR="blue">ASHRAE Maintenance Cost Query Dataset</FONT></td>
+</tr>
+<tr>
+</tr>
+<tr>
+<td colspan=4><center><u><i>Search Criteria</i></u></center></td>
+</tr>
+<tr>
+<td><B>REGION</B></td>
+<td colspan=3><center>- Pacific</td>
+</tr><tr>
+<td><B>STATE</B></td>
+<td colspan=3><center>WA</td>
+</tr>
+<tr>
+<td><B>Function</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Size (sf)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Age (years)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Height (stories)</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>BOMA Class</B></td>
+<td colspan=3><center>All</td>
+</tr>
+<tr>
+<td><B>Location</B></td>
+<td colspan=3><center>All</td>
+</tr><tr></tr>
+<tr><TD colspan=2><B>MATCHING BUILDINGS:</B></td><td colspan=2><B><CENTER>14</CENTER></B></td></tr>
+<tr></tr>
+<tr>
+<td colspan=2></td>
+	  <td colspan=3><CENTER><I>Yearly Maintanence Costs</I></CENTER></td>
+	  <TD></td>
+	  	  <td colspan=3><CENTER><I>Maintanence Costs per SF</I></CENTER></td>
+</tr>
+
+<tr>
+
+		<td><B><center>ID</center></B></td>
+		<td><B><center>STATE</center></B></td>
+		<td><B><center>No Adjustment</center></B></td>
+		<td><B><center>CPI-U</center></B></td>
+		<td><B><center>GDP-IPD</center></B></td>
+		<td><B><center>GROSS AREA</center></B></td>
+		<td><B><center>No Adjustment</center></B></td>
+		<td><B><center>CPI-U</center></B></td>
+		<td><B><center>GDP-IPD</center></B></td>
+		<td><B><center>% HEATED</center></B></td>
+		<td><B><center>% COOLED</center></B></td>
+		<td><B><center>First Occupied Year</center></B></td>
+		<td><B><center>First Occupied Month</center></B></td>
+		<td><B><center>FUNCTION</center></B></td>
+		<td><B><center>OTHER FUNCTION</center></B></td>
+		<td><B><center>STORIES</center></B></td>
+		<td><B><center>BOMA CLASS</center></B></td>
+		<td><B><center>LOCATION</center></B></td>
+		<td><B><center>WEEKLY HOURS</center></B></td>
+		<td><B><center>ONSITE STAFF</center></B></td>
+		<td><B><center>OCCUPANCY</center></B></td>
+		<td><B><center>Month Entered</td>
+		<td><B><center>Year Entered</td>
+		<td><B><center>% Inhouse</td>
+		<td><B><center>% Contract</td>
+		<td><B><center>Cost Data Source</td>
+		<td><B><center>InHouse Labor Source</td>
+		<td><B><center>InHouse Predictive %</td>
+		<td><B><center>InHouse Preventive %</td>
+		<td><B><center>InHouse Unplanned %</td>
+		<td><B><center>InHouse % Details</td>
+		<td><B><center>InHouse Labor Hours</td>
+		<td><B><center>InHouse Labor Rate</td>
+		<td><B><center>InHouse Labor Cost</td>
+		<td><B><center>InHouse Materials Cost</td>
+		<td><B><center>InHouse Total Cost</td>
+		<td><B><center>Contract Labor Source</td>
+		<td><B><center>Contract Predictive %</td>
+		<td><B><center>Contract Preventive %</td>
+		<td><B><center>Contract Unplanned %</td>
+		<td><B><center>Contract Total Cost</td>
+
+  </tr>
+  <tr>
+
+		<td></td>
+		<td></td>
+		<td><CENTER><I>$ per year</I></CENTER></td>
+		<td><CENTER><I>$ per year</I></CENTER></td>
+		<td><CENTER><I>$ per year</I></CENTER></td>
+		<td><CENTER><I>square feet</I></CENTER></td>
+		<td><CENTER><I>$ per sf</I></CENTER></td>
+		<td><CENTER><I>$ per sf</I></CENTER></td>
+		<td><CENTER><I>$ per sf</I></CENTER></td>
+		<td></td>
+		<td></td>
+		<td><CENTER><I>year</I></CENTER></td>
+		<td><CENTER><I>month</I></CENTER></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td><CENTER><I>hours</I></CENTER></td>
+		<td><CENTER><I># of Staff</I></CENTER></td>
+		<td><CENTER><I></I></CENTER></td>
+
+  </tr>
+  
+    <tr>
+
+      <td><center>413</td>
+      <td><center>WA</td>
+ 	  <td><center>$2,100</td>
+	  <td><center>$2,507</td>
+	  <td><center>$3,741</td>
+	  <td><center>30,000</td>
+  	  <td><center>$0.070</td>
+	  <td><center>$0.084</td>
+	  <td><center>$0.125</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1900</td>
+      <td><center>1</td>
+      <td><center>Office</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>60 %</td>
+	  <td><center>40 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>414</td>
+      <td><center>WA</td>
+ 	  <td><center>$5,700</td>
+	  <td><center>$6,804</td>
+	  <td><center>$10,153</td>
+	  <td><center>52,000</td>
+  	  <td><center>$0.110</td>
+	  <td><center>$0.131</td>
+	  <td><center>$0.195</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1917</td>
+      <td><center>1</td>
+      <td><center>Other</td>
+      <td><center>Courthouse</td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>2</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>80 %</td>
+	  <td><center>20 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>415</td>
+      <td><center>WA</td>
+ 	  <td><center>$8,184</td>
+	  <td><center>$10,205</td>
+	  <td><center>$15,068</td>
+	  <td><center>13,300</td>
+  	  <td><center>$0.615</td>
+	  <td><center>$0.767</td>
+	  <td><center>$1.133</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1938</td>
+      <td><center>1</td>
+      <td><center>Office</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1997</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>5</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>80 %</td>
+	  <td><center>20 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>416</td>
+      <td><center>WA</td>
+ 	  <td><center>$66,300</td>
+	  <td><center>$76,296</td>
+	  <td><center>$115,584</td>
+	  <td><center>130,000</td>
+  	  <td><center>$0.510</td>
+	  <td><center>$0.587</td>
+	  <td><center>$0.889</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1954</td>
+      <td><center>1</td>
+      <td><center>Office</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>2000</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>5</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>75 %</td>
+	  <td><center>25 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>417</td>
+      <td><center>WA</td>
+ 	  <td><center>$16,035</td>
+	  <td><center>$19,141</td>
+	  <td><center>$28,563</td>
+	  <td><center>32,000</td>
+  	  <td><center>$0.501</td>
+	  <td><center>$0.598</td>
+	  <td><center>$0.893</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1956</td>
+      <td><center>1</td>
+      <td><center>Other</td>
+      <td><center>Conference room</td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>418</td>
+      <td><center>WA</td>
+ 	  <td><center>$4,400</td>
+	  <td><center>$5,252</td>
+	  <td><center>$7,838</td>
+	  <td><center>88,000</td>
+  	  <td><center>$0.050</td>
+	  <td><center>$0.060</td>
+	  <td><center>$0.089</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1963</td>
+      <td><center>1</td>
+      <td><center>Laboratory</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>90 %</td>
+	  <td><center>10 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>419</td>
+      <td><center>WA</td>
+ 	  <td><center>$12,500</td>
+	  <td><center>$14,922</td>
+	  <td><center>$22,266</td>
+	  <td><center>100,000</td>
+  	  <td><center>$0.125</td>
+	  <td><center>$0.149</td>
+	  <td><center>$0.223</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1974</td>
+      <td><center>1</td>
+      <td><center>Office</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>70 %</td>
+	  <td><center>30 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>20 %</td>
+	  <td><center>80 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>421</td>
+      <td><center>WA</td>
+ 	  <td><center>$0</td>
+	  <td><center>$0</td>
+	  <td><center>$0</td>
+	  <td><center>4,600</td>
+  	  <td><center>$0.000</td>
+	  <td><center>$0.000</td>
+	  <td><center>$0.000</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1978</td>
+      <td><center>1</td>
+      <td><center>Office</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1997</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>422</td>
+      <td><center>WA</td>
+ 	  <td><center>$18,225</td>
+	  <td><center>$21,756</td>
+	  <td><center>$32,464</td>
+	  <td><center>135,000</td>
+  	  <td><center>$0.135</td>
+	  <td><center>$0.161</td>
+	  <td><center>$0.240</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1985</td>
+      <td><center>1</td>
+      <td><center>Other</td>
+      <td><center>rehab center</td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>70 %</td>
+	  <td><center>30 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>30 %</td>
+	  <td><center>70 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>423</td>
+      <td><center>WA</td>
+ 	  <td><center>$1,170</td>
+	  <td><center>$1,397</td>
+	  <td><center>$2,084</td>
+	  <td><center>180,000</td>
+  	  <td><center>$0.007</td>
+	  <td><center>$0.008</td>
+	  <td><center>$0.012</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1985</td>
+      <td><center>1</td>
+      <td><center>Other</td>
+      <td><center>prison</td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center></td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>424</td>
+      <td><center>WA</td>
+ 	  <td><center>$11,700</td>
+	  <td><center>$13,967</td>
+	  <td><center>$20,841</td>
+	  <td><center>17,400</td>
+  	  <td><center>$0.672</td>
+	  <td><center>$0.803</td>
+	  <td><center>$1.198</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1991</td>
+      <td><center>1</td>
+      <td><center>Other</td>
+      <td><center>library</td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>2</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>80 %</td>
+	  <td><center>20 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>425</td>
+      <td><center>WA</td>
+ 	  <td><center>$7,800</td>
+	  <td><center>$9,726</td>
+	  <td><center>$14,361</td>
+	  <td><center>39,000</td>
+  	  <td><center>$0.200</td>
+	  <td><center>$0.249</td>
+	  <td><center>$0.368</td>
+      <td><center>75 %</td>
+      <td><center>100 %</td>
+      <td><center>1992</td>
+      <td><center>1</td>
+      <td><center>School (K-12)</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1997</td>
+	  <td><center>80 %</td>
+	  <td><center>20 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>80 %</td>
+	  <td><center>20 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>0 %</td>
+	  <td><center>100 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>427</td>
+      <td><center>WA</td>
+ 	  <td><center>$52,100</td>
+	  <td><center>$62,193</td>
+	  <td><center>$92,804</td>
+	  <td><center>91,432</td>
+  	  <td><center>$0.570</td>
+	  <td><center>$0.680</td>
+	  <td><center>$1.015</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1995</td>
+      <td><center>1</td>
+      <td><center>Office</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>80 %</td>
+	  <td><center>20 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>20 %</td>
+	  <td><center>80 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+    <tr>
+
+      <td><center>429</td>
+      <td><center>WA</td>
+ 	  <td><center>$31,600</td>
+	  <td><center>$37,722</td>
+	  <td><center>$56,288</td>
+	  <td><center>109,000</td>
+  	  <td><center>$0.290</td>
+	  <td><center>$0.346</td>
+	  <td><center>$0.516</td>
+      <td><center>100 %</td>
+      <td><center>100 %</td>
+      <td><center>1994</td>
+      <td><center>9</td>
+      <td><center>School (K-12)</td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center></td>
+      <td><center></td>
+      <td><center>0</td>
+      <td><center>0</td>
+      <td><center>0</td>
+	  <td><center>12</td>
+	  <td><center>1999</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>4</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>$ 0</td>
+	  <td><center>$ 0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0</td>
+	  <td><center>0 %</td>
+	  <td><center>50 %</td>
+	  <td><center>50 %</td>
+	  <td><center>$0</td>
+
+
+	
+    </tr>
+  
+</tableM
