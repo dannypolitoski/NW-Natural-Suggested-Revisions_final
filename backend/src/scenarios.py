@@ -82,7 +82,7 @@ class ScenarioConfig:
     # Calibrate the baseline scenario's estimated total UPC to the IRP UPC series
     # after bottom-up model effects have been applied. Non-baseline scenarios keep
     # their model-derived deltas so scenario comparisons remain meaningful.
-    baseline_irp_alignment: Optional[bool] = None
+    baseline_irp_alignment: bool = True
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert config to dictionary."""
@@ -95,24 +95,6 @@ class ScenarioConfig:
         valid_fields = {f.name for f in cls.__dataclass_fields__.values()}
         filtered = {k: v for k, v in data.items() if not k.startswith('_') and k in valid_fields}
         return cls(**filtered)
-
-
-def _build_fallback_irp_forecast(base_year: int, forecast_horizon: int) -> pd.DataFrame:
-    """Build a documented IRP UPC fallback when the forecast file is unavailable."""
-    base_upc = 648.0
-    annual_decay_rate = -0.0119
-    rows = []
-    for offset in range(forecast_horizon + 1):
-        year = base_year + offset
-        upc = base_upc * ((1 + annual_decay_rate) ** (year - BASE_YEAR))
-        rows.append({
-            'year': year,
-            'irp_upc_therms': round(upc, 1),
-            'irp_decay_rate': 0.0 if year == BASE_YEAR else annual_decay_rate,
-            'irp_era': 'fallback_assumption',
-            'irp_source': 'embedded_2025_irp_decay_assumption',
-        })
-    return pd.DataFrame(rows)
 
 
 def _is_baseline_scenario(name: str) -> bool:
@@ -134,13 +116,11 @@ def _align_baseline_to_irp(
     """
     summary: Dict[str, Any] = {
         'enabled': False,
-        'reason': 'disabled',
+        'reason': 'disabled_or_not_baseline',
         'years_aligned': 0,
     }
 
-    alignment_setting = getattr(config, 'baseline_irp_alignment', None)
-    should_align = _is_baseline_scenario(config.name) if alignment_setting is None else bool(alignment_setting)
-    if not should_align:
+    if not getattr(config, 'baseline_irp_alignment', True) or not _is_baseline_scenario(config.name):
         return results_df, estimated_total_df, summary
 
     if estimated_total_df.empty or 'estimated_total_upc' not in estimated_total_df.columns or 'irp_upc' not in estimated_total_df.columns:
