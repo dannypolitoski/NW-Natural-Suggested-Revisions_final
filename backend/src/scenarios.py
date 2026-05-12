@@ -322,6 +322,34 @@ def validate_scenario(config: ScenarioConfig) -> Dict[str, Any]:
     }
 
 
+def _build_fallback_irp_forecast(base_year: int, forecast_horizon: int) -> pd.DataFrame:
+    """Build a synthetic IRP forecast using the documented 2025 IRP planning assumptions.
+
+    Uses 648 therms/customer in 2025 with -1.19% annual decay rate, as documented
+    in the NW Natural 2025 IRP load decay forecast.
+    """
+    IRP_BASE_UPC = 648.0        # 2025 IRP baseline therms/customer
+    IRP_DECAY_RATE = -0.0119    # -1.19% annual decay
+
+    rows = []
+    for offset in range(forecast_horizon + 1):
+        year = base_year + offset
+        # Apply compound decay from 2025 baseline
+        years_from_2025 = year - 2025
+        upc = IRP_BASE_UPC * ((1 + IRP_DECAY_RATE) ** years_from_2025)
+        rows.append({
+            'year': year,
+            'irp_upc_therms': round(upc, 1),
+            'irp_source': 'embedded_fallback',
+        })
+
+    logger.info(
+        f"Built fallback IRP forecast: {len(rows)} years, "
+        f"UPC {rows[0]['irp_upc_therms']:.1f} → {rows[-1]['irp_upc_therms']:.1f}"
+    )
+    return pd.DataFrame(rows)
+
+
 def _load_irp_forecast(base_year: int, forecast_horizon: int) -> Optional[pd.DataFrame]:
     """Load NW Natural IRP 10-Year Load Decay Forecast for comparison.
 
@@ -349,10 +377,17 @@ def _load_irp_forecast(base_year: int, forecast_horizon: int) -> Optional[pd.Dat
         df = df[(df['year'] >= base_year) & (df['year'] <= base_year + forecast_horizon)]
         if 'irp_source' not in df.columns:
             df['irp_source'] = 'csv_forecast'
+        if df.empty:
+            logger.warning(
+                "IRP forecast CSV had no rows for years %d–%d; using embedded fallback",
+                base_year, base_year + forecast_horizon
+            )
+            return _build_fallback_irp_forecast(base_year, forecast_horizon)
         logger.info(f"Loaded IRP forecast: {len(df)} years, UPC range {df['irp_upc_therms'].min():.1f}-{df['irp_upc_therms'].max():.1f}")
         return df
     except Exception as e:
-        logger.warning(f"Failed to load IRP forecast: {e}; using embedded fallback")
+        logger.error(f"Failed to load IRP forecast: {e}", exc_info=True)
+        logger.warning("Falling back to embedded IRP decay forecast")
         return _build_fallback_irp_forecast(base_year, forecast_horizon)
 
 
