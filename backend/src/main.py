@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import List, Tuple, Dict, Any
 
 import pandas as pd
+import numpy as np
 
 from src.config import (
     BASE_YEAR, OUTPUT_DIR, PREMISE_DATA, EQUIPMENT_DATA, EQUIPMENT_CODES,
@@ -613,7 +614,19 @@ Examples:
                         est_total[['year', 'estimated_total_upc']],
                         on='year', how='left'
                     )
-                irp_compare['diff_therms'] = irp_compare['model_upc'] - irp_compare['irp_upc']
+                # Compare IRP against estimated total UPC when available; otherwise fall
+                # back to the space-heating-only model UPC. This keeps dashboard
+                # summary diffs aligned with the displayed total-UPC comparison.
+                if 'estimated_total_upc' in irp_compare.columns:
+                    irp_compare['comparison_upc'] = irp_compare['estimated_total_upc'].fillna(irp_compare['model_upc'])
+                    irp_compare['model_upc_label'] = np.where(
+                        irp_compare['estimated_total_upc'].notna(),
+                        'estimated_total_upc',
+                        irp_compare['model_upc_label']
+                    )
+                else:
+                    irp_compare['comparison_upc'] = irp_compare['model_upc']
+                irp_compare['diff_therms'] = irp_compare['comparison_upc'] - irp_compare['irp_upc']
                 irp_compare['diff_pct'] = (irp_compare['diff_therms'] / irp_compare['irp_upc'] * 100).round(1)
                 export_results(irp_compare, str(scenario_dir / 'irp_comparison.csv'), format='csv')
                 export_results(irp_compare, str(scenario_dir / 'irp_comparison.json'), format='json')
