@@ -1,1 +1,40 @@
-{"name": "baseline", "base_year": 2025, "forecast_horizon": 10, "housing_growth_rate": 0.01, "electrification_rate": 0.02, "efficiency_improvement": 0.01, "weather_assumption": "normal", "heating_factor": 0.112501, "end_use_scope": ["space_heating"], "max_premises": 100, "vectorized": true, "_comment": "Baseline Reference Case - Conservative assumptions for IRP planning", "_parameters": {"name": "Scenario identifier used in outputs and comparisons", "base_year": "Starting year for simulation (2025)", "forecast_horizon": "Number of years to project forward (10 years = 2025-2035)", "housing_growth_rate": "Annual housing unit growth rate (1% per year, conservative)", "electrification_rate": "Annual rate of gas-to-electric fuel switching (2% per year)", "efficiency_improvement": "Annual equipment efficiency improvement rate (1% per year)", "weather_assumption": "Weather scenario: 'normal' uses 30-year normals, 'warm' reduces HDD, 'cold' increases HDD", "end_use_scope": "List of end-uses to simulate. Current scope: ['space_heating']. Future: add water_heating, cooking, clothes_drying, fireplace, other", "max_premises": "Maximum premises to simulate (0 = all). Set to 1000-5000 for quick testing", "vectorized": "Use fast vectorized simulation (true) or row-by-row loop (false)"}, "_notes": ["This baseline scenario represents a reference case with conservative assumptions.", "Housing growth of 1% aligns with historical NW Natural service territory trends.", "Electrification of 2% reflects current policy and market adoption rates.", "Efficiency improvements of 1% account for natural equipment replacement with newer, more efficient models.", "Results are compared against NW Natural's 2025 IRP UPC forecast (648 therms baseline).", "end_use_scope controls which end-uses are simulated. Current scope is space_heating only.", "Set max_premises to a small number (e.g., 1000) for quick testing runs.", "Set vectorized to true for production runs (100x faster than row-by-row)."]}
+{
+  "name": "baseline",
+  "base_year": 2025,
+  "forecast_horizon": 10,
+  "housing_growth_rate": 0.01,
+  "electrification_rate": 0.02,
+  "efficiency_improvement": 0.01,
+  "weather_assumption": "normal",
+  "heating_factor": 0.112501,
+  "end_use_scope": [
+    "space_heating"
+  ],
+  "max_premises": 100,
+  "vectorized": true,
+  "_comment": "Baseline Reference Case - Conservative assumptions for IRP planning",
+  "_parameters": {
+    "name": "Scenario identifier used in outputs and comparisons",
+    "base_year": "Starting year for simulation (2025)",
+    "forecast_horizon": "Number of years to project forward (10 years = 2025-2035)",
+    "housing_growth_rate": "Annual housing unit growth rate (1% per year, conservative)",
+    "electrification_rate": "Annual rate of gas-to-electric fuel switching (2% per year)",
+    "efficiency_improvement": "Annual equipment efficiency improvement rate (1% per year)",
+    "weather_assumption": "Weather scenario: 'normal' uses 30-year normals, 'warm' reduces HDD, 'cold' increases HDD",
+    "end_use_scope": "List of end-uses to simulate. Current scope: ['space_heating']. Future: add water_heating, cooking, clothes_drying, fireplace, other",
+    "max_premises": "Maximum premises to simulate (0 = all). Set to 1000-5000 for quick testing",
+    "vectorized": "Use fast vectorized simulation (true) or row-by-row loop (false)",
+    "baseline_irp_alignment": "Anchor this baseline scenario estimated total UPC to NW Natural IRP UPC when the IRP forecast is available."
+  },
+  "_notes": [
+    "This baseline scenario represents a reference case with conservative assumptions.",
+    "Housing growth of 1% aligns with historical NW Natural service territory trends.",
+    "Electrification of 2% reflects current policy and market adoption rates.",
+    "Efficiency improvements of 1% account for natural equipment replacement with newer, more efficient models.",
+    "Results are compared against NW Natural's 2025 IRP UPC forecast (648 therms baseline).",
+    "end_use_scope controls which end-uses are simulated. Current scope is space_heating only.",
+    "Set max_premises to a small number (e.g., 1000) for quick testing runs.",
+    "Set vectorized to true for production runs (100x faster than row-by-row)."
+  ],
+  "baseline_irp_alignment": true
+}

@@ -14,7 +14,9 @@ from src.scenarios import (
     ScenarioConfig,
     validate_scenario,
     run_scenario,
-    compare_scenarios
+    compare_scenarios,
+    _align_baseline_to_irp,
+    _load_irp_forecast
 )
 
 
@@ -160,6 +162,89 @@ class TestValidateScenario:
         result = validate_scenario(config)
         assert result['valid'] is True
         assert len(result['errors']) == 0
+
+
+class TestBaselineIrpAlignment:
+    """Tests for baseline IRP anchoring after bottom-up UPC is computed."""
+
+    def test_aligns_baseline_estimated_total_upc_to_irp(self):
+        config = ScenarioConfig(name='baseline', baseline_irp_alignment=True)
+        results_df = pd.DataFrame({
+            'year': [2025, 2026],
+            'total_therms': [1000.0, 900.0],
+            'use_per_customer': [100.0, 90.0],
+        })
+        estimated_total = pd.DataFrame({
+            'year': [2025, 2026],
+            'space_heating': [100.0, 90.0],
+            'water_heating': [40.0, 36.0],
+            'estimated_total_upc': [150.0, 135.0],
+            'irp_upc': [165.0, 162.0],
+            'non_heating_offset': [50.0, 45.0],
+            'diff_vs_irp': [-15.0, -27.0],
+            'diff_vs_irp_pct': [-9.1, -16.7],
+            'data_type': ['calibrated', 'projected'],
+        })
+
+        aligned_results, aligned_estimated, summary = _align_baseline_to_irp(
+            results_df, estimated_total, config
+        )
+
+        assert summary['enabled'] is True
+        assert summary['years_aligned'] == 2
+        assert aligned_estimated['estimated_total_upc'].tolist() == [165.0, 162.0]
+        assert aligned_estimated['diff_vs_irp'].tolist() == [0.0, 0.0]
+        assert aligned_estimated['diff_vs_irp_pct'].tolist() == [0.0, 0.0]
+        assert aligned_estimated['irp_aligned'].tolist() == [True, True]
+        assert aligned_results.loc[aligned_results['year'] == 2025, 'use_per_customer'].iloc[0] == pytest.approx(110.0)
+        assert aligned_results.loc[aligned_results['year'] == 2026, 'use_per_customer'].iloc[0] == pytest.approx(108.0)
+
+    def test_does_not_align_when_alignment_flag_is_disabled(self):
+        config = ScenarioConfig(name='high_electrification', baseline_irp_alignment=False)
+        results_df = pd.DataFrame({'year': [2025], 'total_therms': [1000.0], 'use_per_customer': [100.0]})
+        estimated_total = pd.DataFrame({
+            'year': [2025],
+            'estimated_total_upc': [150.0],
+            'irp_upc': [165.0],
+        })
+
+        aligned_results, aligned_estimated, summary = _align_baseline_to_irp(
+            results_df, estimated_total, config
+        )
+
+        assert summary['enabled'] is False
+        assert aligned_results.equals(results_df)
+        assert aligned_estimated.equals(estimated_total)
+
+
+    def test_aligns_custom_named_baseline_template_runs_when_enabled(self):
+        config = ScenarioConfig(name='baseline_run_2026_05_12', baseline_irp_alignment=True)
+        results_df = pd.DataFrame({
+            'year': [2025],
+            'total_therms': [1000.0],
+            'use_per_customer': [100.0],
+        })
+        estimated_total = pd.DataFrame({
+            'year': [2025],
+            'estimated_total_upc': [150.0],
+            'irp_upc': [165.0],
+        })
+
+        _, aligned_estimated, summary = _align_baseline_to_irp(
+            results_df, estimated_total, config
+        )
+
+        assert summary['enabled'] is True
+        assert aligned_estimated['estimated_total_upc'].iloc[0] == 165.0
+
+    def test_irp_forecast_fallback_is_available_when_csv_missing(self, monkeypatch):
+        monkeypatch.setattr('src.scenarios.IRP_LOAD_DECAY_FORECAST', '/missing/irp_forecast.csv')
+
+        forecast = _load_irp_forecast(base_year=2025, forecast_horizon=2)
+
+        assert forecast['year'].tolist() == [2025, 2026, 2027]
+        assert forecast['irp_upc_therms'].iloc[0] == pytest.approx(648.0)
+        assert forecast['irp_source'].eq('embedded_2025_irp_decay_assumption').all()
 
 
 class TestCompareScenarios:

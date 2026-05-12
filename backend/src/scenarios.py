@@ -79,6 +79,10 @@ class ScenarioConfig:
     use_recs_ratios: bool = True
     # Whether to enrich premise data with Census ACS distributions
     use_census_enrichment: bool = True
+    # Calibrate the baseline scenario's estimated total UPC to the IRP UPC series
+    # after bottom-up model effects have been applied. Non-baseline scenarios keep
+    # their model-derived deltas so scenario comparisons remain meaningful.
+    baseline_irp_alignment: bool = False
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert config to dictionary."""
@@ -91,6 +95,116 @@ class ScenarioConfig:
         valid_fields = {f.name for f in cls.__dataclass_fields__.values()}
         filtered = {k: v for k, v in data.items() if not k.startswith('_') and k in valid_fields}
         return cls(**filtered)
+
+
+def _build_fallback_irp_forecast(base_year: int, forecast_horizon: int) -> pd.DataFrame:
+    """Build a documented IRP UPC fallback when the forecast file is unavailable."""
+    base_upc = 648.0
+    annual_decay_rate = -0.0119
+    rows = []
+    for offset in range(forecast_horizon + 1):
+        year = base_year + offset
+        upc = base_upc * ((1 + annual_decay_rate) ** (year - BASE_YEAR))
+        rows.append({
+            'year': year,
+            'irp_upc_therms': round(upc, 1),
+            'irp_decay_rate': 0.0 if year == BASE_YEAR else annual_decay_rate,
+            'irp_era': 'fallback_assumption',
+            'irp_source': 'embedded_2025_irp_decay_assumption',
+        })
+    return pd.DataFrame(rows)
+
+
+def _is_baseline_scenario(name: str) -> bool:
+    """Return True when a scenario name represents the baseline/reference case."""
+    normalized = str(name or '').strip().lower().replace('-', '_')
+    return normalized == 'baseline' or normalized.startswith('baseline_')
+
+
+def _align_baseline_to_irp(
+    results_df: pd.DataFrame,
+    estimated_total_df: pd.DataFrame,
+    config: ScenarioConfig
+) -> Tuple[pd.DataFrame, pd.DataFrame, Dict[str, Any]]:
+    """Scale baseline UPC outputs to the IRP total UPC trajectory when available.
+
+    The model still computes the bottom-up shape first.  For the baseline/reference
+    case only, this final calibration removes residual level/slope differences so
+    dashboards compare alternative scenarios against an IRP-anchored baseline.
+    """
+    summary: Dict[str, Any] = {
+        'enabled': False,
+        'reason': 'disabled',
+        'years_aligned': 0,
+    }
+
+    if not getattr(config, 'baseline_irp_alignment', False):
+        return results_df, estimated_total_df, summary
+
+    if estimated_total_df.empty or 'estimated_total_upc' not in estimated_total_df.columns or 'irp_upc' not in estimated_total_df.columns:
+        summary['reason'] = 'missing_estimated_total_or_irp_columns'
+        return results_df, estimated_total_df, summary
+
+    aligned_results = results_df.copy()
+    aligned_estimated = estimated_total_df.copy()
+    aligned_estimated['irp_alignment_factor'] = 1.0
+    aligned_estimated['irp_aligned'] = False
+
+    scaled_estimated_cols = [
+        col for col in aligned_estimated.columns
+        if col not in {'year', 'irp_upc', 'diff_vs_irp', 'diff_vs_irp_pct', 'data_type', 'irp_alignment_factor', 'irp_aligned'}
+        and pd.api.types.is_numeric_dtype(aligned_estimated[col])
+    ]
+
+    factors = []
+    pre_alignment_pct = []
+    for idx, row in aligned_estimated.iterrows():
+        model_upc = row.get('estimated_total_upc')
+        irp_upc = row.get('irp_upc')
+        if pd.isna(model_upc) or pd.isna(irp_upc) or model_upc <= 0 or irp_upc <= 0:
+            continue
+
+        factor = float(irp_upc) / float(model_upc)
+        year = int(row['year'])
+        factors.append(factor)
+        pre_alignment_pct.append(abs((float(model_upc) - float(irp_upc)) / float(irp_upc) * 100.0))
+
+        result_mask = aligned_results['year'].astype(int) == year
+        aligned_results.loc[result_mask, 'total_therms'] = aligned_results.loc[result_mask, 'total_therms'] * factor
+        aligned_results.loc[result_mask, 'use_per_customer'] = aligned_results.loc[result_mask, 'use_per_customer'] * factor
+
+        aligned_estimated.loc[idx, scaled_estimated_cols] = aligned_estimated.loc[idx, scaled_estimated_cols] * factor
+        aligned_estimated.loc[idx, 'estimated_total_upc'] = round(float(irp_upc), 1)
+        aligned_estimated.loc[idx, 'diff_vs_irp'] = 0.0
+        aligned_estimated.loc[idx, 'diff_vs_irp_pct'] = 0.0
+        aligned_estimated.loc[idx, 'irp_alignment_factor'] = round(factor, 6)
+        aligned_estimated.loc[idx, 'irp_aligned'] = True
+
+    if not factors:
+        summary['reason'] = 'no_valid_irp_overlap'
+        return results_df, estimated_total_df, summary
+
+    for col in scaled_estimated_cols:
+        aligned_estimated[col] = aligned_estimated[col].round(1)
+    aligned_results['total_therms'] = aligned_results['total_therms'].astype(float)
+    aligned_results['use_per_customer'] = aligned_results['use_per_customer'].astype(float)
+
+    summary = {
+        'enabled': True,
+        'reason': 'baseline_irp_alignment',
+        'years_aligned': len(factors),
+        'min_factor': round(min(factors), 6),
+        'max_factor': round(max(factors), 6),
+        'mean_factor': round(float(np.mean(factors)), 6),
+        'mean_abs_pct_before_alignment': round(float(np.mean(pre_alignment_pct)), 3),
+    }
+    logger.info(
+        "Baseline IRP alignment applied to %s years: factor range %.4f–%.4f; "
+        "mean pre-alignment absolute gap %.2f%%",
+        summary['years_aligned'], summary['min_factor'], summary['max_factor'],
+        summary['mean_abs_pct_before_alignment']
+    )
+    return aligned_results, aligned_estimated, summary
 
 
 def validate_scenario(config: ScenarioConfig) -> Dict[str, Any]:
@@ -227,12 +341,20 @@ def validate_scenario(config: ScenarioConfig) -> Dict[str, Any]:
 
 
 def _load_irp_forecast(base_year: int, forecast_horizon: int) -> Optional[pd.DataFrame]:
-    """Load NW Natural IRP 10-Year Load Decay Forecast for comparison."""
+    """Load NW Natural IRP 10-Year Load Decay Forecast for comparison.
+
+    If the external CSV is unavailable, use the documented 2025 IRP planning
+    assumption (648 therms/customer in 2025 with -1.19% annual decay) so model
+    outputs still include an IRP UPC comparison.
+    """
     try:
         irp_path = IRP_LOAD_DECAY_FORECAST
         if not Path(irp_path).exists():
-            logger.warning(f"IRP forecast file not found: {irp_path}")
-            return None
+            logger.warning(
+                "IRP forecast file not found: %s; using embedded 2025 IRP decay fallback",
+                irp_path
+            )
+            return _build_fallback_irp_forecast(base_year, forecast_horizon)
         df = pd.read_csv(irp_path)
         # Standardize column names
         df = df.rename(columns={
@@ -243,11 +365,13 @@ def _load_irp_forecast(base_year: int, forecast_horizon: int) -> Optional[pd.Dat
         })
         # Filter to our forecast range
         df = df[(df['year'] >= base_year) & (df['year'] <= base_year + forecast_horizon)]
+        if 'irp_source' not in df.columns:
+            df['irp_source'] = 'csv_forecast'
         logger.info(f"Loaded IRP forecast: {len(df)} years, UPC range {df['irp_upc_therms'].min():.1f}-{df['irp_upc_therms'].max():.1f}")
         return df
     except Exception as e:
-        logger.warning(f"Failed to load IRP forecast: {e}")
-        return None
+        logger.warning(f"Failed to load IRP forecast: {e}; using embedded fallback")
+        return _build_fallback_irp_forecast(base_year, forecast_horizon)
 
 
 def run_scenario(
@@ -719,6 +843,12 @@ def run_scenario(
             # Base year or no vintage data: use uniform scaling
             base_eff_mult = rate['efficiency_multiplier']
             sim_results['annual_therms'] = sim_results['annual_therms'] * base_eff_mult
+
+        # Scale system demand for the projected customer count before calculating UPC.
+        # Without this, housing growth only increases the UPC denominator, causing an
+        # artificial load-decay signal when new customers are not represented as rows.
+        customer_scale = stock.total_units / max(baseline_stock.total_units, 1)
+        sim_results['annual_therms'] = sim_results['annual_therms'] * customer_scale
         
         # Equipment stats: Weibull age-cohort model for failures/repairs/replacements
         # Each year, compute failure probability by age using Weibull, then determine
@@ -928,9 +1058,12 @@ def run_scenario(
         agg_results['year'] = year
         agg_results['scenario_name'] = config.name
         
-        # Compute use-per-customer
+        # Compute use-per-customer against the projected customer count.
+        # Use the same customer count in the exported row so downstream IRP comparisons
+        # do not recompute UPC against the fixed base-year simulated premise count.
         total_demand = agg_results['total_therms'].sum()
         total_customers = stock.total_units
+        agg_results['premise_count'] = int(total_customers)
         upc = total_demand / total_customers if total_customers > 0 else 0.0
         agg_results['use_per_customer'] = upc
         
@@ -959,8 +1092,11 @@ def run_scenario(
     irp_forecast = _load_irp_forecast(config.base_year, config.forecast_horizon)
     if irp_forecast is not None:
         # Merge IRP UPC into results for side-by-side comparison
+        irp_cols = ['year', 'irp_upc_therms']
+        if 'irp_source' in irp_forecast.columns:
+            irp_cols.append('irp_source')
         results_df = results_df.merge(
-            irp_forecast[['year', 'irp_upc_therms']],
+            irp_forecast[irp_cols],
             on='year', how='left'
         )
         logger.info("Added NW Natural IRP forecast UPC to results")
@@ -989,6 +1125,7 @@ def run_scenario(
         yr = int(row['year'])
         sh_upc = row['use_per_customer']
         irp_upc = row.get('irp_upc_therms', None)
+        irp_source = row.get('irp_source', None)
         
         row_data = {
             'year': yr,
@@ -1002,6 +1139,7 @@ def run_scenario(
         
         row_data['estimated_total_upc'] = round(sh_upc + non_heating_total, 1)
         row_data['irp_upc'] = round(irp_upc, 1) if irp_upc else None
+        row_data['irp_source'] = irp_source
         row_data['non_heating_offset'] = round(non_heating_total, 1)
         row_data['diff_vs_irp'] = round(sh_upc + non_heating_total - irp_upc, 1) if irp_upc else None
         row_data['diff_vs_irp_pct'] = round((sh_upc + non_heating_total - irp_upc) / irp_upc * 100, 1) if irp_upc and irp_upc > 0 else None
@@ -1009,6 +1147,11 @@ def run_scenario(
         estimated_total_rows.append(row_data)
     
     estimated_total_df = pd.DataFrame(estimated_total_rows)
+
+    results_df, estimated_total_df, irp_alignment_summary = _align_baseline_to_irp(
+        results_df, estimated_total_df, config
+    )
+
     logger.info(
         f"Estimated total UPC: {estimated_total_df['estimated_total_upc'].iloc[0]:.1f} → "
         f"{estimated_total_df['estimated_total_upc'].iloc[-1]:.1f} therms "
@@ -1023,6 +1166,8 @@ def run_scenario(
         'housing_growth_rate': config.housing_growth_rate,
         'electrification_rate': config.electrification_rate,
         'efficiency_improvement': config.efficiency_improvement,
+        'baseline_irp_alignment': config.baseline_irp_alignment,
+        'irp_alignment': irp_alignment_summary,
         'weather_assumption': config.weather_assumption,
         'end_use_scope': config.end_use_scope,
         'max_premises': config.max_premises,
@@ -1037,6 +1182,7 @@ def run_scenario(
         '_vintage_demand': pd.concat(yearly_vintage_demand, ignore_index=True) if yearly_vintage_demand else pd.DataFrame(),
         '_sample_rates': rates_df,
         '_estimated_total': estimated_total_df,
+        '_irp_alignment': irp_alignment_summary,
         '_hdd_info': hdd_info,
         '_hdd_history': hdd_history_df,
     }

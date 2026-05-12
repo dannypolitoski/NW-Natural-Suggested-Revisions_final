@@ -49,7 +49,8 @@
     "hybrid_adoption_rate": "Share of replacements that go to dual-fuel heat pump + gas backup (3%/yr)",
     "hybrid_gas_usage_factor": "Gas usage of hybrid homes relative to gas-only (35% \u2014 heat pump handles mild weather)",
     "use_recs_ratios": "Use RECS 1993-2020 trend to compute non-heating end-use ratios dynamically",
-    "use_census_enrichment": "Enrich unclassified premises with Census B25024/B25034 distributions"
+    "use_census_enrichment": "Enrich unclassified premises with Census B25024/B25034 distributions",
+    "baseline_irp_alignment": "Anchor this baseline scenario estimated total UPC to NW Natural IRP UPC when the IRP forecast is available."
   },
   "template_name": "baseline",
   "display_name": "Baseline",
@@ -64,5 +65,6 @@
       "space_heating": 0.01,
       "hybrid_space_heating": 0.005
     }
-  }
+  },
+  "baseline_irp_alignment": true
 }

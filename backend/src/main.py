@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import List, Tuple, Dict, Any
 
 import pandas as pd
+import numpy as np
 
 from src.config import (
     BASE_YEAR, OUTPUT_DIR, PREMISE_DATA, EQUIPMENT_DATA, EQUIPMENT_CODES,
@@ -601,10 +602,18 @@ Examples:
             if 'irp_upc_therms' in results_df.columns and results_df['irp_upc_therms'].notna().any():
                 # Always annual — sum months first if monthly resolution
                 irp_agg_cols = {'total_therms': 'sum', 'premise_count': 'first', 'irp_upc_therms': 'first'}
+                if 'irp_source' in results_df.columns:
+                    irp_agg_cols['irp_source'] = 'first'
                 irp_by_year = results_df.groupby('year').agg(irp_agg_cols).reset_index()
                 irp_by_year['use_per_customer'] = irp_by_year['total_therms'] / irp_by_year['premise_count'].clip(lower=1)
-                irp_compare = irp_by_year[['year', 'use_per_customer', 'irp_upc_therms', 'total_therms', 'premise_count']].copy()
-                irp_compare.columns = ['year', 'model_upc', 'irp_upc', 'total_therms', 'premise_count']
+                compare_cols = ['year', 'use_per_customer', 'irp_upc_therms', 'total_therms', 'premise_count']
+                if 'irp_source' in irp_by_year.columns:
+                    compare_cols.append('irp_source')
+                irp_compare = irp_by_year[compare_cols].copy()
+                irp_compare = irp_compare.rename(columns={
+                    'use_per_customer': 'model_upc',
+                    'irp_upc_therms': 'irp_upc',
+                })
                 irp_compare['model_upc_label'] = 'space_heating_only'
                 # Add estimated total UPC if available
                 est_total = metadata.get('_estimated_total')
@@ -613,7 +622,19 @@ Examples:
                         est_total[['year', 'estimated_total_upc']],
                         on='year', how='left'
                     )
-                irp_compare['diff_therms'] = irp_compare['model_upc'] - irp_compare['irp_upc']
+                # Compare IRP against estimated total UPC when available; otherwise fall
+                # back to the space-heating-only model UPC. This keeps dashboard
+                # summary diffs aligned with the displayed total-UPC comparison.
+                if 'estimated_total_upc' in irp_compare.columns:
+                    irp_compare['comparison_upc'] = irp_compare['estimated_total_upc'].fillna(irp_compare['model_upc'])
+                    irp_compare['model_upc_label'] = np.where(
+                        irp_compare['estimated_total_upc'].notna(),
+                        'estimated_total_upc',
+                        irp_compare['model_upc_label']
+                    )
+                else:
+                    irp_compare['comparison_upc'] = irp_compare['model_upc']
+                irp_compare['diff_therms'] = irp_compare['comparison_upc'] - irp_compare['irp_upc']
                 irp_compare['diff_pct'] = (irp_compare['diff_therms'] / irp_compare['irp_upc'] * 100).round(1)
                 export_results(irp_compare, str(scenario_dir / 'irp_comparison.csv'), format='csv')
                 export_results(irp_compare, str(scenario_dir / 'irp_comparison.json'), format='json')
